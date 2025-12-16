@@ -1,4 +1,8 @@
 {
-    "home":"Home page!",
-    "contact":"Contact page!"
+    "header":"header works!",
+    "footer":"footer works!",
+    "home":"Home",
+    "contact":"Contact",
+    "home-page":"Home Page!",
+    "contact-page":"Contact Page!"
 }

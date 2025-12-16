@@ -12,31 +12,33 @@ export class I18nPipe implements PipeTransform {
   private cdr = inject(ChangeDetectorRef);
   private injector = inject(Injector);
 
-  private keySignal = signal('');  // señal que almacena la key actual
-  private value = '';              // valor traducido actual
+  private keySignal = signal(''); 
+  private value = '';             
 
   constructor() {
-    // Effect que actualiza `value` cada vez que cambie la key o las traducciones
     effect(() => {
       const key = this.keySignal();
       if (!key) return;
 
-      const translation = this.i18n.translate(key)(); // señal derivada del servicio
-      this.value = translation ?? key;               // fallback a la key
+      const translation = this.i18n.translate(key)();
+      this.value = translation ?? key;               
 
-      this.cdr.markForCheck(); // refresca el DOM
+      // refresca el DOM
+      this.cdr.markForCheck(); 
     }, { injector: this.injector });
   }
 
   transform(key: string): string {
-    // Evita modificar signals durante el render: se hace en microtask
+    // NO se escribe la signal durante el render
+    //Se agenda para después (microtask)
     queueMicrotask(() => {
       if (this.keySignal() !== key) {
         this.keySignal.set(key);
       }
     });
 
-    // Retorna el valor actual (puede ser la key mientras se carga JSON)
+    // Retorna el valor actual 
+    // (puede ser la key mientras se carga JSON)
     return this.value;
   }
 }

@@ -1,7 +1,6 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -38,5 +37,4 @@ export class I18nService {
       return dict[key] ?? key;
     });
   }
-
 }
