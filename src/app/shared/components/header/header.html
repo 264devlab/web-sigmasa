@@ -1,1 +1,13 @@
-<p>header works!</p>
+<p> {{'header' | i18n}}</p>
+
+<nav>
+    <ul>
+      <li><a [routerLink]="['/home']"> {{ 'home' |i18n}} </a></li>
+      <li><a [routerLink]="['/contact']"> {{ 'contact' | i18n}} </a></li>
+    </ul>
+
+    <button (click)="switchLanguage('es')">ES</button>
+    <button (click)="switchLanguage('en')">EN</button>
+</nav>
+  
+  
