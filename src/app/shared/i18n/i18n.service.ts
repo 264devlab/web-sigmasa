@@ -1,5 +1,6 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { LocalStorageService } from '../../core/services/local-storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,9 @@ import { HttpClient } from '@angular/common/http';
 export class I18nService {
   
   private http = inject(HttpClient);
-
+  private localStorage = inject(LocalStorageService)
+  private readonly LANG_KEY = 'currentLang';
+  
   // Idioma actual
   currentLang = signal<'es' | 'en'>('es');
 
@@ -15,11 +18,16 @@ export class I18nService {
   private translations = signal<Record<string, string>>({});
 
   constructor() {
-    this.loadLanguage(this.currentLang());
+    const lang = this.localStorage.get(this.LANG_KEY) as 'es' | 'en' ?? 'es';
+    this.currentLang.set(lang);
+    this.loadLanguage(lang);
   }
 
   // Cambia idioma y recarga JSON
   setLanguage(lang: 'es' | 'en') {
+    if (this.currentLang() === lang) return;
+
+    this.localStorage.set(this.LANG_KEY, lang);
     this.currentLang.set(lang);
     this.loadLanguage(lang);
   }
