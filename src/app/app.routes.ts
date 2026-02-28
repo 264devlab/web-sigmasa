@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout';
+import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.component';
 import { mainRoutes } from './core/routes/main.routes';
 
 export const routes: Routes = [
@@ -12,5 +12,6 @@ export const routes: Routes = [
         path: '**',
         redirectTo: 'home',
         pathMatch: 'full',
-    }
+    },
 ];
+
