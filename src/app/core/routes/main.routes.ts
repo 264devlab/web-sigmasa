@@ -1,18 +1,16 @@
-import { Routes } from "@angular/router";
+import { Routes } from '@angular/router';
 
 export const mainRoutes: Routes = [
     {
         path: '',
-        loadComponent: () => import('../../pages/home/home').then(m => m.HomeComponent),
-        
+        loadComponent: () => import('../../pages/home/home.component').then((m) => m.HomeComponent),
     },
     {
         path: 'home',
-        loadComponent: () => import('../../pages/home/home').then(m => m.HomeComponent),
+        loadComponent: () => import('../../pages/home/home.component').then((m) => m.HomeComponent),
     },
     {
         path: 'contact',
-        loadComponent: () => import('../../pages/contact/contact').then(m => m.ContactComponent),
+        loadComponent: () => import('../../pages/contact/contact.component').then((m) => m.ContactComponent),
     },
-    
 ];
