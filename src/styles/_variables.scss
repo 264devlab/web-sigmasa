@@ -1,0 +1,38 @@
+/*Centraliza los colores de marca, tipografía y espaciados. 
+Si se desea cambiar un color o tamaño de la web, se hace en un solo lugar y se refleja en toda la app.*/
+
+// Breakpoints
+$mobile: 768px;
+$tablet: 1024px;
+
+// Colors (Ejemplos profesionales)
+$color-primary: #2c3e50;
+$color-secondary: #34495e;
+$color-accent: #3498db;
+$color-background: #f4f7f6;
+$color-text: #333333;
+$color-text-light: #7f8c8d;
+$color-white: #ffffff;
+$color-error: #e74c3c;
+$color-success: #2ecc71;
+
+// Typography
+$font-family-inter: 'Inter', sans-serif;
+$font-family-raleway: 'Raleway', sans-serif;
+
+$font-weight-light: 300;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+
+$font-size-h1: 64px;
+$font-size-h2: 40px;
+$font-size-h3: 32px;
+$font-size-large: 20px;
+$font-size-base: 16px;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+$spacing-xl: 4rem;

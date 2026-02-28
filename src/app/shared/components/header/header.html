@@ -1,13 +1,16 @@
-<p> {{'header' | i18n}}</p>
-
-<nav>
-    <ul>
-      <li><a [routerLink]="['/home']"> {{ 'home' |i18n}} </a></li>
-      <li><a [routerLink]="['/contact']"> {{ 'contact' | i18n}} </a></li>
+<header class="header">
+  <div class="header__logo">{{'header' | i18n}}</div>
+  <nav class="header__nav">
+    <ul class="header__list">
+      <li class="header__item"><a class="header__link" [routerLink]="['/home']"> {{ 'home' | i18n}} </a></li>
+      <li class="header__item"><a class="header__link" [routerLink]="['/contact']"> {{ 'contact' | i18n}} </a></li>
     </ul>
 
-    <button (click)="switchLanguage('es')">ES</button>
-    <button (click)="switchLanguage('en')">EN</button>
-</nav>
+    <div class="header__languages">
+      <button class="header__lang-btn" (click)="switchLanguage('es')">ES</button>
+      <button class="header__lang-btn" (click)="switchLanguage('en')">EN</button>
+    </div>
+  </nav>
+</header>
   
   

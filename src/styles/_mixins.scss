@@ -1,0 +1,35 @@
+/*Sirven para no repetir código. 
+Por ejemplo, en lugar de escribir 10 veces la media query para móvil, 
+la escribes una vez aquí y la reutilizas con @include respond-to(mobile).*/
+
+@use 'variables' as *;
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint ==mobile {
+        @media (max-width: $mobile) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==tablet {
+        @media (max-width: $tablet) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==desktop {
+        @media (min-width: ($tablet + 1px)) {
+            @content;
+        }
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin transition-standard {
+    transition: all 0.3s ease-in-out;
+}
