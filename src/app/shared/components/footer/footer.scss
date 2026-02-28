@@ -1,0 +1,14 @@
+@use 'index' as *;
+
+.footer {
+    padding: $spacing-lg;
+    background-color: $color-primary;
+    color: $color-white;
+    text-align: center;
+    margin-top: auto;
+
+    &__text {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+}
