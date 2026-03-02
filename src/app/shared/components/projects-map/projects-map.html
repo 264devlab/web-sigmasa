@@ -1,0 +1,40 @@
+<!-- DEBUG: Map Component Rendered -->
+<section class="projects-map-section">
+
+    <div class="background-container" style="background-color: #001a33;">
+        <img src="assets/images/fondo-textura-azul.svg" alt="Texture Background" class="bg-texture"
+            style="opacity: 0.5;">
+    </div>
+
+
+    <div class="content-wrapper">
+        <div class="map-container">
+            <img src="assets/images/mapa-sanjuan.svg" alt="Mapa San Juan" class="map-svg">
+
+            <!-- Connection Lines Container -->
+            <svg class="lines-svg" preserveAspectRatio="none">
+                <ng-container *ngFor="let project of projects">
+                    <line *ngIf="activeProject?.id === project.id" [attr.x1]="project.x + '%'"
+                        [attr.y1]="project.y + '%'" x2="75%" [attr.y2]="(30 + (project.id - 1) * 10) + '%'"
+                        class="connection-line" />
+                    <circle *ngIf="activeProject?.id === project.id" [attr.cx]="project.x + '%'"
+                        [attr.cy]="project.y + '%'" r="4" class="map-dot" />
+                </ng-container>
+            </svg>
+        </div>
+
+        <div class="buttons-container">
+            <div *ngFor="let project of projects" class="project-button-wrapper"
+                [class.active]="activeProject?.id === project.id" (mouseenter)="setActiveProject(project)"
+                (mouseleave)="setActiveProject(null)">
+                <div class="button-content">
+                    <span class="project-name">{{ project.name }}</span>
+                    <div class="project-description-container">
+                        <p class="description">{{ project.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
