@@ -8,28 +8,36 @@
 
 
     <div class="content-wrapper">
-        <div class="map-container">
-            <img src="assets/images/mapa-sanjuan.svg" alt="Mapa San Juan" class="map-svg">
+        <!-- Shared Info Card (Fixed position on left for desktop/tablet) -->
+        <div #infoCard class="project-info-card" [class.visible]="activeProject">
+            <div class="info-content" *ngIf="activeProject">
+                <h3 class="info-title">{{ activeProject.name }}</h3>
+                <p class="info-description">{{ activeProject.description }}</p>
+            </div>
+        </div>
 
-            <!-- Connection Lines Container -->
-            <svg class="lines-svg" preserveAspectRatio="none">
-                <ng-container *ngFor="let project of projects">
-                    <line *ngIf="activeProject?.id === project.id" [attr.x1]="project.x + '%'"
-                        [attr.y1]="project.y + '%'" x2="75%" [attr.y2]="(30 + (project.id - 1) * 10) + '%'"
-                        class="connection-line" />
-                    <circle *ngIf="activeProject?.id === project.id" [attr.cx]="project.x + '%'"
-                        [attr.cy]="project.y + '%'" r="4" class="map-dot" />
-                </ng-container>
-            </svg>
+        <!-- Connection Lines Container (Moved here for full reach) -->
+        <svg #linesContainer class="lines-svg" preserveAspectRatio="none">
+            <ng-container *ngFor="let project of projects">
+                <line *ngIf="activeProject?.id === project.id" [attr.x1]="lineStartX + '%'" [attr.y1]="lineStartY + '%'"
+                    [attr.x2]="lineTargetX + '%'" [attr.y2]="lineTargetY + '%'" class="connection-line" />
+                <circle *ngIf="activeProject?.id === project.id" [attr.cx]="lineStartX + '%'"
+                    [attr.cy]="lineStartY + '%'" r="4" class="map-dot" />
+            </ng-container>
+        </svg>
+
+        <div class="map-container">
+            <img #mapImage src="assets/images/mapa-sanjuan.svg" alt="Mapa San Juan" class="map-svg">
         </div>
 
         <div class="buttons-container">
-            <div *ngFor="let project of projects" class="project-button-wrapper"
+            <div #projectButton *ngFor="let project of projects" class="project-button-wrapper"
                 [class.active]="activeProject?.id === project.id" (mouseenter)="setActiveProject(project)"
                 (mouseleave)="setActiveProject(null)">
                 <div class="button-content">
                     <span class="project-name">{{ project.name }}</span>
-                    <div class="project-description-container">
+                    <!-- Mobile-only description expansion -->
+                    <div class="project-description-container mobile-only">
                         <p class="description">{{ project.description }}</p>
                     </div>
                 </div>
