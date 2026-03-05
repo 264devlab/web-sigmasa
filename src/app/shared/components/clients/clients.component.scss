@@ -117,12 +117,13 @@
         }
 
         .logos-track {
-            gap: $spacing-xl;
+            gap: $spacing-md;
             animation-duration: 20s;
         }
 
         .logo-item {
             height: 50px;
+            width: 120px;
         }
     }
 }
