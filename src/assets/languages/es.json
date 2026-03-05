@@ -1,8 +1,36 @@
 {
     "header": "Seccion de trabajo del header component",
     "footer": "Seccion de trabajo del footer component",
-    "home":"Inicio",
-    "contact":"Contactos",
-    "home-page":"Pagina de Inicio!",
-    "contact-page":"Pagina de Contacto!"
+    "home": "Inicio",
+    "contact": "Contactos",
+    "home-page": "Pagina de Inicio!",
+    "contact-page": "Pagina de Contacto!",
+    "services": {
+        "title": "Servicios",
+        "description": "Más De 35 Años Ofreciendo Soluciones Concretas A Complejos Requerimientos. A Través De Un \"Asesoramiento Técnico Personalizado\" Para El Análisis, Desarrollo, Seguimiento Y Asistencia De Proyectos Y Obras.",
+        "engineering": {
+            "title": "Ingeniería De Proyecto",
+            "description": "Desarrollamos Proyectos De Ingeniería En Sus Distintas Etapas, Asegurando Soluciones Técnicas Eficientes, Seguras Y Acordes A Los Requerimientos De Cada Obra."
+        },
+        "construction": {
+            "title": "Construcción",
+            "description": "Desarrollamos Proyectos De Ingeniería En Sus Distintas Etapas, Asegurando Soluciones Técnicas Eficientes, Seguras Y Acordes A Los Requerimientos De Cada Obra."
+        },
+        "real-estate": {
+            "title": "Desarrollos Inmobiliarios",
+            "description": "Hemos Enfocado Esta Unidad De Negocios En La \"Proyección, Ejecución Y Comercialización De Barrios Privados\" De Alta Calidad Constructiva, Destacándose Por Sus Cualidades Urbanísticas, Su Ubicación Estratégica Y Su Rápida Consolidación."
+        },
+        "architecture": {
+            "title": "Arquitectura",
+            "description": "Ejecutamos \"Obras Civiles Y Arquitectónicas\" Para El Sector Público Y Privado, Abarcando Desde La Planificación Y Construcción Hasta La Coordinación Integral De Los Trabajos, Garantizando Calidad Constructiva, Cumplimiento De Plazos Y Seguridad En Obra."
+        },
+        "mining": {
+            "title": "Minería",
+            "description": "Contamos Con Un \"Equipo Técnico Especializado\" Para Desarrollar Y Ejecutar Proyectos En Localizaciones Mineras, Incorporando Tecnología De Vanguardia Al Servicio De La Construcción. Brindamos Servicios A Empresas Mineras En \"Movimientos Masivos De Suelos\", \"Obras Civiles\" Y Trabajos Asociados."
+        },
+        "equipment": {
+            "title": "Provisión De Equipos Pesados",
+            "description": "Disponemos De Una \"Flota De Equipos Propia\" Que Nos Permite Ofrecer Servicios De Provisión Y Operación De Equipos Pesados En Todas Las Etapas, Sectores E Instalaciones De Proyectos Mineros, Con \"Personal Altamente Capacitado Y Calificado\"."
+        }
+    }
 }

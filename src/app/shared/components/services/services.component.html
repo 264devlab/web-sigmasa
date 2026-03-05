@@ -1,0 +1,15 @@
+<section class="services-section">
+    <div class="container">
+        <div class="header">
+            <h2 class="text-raleway-semibold-40 title">{{ 'services.title' | i18n }}</h2>
+            <p class="text-raleway-light-20 description">{{ 'services.description' | i18n }}</p>
+        </div>
+
+        <div class="services-grid">
+            @for (service of services; track service.titleKey) {
+            <app-service-card [icon]="service.icon" [titleKey]="service.titleKey"
+                [descriptionKey]="service.descriptionKey"></app-service-card>
+            }
+        </div>
+    </div>
+</section>
