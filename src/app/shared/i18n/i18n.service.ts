@@ -6,11 +6,11 @@ import { LocalStorageService } from '../../core/services/local-storage.service';
   providedIn: 'root',
 })
 export class I18nService {
-  
+
   private http = inject(HttpClient);
   private localStorage = inject(LocalStorageService)
   private readonly LANG_KEY = 'currentLang';
-  
+
   // Idioma actual
   currentLang = signal<'es' | 'en'>('es');
 

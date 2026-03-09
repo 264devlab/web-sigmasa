@@ -1,5 +1,7 @@
-import { Component, HostListener, OnInit, signal, computed } from '@angular/core';
+import { Component, HostListener, OnInit, signal, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { I18nService } from '../../i18n/i18n.service';
+import { I18nPipe } from '../../i18n/i18n.pipe';
 
 interface Project {
     id: number;
@@ -11,17 +13,24 @@ interface Project {
 @Component({
     selector: 'app-projects-gallery',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, I18nPipe],
     templateUrl: './projects-gallery.component.html',
     styleUrl: './projects-gallery.component.scss'
 })
 export class ProjectsGalleryComponent implements OnInit {
-    projects: Project[] = Array.from({ length: 18 }, (_, i) => ({
-        id: i + 1,
-        name: `Proyecto ${i + 1}`,
-        description: 'Descripción breve del proyecto realizado con excelencia técnica.',
-        image: `assets/images/projects/project-${i + 1}.png`
-    }));
+    private i18nService = inject(I18nService);
+
+    projects = computed(() => {
+        const items = (this.i18nService.translate('projects.items')() as unknown) as any[];
+        if (!Array.isArray(items)) return [];
+
+        return items.map((item, i) => ({
+            id: i + 1,
+            name: item.name,
+            description: item.description,
+            image: `assets/images/projects/project-${i + 1}.png`
+        }));
+    });
 
     currentPage = signal(1);
     itemsPerPage = signal(6);
@@ -49,11 +58,11 @@ export class ProjectsGalleryComponent implements OnInit {
         }
     }
 
-    totalPages = computed(() => Math.ceil(this.projects.length / this.itemsPerPage()));
+    totalPages = computed(() => Math.ceil(this.projects().length / this.itemsPerPage()));
 
     paginatedProjects = computed(() => {
         const start = (this.currentPage() - 1) * this.itemsPerPage();
-        return this.projects.slice(start, start + this.itemsPerPage());
+        return this.projects().slice(start, start + this.itemsPerPage());
     });
 
     changePage(page: number): void {
