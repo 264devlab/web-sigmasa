@@ -1,0 +1,38 @@
+<div class="gallery-container" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+    <div class="projects-grid" [class.is-animating]="isAnimating()">
+        <div class="project-card" *ngFor="let project of paginatedProjects(); let i = index" [style.--index]="i">
+            <div class="image-wrapper">
+                <img [src]="project.image" [alt]="project.name" loading="lazy">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h3 class="project-name text-raleway-medium-32">{{ project.name }}</h3>
+                        <p class="project-desc text-raleway-light-16">{{ project.description }}</p>
+                        <a href="#" class="read-more text-raleway-medium-20">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pagination" *ngIf="totalPages() > 1">
+        <button (click)="prevPage()" class="page-btn prev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <div class="page-indicators">
+            <span *ngFor="let p of [].constructor(totalPages()); let i = index" (click)="changePage(i + 1)"
+                [class.active]="currentPage() === i + 1" class="indicator">
+            </span>
+        </div>
+
+        <button (click)="nextPage()" class="page-btn next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,186 @@
+@use 'variables' as *;
+
+.gallery-container {
+    width: 100%;
+    touch-action: pan-y; // Allows vertical scrolling while handling horizontal swipes
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+
+    @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
+    }
+
+    &.is-animating {
+        .project-card {
+            animation: none;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    }
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    border-radius: 4px;
+
+    // Default animation on load/render
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: calc(var(--index) * 0.1s);
+
+    .image-wrapper {
+        width: 100%;
+        line-height: 0; // Removes unwanted space below image
+        position: relative;
+
+        img {
+            width: 100%;
+            height: auto; // Keep original proportions
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        color: $color-white;
+        transform: translateY(100%);
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        text-align: center;
+
+        .overlay-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            .project-name {
+                margin: 0;
+                transform: translateY(20px);
+                transition: transform 0.5s 0.1s;
+            }
+
+            .project-desc {
+                margin: 0;
+                opacity: 0.9;
+                line-height: 1.4;
+                transform: translateY(20px);
+                transition: transform 0.5s 0.2s;
+            }
+
+            .read-more {
+                display: inline-block;
+                margin-top: 10px;
+                border-bottom: 1px solid transparent;
+                transition: border-color 0.3s, transform 0.5s 0.3s;
+                transform: translateY(20px);
+
+                &:hover {
+                    border-bottom-color: $color-white;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .image-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .overlay {
+            transform: translateY(0);
+            opacity: 1;
+
+            .project-name,
+            .project-desc,
+            .read-more {
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+
+    .page-indicators {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        .indicator {
+            width: 40px;
+            height: 2px;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &.active {
+                background-color: $color-primary;
+                height: 3px;
+            }
+
+            &:hover:not(.active) {
+                background-color: #bbb;
+            }
+        }
+    }
+
+    .page-btn {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background: transparent;
+        color: $color-text;
+        border-radius: 50%;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            color: $color-primary;
+        }
+
+        svg {
+            width: 28px;
+            height: 28px;
+        }
+    }
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

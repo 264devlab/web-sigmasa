@@ -1,0 +1,42 @@
+@use 'variables' as *;
+
+.projects-section {
+    padding: 100px 0;
+    background-color: $color-white;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .section-header {
+        margin-bottom: 60px;
+        max-width: 900px;
+
+        .section-title {
+            margin-bottom: 25px;
+            color: $color-primary;
+        }
+
+        .section-description {
+            color: $color-text-light;
+            line-height: 1.6;
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .projects-section {
+        padding: 60px 0;
+
+        .section-header {
+            margin-bottom: 40px;
+
+            .section-title {
+                margin-bottom: 15px;
+                font-size: 32px; // Adjusted for mobile if needed
+            }
+        }
+    }
+}
