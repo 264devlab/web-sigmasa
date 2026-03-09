@@ -42,7 +42,23 @@ export class I18nService {
   translate(key: string) {
     return computed(() => {
       const dict = this.translations();
-      return dict[key] ?? key;
+      const value = this.getNestedValue(dict, key);
+      return value ?? key;
     });
+  }
+
+  private getNestedValue(obj: any, path: string): string | null {
+    const keys = path.split('.');
+    let current = obj;
+
+    for (const key of keys) {
+      if (current && typeof current === 'object' && key in current) {
+        current = current[key];
+      } else {
+        return null;
+      }
+    }
+
+    return typeof current === 'string' ? current : null;
   }
 }
