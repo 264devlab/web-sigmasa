@@ -1,8 +1,15 @@
 {
     "header": "Seccion de trabajo del header component",
     "footer": "Seccion de trabajo del footer component",
-    "home":"Inicio",
-    "contact":"Contactos",
-    "home-page":"Pagina de Inicio!",
-    "contact-page":"Pagina de Contacto!"
+    "home": "Inicio",
+    "contact": "Contactos",
+    "nav_home": "Inicio",
+    "nav_services": "Servicios",
+    "nav_projects": "Proyectos",
+    "nav_mining": "Minería",
+    "home-page": "Pagina de Inicio!",
+    "contact-page": "Pagina de Contacto!",
+    "hero_title": "Legislatura San Juan",
+    "hero_description": "Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit, Sed Diam Nonummy Nibh Euismod Tincidunt Ut Laoreet Dolore Magna Aliquam Erat Volutpat. Ut Wisi Enim Ad Minim Veniam, Quis",
+    "hero_button": "Ver Proyectos"
 }

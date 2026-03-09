@@ -1,0 +1,121 @@
+@use 'index' as *;
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    color: $color-white;
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.1) 0%,
+                rgba(0, 0, 0, 0.5) 100%);
+        z-index: 1;
+    }
+
+    .hero-container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 $spacing-2xl $spacing-3xl;
+
+        @include respond-to(mobile) {
+            padding: 0 clamp($spacing-md, 3.5vw, $spacing-xl) 11rem;
+        }
+    }
+
+    .hero-content {
+        max-width: 800px;
+    }
+
+    .hero-title {
+        font-family: $font-family-inter;
+        font-size: 4rem;
+        font-weight: $font-weight-semibold;
+        margin-bottom: $spacing-md;
+        line-height: 1.1;
+
+        @include respond-to(tablet) {
+            font-size: 3rem;
+        }
+
+        @include respond-to(mobile) {
+            font-size: 2.5rem;
+        }
+    }
+
+    .hero-description {
+        font-family: $font-family-inter;
+        font-size: 1rem;
+        line-height: 1.6;
+        opacity: 0.9;
+        margin-bottom: $spacing-lg;
+        max-width: 600px;
+        text-transform: capitalize;
+
+        @include respond-to(mobile) {
+            font-size: 0.9rem;
+        }
+    }
+
+    .hero-action {
+        display: flex;
+        width: fit-content;
+    }
+
+    .hero-btn {
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        @include transition-standard;
+
+        &:hover {
+            transform: translateX(6px);
+
+            .hero-btn-text {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        &-text {
+            background: $color-white;
+            color: $color-primary;
+            padding: 12px 24px;
+            font-weight: $font-weight-semibold;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            @include transition-standard;
+        }
+
+        &-icon {
+            background: $color-accent;
+            color: $color-white;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            margin-left: 4px;
+            @include transition-standard;
+
+            .material-symbols-outlined {
+                font-size: 20px;
+            }
+        }
+    }
+}

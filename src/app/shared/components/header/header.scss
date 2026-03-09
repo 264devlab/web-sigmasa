@@ -1,78 +1,241 @@
 @use 'index' as *;
 
 .header {
-    background-color: $color-white;
-    padding: $spacing-md $spacing-lg;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
+    padding: $spacing-sm-2 0;
+    @include transition-standard;
 
-    @include respond-to(mobile) {
-        flex-direction: column;
+    // Glassmorphism effect
+    background: rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+    &-container {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 clamp($spacing-sm, 3.5vw, $spacing-xl);
+        display: flex;
+        justify-content: space-between; // Desktop: 3 cajas (Logo | Nav | Actions)
+        align-items: center;
+        width: 100%;
+    }
+
+    &-logo {
+        display: flex;
+        align-items: center;
+
+        &-img {
+            height: 36px;
+            width: auto;
+            display: block;
+        }
+    }
+
+    // Contenedor dual (3 cajas en desktop, dropdown en movil)
+    &-menu {
+        display: contents; // Magia CSS: hace que sus hijos sean flex-items del container
+
+        @include respond-to(mobile) {
+            display: flex;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+
+            // Glassmorphism effect
+            background: rgba(30, 30, 30, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+            flex-direction: column;
+            padding: $spacing-md clamp($spacing-sm, 3.5vw, $spacing-xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            transform: translateY(-10px);
+            opacity: 0;
+            pointer-events: none;
+            @include transition-standard;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+            &.is-open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    }
+
+    &-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &-list {
+        display: flex;
         gap: $spacing-md;
-        text-align: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @include respond-to(mobile) {
+            display: grid;
+            grid-template-columns: 1fr 1fr; // El 2x2 grid
+            gap: $spacing-sm;
+            width: 100%;
+            padding: 0;
+
+        }
     }
 
-    &__logo {
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: $color-primary;
-        letter-spacing: -0.5px;
+    &-link {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        font-weight: $font-weight-medium;
+        font-family: $font-family-inter;
+        font-size: 0.85rem;
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+        padding: 10px 20px;
+        border-radius: 12px;
+        position: relative;
+        @include transition-standard;
+
+        @include respond-to(mobile) {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: $spacing-sm !important;
+        }
+
+        &:hover {
+            color: $color-white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        &.is-active {
+            color: $color-white;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        @include respond-to(mobile) {
+            font-size: 1.25rem;
+            padding: 16px;
+            text-align: center;
+            border-radius: 16px;
+
+            &::after {
+                display: none;
+            }
+        }
     }
 
-    &__nav {
+    &-actions {
         display: flex;
         align-items: center;
         gap: $spacing-lg;
 
         @include respond-to(mobile) {
-            flex-direction: column;
+            width: 100%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
             gap: $spacing-md;
+            padding-top: $spacing-sm;
         }
     }
 
-    &__list {
+    &-socials {
         display: flex;
-        gap: $spacing-md;
+        gap: $spacing-sm;
+        align-items: center;
     }
 
-    &__link {
-        color: $color-text-light;
-        font-weight: 500;
+    &-social-link {
+        color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        border-radius: 10px;
+        @include transition-standard;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover {
+            color: $color-white;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+    }
+
+    &-divider {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        height: 28px;
+    }
+
+    &-languages {
+        display: flex;
+        gap: 4px;
+        padding-left: $spacing-md;
+
+        @include respond-to(mobile) {
+            border-left: none;
+            padding-left: 0;
+        }
+    }
+
+    &-lang-btn {
+        background: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 0.75rem;
+        font-weight: $font-weight-semibold;
+        cursor: pointer;
+        padding: 8px 12px;
+        border-radius: 8px;
+        @include transition-standard;
+
+        &:hover,
+        &.is-active {
+            color: $color-white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    &-mobile-toggle {
+        display: none;
+        background: transparent;
+        border: none;
+        color: $color-white;
+        cursor: pointer;
+        z-index: 1001;
+        padding: 8px;
+        border-radius: 12px;
         @include transition-standard;
 
         &:hover {
-            color: $color-accent;
-        }
-    }
-
-    &__languages {
-        display: flex;
-        gap: $spacing-xs;
-        background: $color-background;
-        padding: 4px;
-        border-radius: 8px;
-    }
-
-    &__lang-btn {
-        padding: 4px 12px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        border-radius: 6px;
-        @include transition-standard;
-
-        &.is-active {
-            background: $color-white;
-            color: $color-accent;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        &:hover:not(.is-active) {
-            background: rgba($color-accent, 0.1);
+        @include respond-to(mobile) {
+            display: flex;
+            align-items: center;
+        }
+
+        .material-symbols-outlined {
+            font-size: 32px;
         }
     }
 }

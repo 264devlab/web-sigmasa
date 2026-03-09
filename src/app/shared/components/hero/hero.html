@@ -1,0 +1,19 @@
+<section class="hero-section" [style.background-image]="'url(' + backgroundImage + ')'">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title">{{ title }}</h1>
+            <p class="hero-description">{{ description }}</p>
+
+            <div class="hero-action">
+                <button class="hero-btn" [routerLink]="buttonLink">
+                    <span class="hero-btn-text">{{ buttonText }}</span>
+                    <span class="hero-btn-icon">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

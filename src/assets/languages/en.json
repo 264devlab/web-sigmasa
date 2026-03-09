@@ -1,8 +1,15 @@
 {
-    "header":"header works!",
-    "footer":"footer works!",
-    "home":"Home",
-    "contact":"Contact",
-    "home-page":"Home Page!",
-    "contact-page":"Contact Page!"
+    "header": "header works!",
+    "footer": "footer works!",
+    "home": "Home",
+    "contact": "Contact",
+    "nav_home": "Home Page",
+    "nav_services": "Services",
+    "nav_projects": "Projects",
+    "nav_mining": "Mining",
+    "home-page": "Home Page!",
+    "contact-page": "Contact Page!",
+    "hero_title": "San Juan Legislature",
+    "hero_description": "Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit, Sed Diam Nonummy Nibh Euismod Tincidunt Ut Laoreet Dolore Magna Aliquam Erat Volutpat. Ut Wisi Enim Ad Minim Veniam, Quis",
+    "hero_button": "View Projects"
 }
