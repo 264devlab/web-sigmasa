@@ -1,8 +1,9 @@
 <div class="gallery-container" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
     <div class="projects-grid" [class.is-animating]="isAnimating()">
-        <div class="project-card" *ngFor="let project of paginatedProjects(); let i = index" [style.--index]="i">
+        @for (project of paginatedProjects(); track project.id; let i = $index) {
+        <div class="project-card" [style.--index]="i">
             <div class="image-wrapper">
-                <img [src]="project.image" [alt]="project.name" loading="lazy">
+                <img [src]="project.image" [alt]="project.name">
                 <div class="overlay">
                     <div class="overlay-content">
                         <h3 class="project-name text-raleway-medium-32">{{ project.name }}</h3>
@@ -12,6 +13,7 @@
                 </div>
             </div>
         </div>
+        }
     </div>
 
     <div class="pagination" *ngIf="totalPages() > 1">

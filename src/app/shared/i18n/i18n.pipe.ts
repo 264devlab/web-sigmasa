@@ -12,8 +12,8 @@ export class I18nPipe implements PipeTransform {
   private cdr = inject(ChangeDetectorRef);
   private injector = inject(Injector);
 
-  private keySignal = signal(''); 
-  private value = '';             
+  private keySignal = signal('');
+  private value = '';
 
   constructor() {
     effect(() => {
@@ -21,10 +21,10 @@ export class I18nPipe implements PipeTransform {
       if (!key) return;
 
       const translation = this.i18n.translate(key)();
-      this.value = translation ?? key;               
+      this.value = translation ?? key;
 
       // refresca el DOM
-      this.cdr.markForCheck(); 
+      this.cdr.markForCheck();
     }, { injector: this.injector });
   }
 

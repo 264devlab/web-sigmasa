@@ -1,21 +1,29 @@
 @use 'variables' as *;
 
 .projects-section {
-    padding: 100px 0;
+    padding: $spacing-xl 0;
     background-color: $color-white;
 
     .container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 $spacing-xl;
+
+        @media (max-width: $tablet) {
+            padding: 0 $spacing-lg;
+        }
+
+        @media (max-width: $mobile) {
+            padding: 0 $spacing-md;
+        }
     }
 
     .section-header {
-        margin-bottom: 60px;
+        margin-bottom: $spacing-xl;
         max-width: 900px;
 
         .section-title {
-            margin-bottom: 25px;
+            margin-bottom: $spacing-md;
             color: $color-primary;
         }
 
@@ -28,14 +36,14 @@
 
 @media (max-width: $mobile) {
     .projects-section {
-        padding: 60px 0;
+        padding: $spacing-lg 0;
 
         .section-header {
-            margin-bottom: 40px;
+            margin-bottom: $spacing-lg;
 
             .section-title {
-                margin-bottom: 15px;
-                font-size: 32px; // Adjusted for mobile if needed
+                margin-bottom: $spacing-sm;
+                font-size: 32px;
             }
         }
     }

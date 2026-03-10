@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, signal, computed, inject } from '@angular/core';
+import { Component, HostListener, OnInit, signal, computed, inject, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { I18nService } from '../../i18n/i18n.service';
 import { I18nPipe } from '../../i18n/i18n.pipe';
@@ -38,6 +38,17 @@ export class ProjectsGalleryComponent implements OnInit {
 
     private touchStartX: number = 0;
     private touchEndX: number = 0;
+    private imageCache: HTMLImageElement[] = [];
+
+    constructor() {
+        // Preload all images whenever the projects list changes
+        effect(() => {
+            const currentProjects = this.projects();
+            if (currentProjects.length > 0) {
+                this.preloadImages(currentProjects);
+            }
+        });
+    }
 
     ngOnInit(): void {
         this.updateItemsPerPage();
@@ -68,37 +79,31 @@ export class ProjectsGalleryComponent implements OnInit {
     changePage(page: number): void {
         if (this.isAnimating()) return;
         this.triggerAnimation();
-        setTimeout(() => {
-            this.currentPage.set(page);
-            const element = document.getElementById('projects-section');
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        }, 300);
+        this.currentPage.set(page);
+        const element = document.getElementById('projects-section');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
     nextPage(): void {
         if (this.isAnimating()) return;
         this.triggerAnimation();
-        setTimeout(() => {
-            if (this.currentPage() < this.totalPages()) {
-                this.currentPage.update(p => p + 1);
-            } else {
-                this.currentPage.set(1);
-            }
-        }, 300);
+        if (this.currentPage() < this.totalPages()) {
+            this.currentPage.update(p => p + 1);
+        } else {
+            this.currentPage.set(1);
+        }
     }
 
     prevPage(): void {
         if (this.isAnimating()) return;
         this.triggerAnimation();
-        setTimeout(() => {
-            if (this.currentPage() > 1) {
-                this.currentPage.update(p => p - 1);
-            } else {
-                this.currentPage.set(this.totalPages());
-            }
-        }, 300);
+        if (this.currentPage() > 1) {
+            this.currentPage.update(p => p - 1);
+        } else {
+            this.currentPage.set(this.totalPages());
+        }
     }
 
     private triggerAnimation(): void {
@@ -122,5 +127,16 @@ export class ProjectsGalleryComponent implements OnInit {
         } else if (this.touchEndX - this.touchStartX > swipeThreshold) {
             this.prevPage();
         }
+    }
+
+    private preloadImages(projects: any[]): void {
+        projects.forEach(project => {
+            // Check if already preloaded
+            if (!this.imageCache.some(img => img.src.includes(project.image))) {
+                const img = new Image();
+                img.src = project.image;
+                this.imageCache.push(img);
+            }
+        });
     }
 }
