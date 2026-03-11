@@ -1,10 +1,39 @@
 {
-    "header": "header works!",
-    "footer": "footer works!",
-    "home": "Home",
-    "contact": "Contact",
-    "home-page": "Home Page!",
-    "contact-page": "Contact Page!",
+    "navbar": {
+        "home": "Home",
+        "services": "Services",
+        "projects": "Projects",
+        "mining": "Mining"
+    },
+    "hero": {
+        "slides": {
+            "legislature_annex": {
+                "title": "San Juan Legislature Annex Building",
+                "description": "Construction of a 5,960 m² architectural landmark featuring three underground levels and five service floors. Highlights include a state-of-the-art auditorium, library, and interactive spaces, designed with a bioclimatic longitudinal courtyard.",
+                "button": "Learn more"
+            },
+            "ayres_village_gallery": {
+                "title": "Ayres Village Commercial Gallery",
+                "description": "A premium two-story Strip Mall development featuring 20 commercial spaces ranging from 45 m² to 160 m². Built with a sophisticated mixed system of masonry, steel frame, and reinforced concrete for maximum durability.",
+                "button": "Learn more"
+            },
+            "ayres_village_neighborhood": {
+                "title": "Ayres Village Premium Residences",
+                "description": "Urban development of 77 premium lots and luxury 3-bedroom residences. Complete with underground utilities, paved streets, and expansive landscaped green spaces across nearly 50,000 m².",
+                "button": "Learn more"
+            },
+            "los_molinos_neighborhood": {
+                "title": "Los Molinos Residential Complex",
+                "description": "A large-scale housing project comprising 260 functional units across modern towers. Built with traditional excellence, featuring reinforced concrete and high-end aluminum and wood finishes.",
+                "button": "Learn more"
+            },
+            "skate_park": {
+                "title": "San Juan Skate Park",
+                "description": "A world-class sports facility at the San Juan Sports City. Featuring over 2,200 m² of precision-engineered reinforced concrete with professional-grade flat, curved, and inclined surfaces for high competition.",
+                "button": "Learn more"
+            }
+        }
+    },
     "services": {
         "title": "Services",
         "description": "More Than 35 Years Offering Concrete Solutions To Complex Requirements. Through \"Personalized Technical Advice\" For The Analysis, Development, Monitoring And Assistance Of Projects And Works.",
@@ -32,5 +61,8 @@
             "title": "Heavy Equipment Supply",
             "description": "We have our \"Own Fleet Of Equipment\" that allows us to offer heavy equipment supply and operation services in all stages, sectors and facilities of mining projects, with \"Highly Trained And Qualified Personnel\"."
         }
-    }
+    },
+    "footer": "footer works!",
+    "home-page": "Home Page!",
+    "contact-page": "Contact Page!"
 }

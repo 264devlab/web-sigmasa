@@ -6,14 +6,7 @@
             <h1 class="hero-title">{{ title }}</h1>
             <p class="hero-description">{{ description }}</p>
 
-            <div class="hero-action">
-                <button class="hero-btn" [routerLink]="buttonLink">
-                    <span class="hero-btn-text">{{ buttonText }}</span>
-                    <span class="hero-btn-icon">
-                        <span class="material-symbols-outlined">arrow_forward</span>
-                    </span>
-                </button>
-            </div>
+            <app-action-button [text]="buttonText" [link]="buttonLink"></app-action-button>
         </div>
     </div>
 </section>

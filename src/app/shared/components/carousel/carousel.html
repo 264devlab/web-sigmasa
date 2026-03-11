@@ -9,10 +9,10 @@
 
     <!-- Controles de navegación -->
     <div class="carousel-controls">
-        <button class="carousel-btn prev" (click)="prevSlide()" aria-label="Anterior">
+        <button class="carousel-btn prev" (click)="prevSlide()">
             <span class="material-symbols-outlined">keyboard_arrow_left</span>
         </button>
-        <button class="carousel-btn next" (click)="nextSlide()" aria-label="Siguiente">
+        <button class="carousel-btn next" (click)="nextSlide()">
             <span class="material-symbols-outlined">keyboard_arrow_right</span>
         </button>
     </div>
@@ -20,7 +20,7 @@
     <!-- Indicadores (Dots) -->
     <div class="carousel-indicators">
         <button *ngFor="let dot of slides; let i = index" class="carousel-dot" [class.is-active]="i === currentIndex()"
-            (click)="goToSlide(i)" [attr.aria-label]="'Ir a slide ' + (i + 1)">
+            (click)="goToSlide(i)">
         </button>
     </div>
 </div>

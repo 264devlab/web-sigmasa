@@ -15,22 +15,22 @@
           <li class="header-item">
             <a class="header-link" routerLink="/" routerLinkActive="is-active"
               [routerLinkActiveOptions]="{exact: true}">
-              {{ 'nav_home' | i18n }}
+              {{ 'navbar.home' | i18n }}
             </a>
           </li>
           <li class="header-item">
             <a class="header-link" routerLink="/services" routerLinkActive="is-active">
-              {{ 'nav_services' | i18n }}
+              {{ 'navbar.services' | i18n }}
             </a>
           </li>
           <li class="header-item">
             <a class="header-link" routerLink="/projects" routerLinkActive="is-active">
-              {{ 'nav_projects' | i18n }}
+              {{ 'navbar.projects' | i18n }}
             </a>
           </li>
           <li class="header-item">
             <a class="header-link" routerLink="/mining" routerLinkActive="is-active">
-              {{ 'nav_mining' | i18n }}
+              {{ 'navbar.mining' | i18n }}
             </a>
           </li>
         </ul>
@@ -53,14 +53,14 @@
           </a>
         </div>
 
-        <!-- <hr class="header-divider">
+        <hr class="header-divider">
 
         <div class="header-languages">
           <button class="header-lang-btn" (click)="switchLanguage('es')"
             [class.is-active]="currentLang === 'es'">ES</button>
           <button class="header-lang-btn" (click)="switchLanguage('en')"
             [class.is-active]="currentLang === 'en'">EN</button>
-        </div> -->
+        </div>
 
       </div>
     </div>

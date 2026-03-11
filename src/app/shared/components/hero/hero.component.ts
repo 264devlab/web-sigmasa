@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ActionButtonComponent } from '../action-button/action-button.component';
 
 @Component({
     selector: 'app-hero',
     standalone: true,
-    imports: [CommonModule, RouterModule],
+    imports: [CommonModule, RouterModule, ActionButtonComponent],
     templateUrl: './hero.html',
     styleUrl: './hero.scss',
 })

@@ -22,37 +22,38 @@ export class HomeComponent {
 
     return [
       {
-        title: this.i18n.translate('hero_title')(),
-        description: this.i18n.translate('hero_description')(),
-        backgroundImage: 'assets/images/build.jpg',
-        buttonText: this.i18n.translate('hero_button')(),
+        title: this.i18n.translate('hero.slides.legislature_annex.title')(),
+        description: this.i18n.translate('hero.slides.legislature_annex.description')(),
+        backgroundImage: 'assets/images/anexo_legislatura.svg',
+        buttonText: this.i18n.translate('hero.slides.legislature_annex.button')(),
         buttonLink: '/proyectos'
       },
       {
-        title: isEs ? 'Minería Sustentable' : 'Sustainable Mining',
-        description: isEs
-          ? 'Comprometidos con el desarrollo responsable y la innovación tecnológica en San Juan.'
-          : 'Committed to responsible development and technological innovation in San Juan.',
-        backgroundImage: 'assets/images/build.jpg',
-        buttonText: isEs ? 'Conocer más' : 'Learn more',
+        title: this.i18n.translate('hero.slides.ayres_village_gallery.title')(),
+        description: this.i18n.translate('hero.slides.ayres_village_gallery.description')(),
+        backgroundImage: 'assets/images/galeria_ayres_village.svg',
+        buttonText: this.i18n.translate('hero.slides.ayres_village_gallery.button')(),
         buttonLink: '/mineria'
       },
       {
-        title: isEs ? 'Energías Renovables' : 'Renewable Energies',
-        description: isEs
-          ? 'Liderando la transición hacia un futuro energético más limpio y eficiente para todos.'
-          : 'Leading the transition towards a cleaner and more efficient energy future for all.',
-        backgroundImage: 'assets/images/build.jpg',
-        buttonText: isEs ? 'Ver energía' : 'View energy',
+        title: this.i18n.translate('hero.slides.ayres_village_neighborhood.title')(),
+        description: this.i18n.translate('hero.slides.ayres_village_neighborhood.description')(),
+        backgroundImage: 'assets/images/barrio_ayres_village.svg',
+        buttonText: this.i18n.translate('hero.slides.ayres_village_neighborhood.button')(),
         buttonLink: '/servicios'
       },
       {
-        title: isEs ? 'Arquitectura Moderna' : 'Modern Architecture',
-        description: isEs
-          ? 'Diseñamos espacios innovadores que transforman el entorno urbano de nuestra provincia.'
-          : 'We design innovative spaces that transform the urban environment of our province.',
-        backgroundImage: 'assets/images/build.jpg',
-        buttonText: isEs ? 'Explorar diseños' : 'Explore designs',
+        title: this.i18n.translate('hero.slides.los_molinos_neighborhood.title')(),
+        description: this.i18n.translate('hero.slides.los_molinos_neighborhood.description')(),
+        backgroundImage: 'assets/images/barrio_los_molinos.svg',
+        buttonText: this.i18n.translate('hero.slides.los_molinos_neighborhood.button')(),
+        buttonLink: '/proyectos'
+      },
+      {
+        title: this.i18n.translate('hero.slides.skate_park.title')(),
+        description: this.i18n.translate('hero.slides.skate_park.description')(),
+        backgroundImage: 'assets/images/skatepark.svg',
+        buttonText: this.i18n.translate('hero.slides.skate_park.button')(),
         buttonLink: '/proyectos'
       }
     ];
