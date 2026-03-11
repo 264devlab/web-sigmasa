@@ -83,6 +83,7 @@
                 "description": "Brief description of the project executed with technical excellence."
             }
         ]
+    },
     "navbar": {
         "home": "Home",
         "services": "Services",
@@ -145,8 +146,5 @@
             "title": "Heavy Equipment Supply",
             "description": "We have our \"Own Fleet Of Equipment\" that allows us to offer heavy equipment supply and operation services in all stages, sectors and facilities of mining projects, with \"Highly Trained And Qualified Personnel\"."
         }
-    },
-    "footer": "footer works!",
-    "home-page": "Home Page!",
-    "contact-page": "Contact Page!"
+    }
 }

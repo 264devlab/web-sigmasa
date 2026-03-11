@@ -83,6 +83,7 @@
                 "description": "Descripción breve del proyecto realizado con excelencia técnica."
             }
         ]
+    },
     "navbar": {
         "home": "Inicio",
         "services": "Servicios",
@@ -120,7 +121,7 @@
     },
     "services": {
         "title": "Servicios",
-        "description": "Más De 35 Años Ofreciendo Soluciones Concretas A Complejos Requerimientos. A Través De Un \"Asesoramiento Técnico Personalizado\" Para El Análisis, Desarrollo, Seguimiento Y Asistencia De Proyectos Y Obras.",
+        "description": "Más De 35 Años Ofrececiendo Soluciones Concretas A Complejos Requerimientos. A Través De Un \"Asesoramiento Técnico Personalizado\" Para El Análisis, Desarrollo, Seguimiento Y Asistencia De Proyectos Y Obras.",
         "engineering": {
             "title": "Ingeniería De Proyecto",
             "description": "Desarrollamos Proyectos De Ingeniería En Sus Distintas Etapas, Asegurando Soluciones Técnicas Eficientes, Seguras Y Acordes A Los Requerimientos De Cada Obra."
@@ -145,8 +146,5 @@
             "title": "Provisión De Equipos Pesados",
             "description": "Disponemos De Una \"Flota De Equipos Propia\" Que Nos Permite Ofrecer Servicios De Provisión Y Operación De Equipos Pesados En Todas Las Etapas, Sectores E Instalaciones De Proyectos Mineros, Con \"Personal Altamente Capacitado Y Calificado\"."
         }
-    },
-    "footer": "Seccion de trabajo del footer component",
-    "home-page": "Pagina de Inicio!",
-    "contact-page": "Pagina de Contacto!"
+    }
 }
