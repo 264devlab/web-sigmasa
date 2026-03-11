@@ -146,5 +146,21 @@
             "title": "Provisión De Equipos Pesados",
             "description": "Disponemos De Una \"Flota De Equipos Propia\" Que Nos Permite Ofrecer Servicios De Provisión Y Operación De Equipos Pesados En Todas Las Etapas, Sectores E Instalaciones De Proyectos Mineros, Con \"Personal Altamente Capacitado Y Calificado\"."
         }
+    },
+    "contact-section": {
+        "title": "Contacto",
+        "areas": {
+            "hr": "Recursos humanos",
+            "commercial": "Comercial",
+            "suppliers": "Proveedores"
+        },
+        "form": {
+            "lastname": "Apellido",
+            "firstname": "Nombre",
+            "email": "Email",
+            "phone": "Teléfono",
+            "message": "Mensaje",
+            "send": "Enviar"
+        }
     }
 }

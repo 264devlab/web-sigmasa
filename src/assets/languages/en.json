@@ -146,5 +146,21 @@
             "title": "Heavy Equipment Supply",
             "description": "We have our \"Own Fleet Of Equipment\" that allows us to offer heavy equipment supply and operation services in all stages, sectors and facilities of mining projects, with \"Highly Trained And Qualified Personnel\"."
         }
+    },
+    "contact-section": {
+        "title": "Contact",
+        "areas": {
+            "hr": "Human Resources",
+            "commercial": "Commercial",
+            "suppliers": "Suppliers"
+        },
+        "form": {
+            "lastname": "Last Name",
+            "firstname": "First Name",
+            "email": "Email",
+            "phone": "Phone",
+            "message": "Message",
+            "send": "Send"
+        }
     }
 }
