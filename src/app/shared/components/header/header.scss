@@ -85,6 +85,10 @@
         margin: 0;
         padding: 0;
 
+        @include respond-to(tablet) {
+            gap: $spacing-xs;
+        }
+
         @include respond-to(mobile) {
             display: grid;
             grid-template-columns: 1fr 1fr; // El 2x2 grid
@@ -144,6 +148,10 @@
         align-items: center;
         gap: $spacing-lg;
 
+        @include respond-to(tablet) {
+            gap: $spacing-sm;
+        }
+
         @include respond-to(mobile) {
             width: 100%;
             flex-direction: row;
@@ -158,6 +166,10 @@
         display: flex;
         gap: $spacing-sm;
         align-items: center;
+
+        @include respond-to(tablet) {
+            gap: $spacing-xs;
+        }
     }
 
     &-social-link {
@@ -188,7 +200,6 @@
     &-languages {
         display: flex;
         gap: 4px;
-        padding-left: $spacing-md;
 
         @include respond-to(mobile) {
             border-left: none;
