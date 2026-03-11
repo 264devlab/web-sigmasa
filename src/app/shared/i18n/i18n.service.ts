@@ -59,6 +59,6 @@ export class I18nService {
       }
     }
 
-    return typeof current === 'string' ? current : null;
+    return current;
   }
 }

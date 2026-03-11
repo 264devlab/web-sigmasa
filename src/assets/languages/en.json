@@ -1,4 +1,88 @@
 {
+    "header": "header works!",
+    "footer": "footer works!",
+    "home": "Home",
+    "contact": "Contact",
+    "home-page": "Home Page!",
+    "contact-page": "Contact Page!",
+    "projects": {
+        "title": "Projects",
+        "description": "Explore our project gallery where technical excellence meets innovation to deliver exceptional results.",
+        "read-more": "Read more",
+        "items": [
+            {
+                "name": "Project 1",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 2",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 3",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 4",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 5",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 6",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 7",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 8",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 9",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 10",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 11",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 12",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 13",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 14",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 15",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 16",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 17",
+                "description": "Brief description of the project executed with technical excellence."
+            },
+            {
+                "name": "Project 18",
+                "description": "Brief description of the project executed with technical excellence."
+            }
+        ]
     "navbar": {
         "home": "Home",
         "services": "Services",

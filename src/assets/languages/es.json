@@ -1,4 +1,88 @@
 {
+    "header": "Seccion de trabajo del header component",
+    "footer": "Seccion de trabajo del footer component",
+    "home": "Inicio",
+    "contact": "Contactos",
+    "home-page": "Pagina de Inicio!",
+    "contact-page": "Pagina de Contacto!",
+    "projects": {
+        "title": "Proyectos",
+        "description": "Explora nuestra galería de proyectos donde la excelencia técnica se une con la innovación para entregar resultados excepcionales.",
+        "read-more": "Leer más",
+        "items": [
+            {
+                "name": "Proyecto 1",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 2",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 3",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 4",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 5",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 6",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 7",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 8",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 9",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 10",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 11",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 12",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 13",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 14",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 15",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 16",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 17",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            },
+            {
+                "name": "Proyecto 18",
+                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+            }
+        ]
     "navbar": {
         "home": "Inicio",
         "services": "Servicios",
