@@ -13,17 +13,131 @@
     background: rgba(30, 30, 30, 0.3);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 
-    &-container {
+    @include respond-to(mobile) {
+        padding: $spacing-xs;
+    }
+
+    &-desktop-container {
+        @include respond-to(mobile) {
+            display: none;
+        }
+
         max-width: 1600px;
         margin: 0 auto;
         padding: 0 clamp($spacing-sm, 3.5vw, $spacing-xl);
         display: flex;
-        justify-content: space-between; // Desktop: 3 cajas (Logo | Nav | Actions)
+        justify-content: space-between;
         align-items: center;
         width: 100%;
+    }
+
+    &-mobile {
+        display: none;
+
+        @include respond-to(mobile) {
+            display: block;
+            width: 100%;
+        }
+
+        &-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 clamp($spacing-sm, 3.5vw, $spacing-xl);
+            width: 100%;
+
+        }
+
+        &-toggle {
+            background: transparent;
+            border: none;
+            color: $color-white;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 8px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            @include transition-standard;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .material-symbols-outlined {
+                font-size: 32px;
+            }
+        }
+
+        &-drawer {
+            max-height: 0px;
+            overflow: hidden;
+            @include transition-standard;
+            background: rgba(30, 30, 30, 0.050);
+            /* backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); */
+            display: flex;
+            flex-direction: column;
+            padding: 0 $spacing-md;
+
+            &.is-open {
+                max-height: 100vh;
+            }
+        }
+
+        &-nav {
+            padding: $spacing-md;
+        }
+
+        &-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $spacing-md;
+        }
+
+        &-link {
+            display: block;
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: $font-weight-medium;
+            padding: $spacing-sm $spacing-lg;
+            text-align: center;
+            border-radius: 12px;
+            @include transition-standard;
+            width: fit-content;
+
+            &:hover,
+            &.is-active {
+                color: $color-white;
+                background: rgba(255, 255, 255, 0.15);
+            }
+        }
+
+        &-footer {
+            margin-top: auto;
+            padding: $spacing-sm 0 $spacing-xs 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+            .header-mobile-socials {
+                display: flex;
+                gap: $spacing-md;
+            }
+
+            .header-mobile-languages {
+                display: flex;
+                gap: $spacing-md;
+            }
+        }
     }
 
     &-logo {
@@ -31,45 +145,19 @@
         align-items: center;
 
         &-img {
-            height: 36px;
+            height: 34px;
             width: auto;
             display: block;
         }
     }
 
-    // Contenedor dual (3 cajas en desktop, dropdown en movil)
-    &-menu {
-        display: contents; // Magia CSS: hace que sus hijos sean flex-items del container
+    &-desktop-menu {
+        display: contents;
 
-        @include respond-to(mobile) {
+        @include respond-to(tablet) {
             display: flex;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-
-            // Glassmorphism effect
-            background: rgba(30, 30, 30, 0.4);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-
-            flex-direction: column;
-            padding: $spacing-md clamp($spacing-sm, 3.5vw, $spacing-xl);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            transform: translateY(-10px);
-            opacity: 0;
-            pointer-events: none;
-            @include transition-standard;
-            z-index: 999;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-
-            &.is-open {
-                transform: translateY(0);
-                opacity: 1;
-                pointer-events: all;
-            }
+            align-items: center;
+            gap: clamp($spacing-xs, 1.8vw, $spacing-xl);
         }
     }
 
@@ -88,15 +176,6 @@
         @include respond-to(tablet) {
             gap: $spacing-xs;
         }
-
-        @include respond-to(mobile) {
-            display: grid;
-            grid-template-columns: 1fr 1fr; // El 2x2 grid
-            gap: $spacing-sm;
-            width: 100%;
-            padding: 0;
-
-        }
     }
 
     &-link {
@@ -112,15 +191,6 @@
         position: relative;
         @include transition-standard;
 
-        @include respond-to(mobile) {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: $spacing-sm !important;
-        }
-
         &:hover {
             color: $color-white;
             background: rgba(255, 255, 255, 0.1);
@@ -129,17 +199,6 @@
         &.is-active {
             color: $color-white;
             background: rgba(255, 255, 255, 0.15);
-        }
-
-        @include respond-to(mobile) {
-            font-size: 1.25rem;
-            padding: 16px;
-            text-align: center;
-            border-radius: 16px;
-
-            &::after {
-                display: none;
-            }
         }
     }
 
@@ -150,15 +209,6 @@
 
         @include respond-to(tablet) {
             gap: $spacing-sm;
-        }
-
-        @include respond-to(mobile) {
-            width: 100%;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: $spacing-md;
-            padding-top: $spacing-sm;
         }
     }
 
@@ -200,11 +250,6 @@
     &-languages {
         display: flex;
         gap: 4px;
-
-        @include respond-to(mobile) {
-            border-left: none;
-            padding-left: 0;
-        }
     }
 
     &-lang-btn {
@@ -221,32 +266,7 @@
         &:hover,
         &.is-active {
             color: $color-white;
-            background: rgba(255, 255, 255, 0.1);
-        }
-    }
-
-    &-mobile-toggle {
-        display: none;
-        background: transparent;
-        border: none;
-        color: $color-white;
-        cursor: pointer;
-        z-index: 1001;
-        padding: 8px;
-        border-radius: 12px;
-        @include transition-standard;
-
-        &:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        @include respond-to(mobile) {
-            display: flex;
-            align-items: center;
-        }
-
-        .material-symbols-outlined {
-            font-size: 32px;
+            background: rgba(255, 255, 255, 0.15);
         }
     }
 }
