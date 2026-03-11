@@ -10,7 +10,15 @@ export const mainRoutes: Routes = [
         loadComponent: () => import('../../pages/home/home.component').then((m) => m.HomeComponent),
     },
     {
-        path: 'contact',
+        path: 'services',
+        loadComponent: () => import('../../pages/contact/contact.component').then((m) => m.ContactComponent),
+    },
+    {
+        path: 'projects',
+        loadComponent: () => import('../../pages/contact/contact.component').then((m) => m.ContactComponent),
+    },
+    {
+        path: 'mining',
         loadComponent: () => import('../../pages/contact/contact.component').then((m) => m.ContactComponent),
     },
 ];

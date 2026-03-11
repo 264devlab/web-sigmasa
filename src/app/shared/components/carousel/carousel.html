@@ -1,0 +1,26 @@
+<div class="carousel-container">
+    <div class="carousel-track" [style.transform]="'translateX(-' + (currentIndex() * 100) + '%)'">
+        <div class="carousel-slide" *ngFor="let slide of slides; let i = index"
+            [class.is-active]="i === currentIndex()">
+            <app-hero [title]="slide.title" [description]="slide.description" [backgroundImage]="slide.backgroundImage"
+                [buttonText]="slide.buttonText" [buttonLink]="slide.buttonLink"></app-hero>
+        </div>
+    </div>
+
+    <!-- Controles de navegación -->
+    <div class="carousel-controls">
+        <button class="carousel-btn prev" (click)="prevSlide()">
+            <span class="material-symbols-outlined">keyboard_arrow_left</span>
+        </button>
+        <button class="carousel-btn next" (click)="nextSlide()">
+            <span class="material-symbols-outlined">keyboard_arrow_right</span>
+        </button>
+    </div>
+
+    <!-- Indicadores (Dots) -->
+    <div class="carousel-indicators">
+        <button *ngFor="let dot of slides; let i = index" class="carousel-dot" [class.is-active]="i === currentIndex()"
+            (click)="goToSlide(i)">
+        </button>
+    </div>
+</div>
