@@ -83,6 +83,40 @@
                 "description": "Descripción breve del proyecto realizado con excelencia técnica."
             }
         ]
+    "navbar": {
+        "home": "Inicio",
+        "services": "Servicios",
+        "projects": "Proyectos",
+        "mining": "Minería"
+    },
+    "hero": {
+        "slides": {
+            "legislature_annex": {
+                "title": "Edificio Anexo Legislatura San Juan",
+                "description": "Construcción de edificio de 5960 m² compuesto por tres subsuelos, planta baja y cuatro niveles superiores, más un quinto nivel de servicios. Incluye auditorio, biblioteca y sala interactiva, con núcleo de circulaciones verticales (escalera y ascensores) y patio longitudinal que actúa como regulador bioclimático.",
+                "button": "Conocer más"
+            },
+            "ayres_village_gallery": {
+                "title": "Galeria Comercial Ayres Village",
+                "description": "Construcción de edificio comercial en dos plantas tipo Strip Mall, con galería semicubierta frontal y 20 locales de entre 45 m² y 160 m². Ejecutado con sistema constructivo mixto que incluye mampostería, pórticos, cerchas metálicas, losas de hormigón armado y steel frame.",
+                "button": "Conocer más"
+            },
+            "ayres_village_neighborhood": {
+                "title": "Barrio Ayres Village",
+                "description": "Urbanización de 77 lotes y construcción de 12 viviendas de 3 dormitorios de 150,96 m² cada una (1811,52 m² totales), incluyendo redes de agua potable, cloaca, gas natural y tendido eléctrico subterráneo, calles pavimentadas, veredas de hormigón, alumbrado público y acondicionamiento de espacios verdes en un terreno de 49.934,88 m².",
+                "button": "Conocer más"
+            },
+            "los_molinos_neighborhood": {
+                "title": "Barrio Los Molinos",
+                "description": "Construcción de barrio de 260 unidades funcionales en torres de dos y tres plantas, con cinco prototipos y sistema constructivo tradicional: platea de fundación, mampostería de ladrillón, losas de hormigón armado, carpinterías de aluminio y madera, y terminaciones cerámicas en baños y cocina.",
+                "button": "Conocer más"
+            },
+            "skate_park": {
+                "title": "Skate Park San Juan",
+                "description": "Construcción de la pista de Skate Park en la Ciudad Deportiva de San Juan (Pocito), incluyendo movimiento y compactación de suelos, ejecución de muros de contención, más de 2200 m² de pisos de hormigón armado (planos, curvos e inclinados) veredas perimetrales y la instalación de obstáculos metálicos.",
+                "button": "Conocer más"
+            }
+        }
     },
     "services": {
         "title": "Servicios",
@@ -97,7 +131,7 @@
         },
         "real-estate": {
             "title": "Desarrollos Inmobiliarios",
-            "description": "Hemos Enfocado Esta Unidad De Negocios En La \"Proyección, Ejecución Y Comercialización De Barrios Privados\" De Alta Calidad Constructiva, Destacándose Por Sus Cualidades Urbanísticas, Su Ubicación Estratégica Y Su Rápida Consolidación."
+            "description": "Hemos Enfocado Esta Unidad De Negocios En La \"Proyección, Ejecución Y Comercialización De Barrios Privados\" De Alta Calidad Constructiva, Destacándose Por Sus Cualidades Urbanísticas, Su Ubicación Estratégica Y Su Rápida Consolidaicón."
         },
         "architecture": {
             "title": "Arquitectura",
@@ -111,5 +145,8 @@
             "title": "Provisión De Equipos Pesados",
             "description": "Disponemos De Una \"Flota De Equipos Propia\" Que Nos Permite Ofrecer Servicios De Provisión Y Operación De Equipos Pesados En Todas Las Etapas, Sectores E Instalaciones De Proyectos Mineros, Con \"Personal Altamente Capacitado Y Calificado\"."
         }
-    }
+    },
+    "footer": "Seccion de trabajo del footer component",
+    "home-page": "Pagina de Inicio!",
+    "contact-page": "Pagina de Contacto!"
 }

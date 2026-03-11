@@ -1,1 +1,6 @@
 @use 'index' as *;
+
+html,
+body {
+    min-width: 360px;
+}
