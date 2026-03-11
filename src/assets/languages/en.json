@@ -3,13 +3,34 @@
     "footer": "footer works!",
     "home": "Home",
     "contact": "Contact",
-    "nav_home": "Home Page",
-    "nav_services": "Services",
-    "nav_projects": "Projects",
-    "nav_mining": "Mining",
     "home-page": "Home Page!",
     "contact-page": "Contact Page!",
-    "hero_title": "San Juan Legislature",
-    "hero_description": "Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit, Sed Diam Nonummy Nibh Euismod Tincidunt Ut Laoreet Dolore Magna Aliquam Erat Volutpat. Ut Wisi Enim Ad Minim Veniam, Quis",
-    "hero_button": "View Projects"
+    "services": {
+        "title": "Services",
+        "description": "More Than 35 Years Offering Concrete Solutions To Complex Requirements. Through \"Personalized Technical Advice\" For The Analysis, Development, Monitoring And Assistance Of Projects And Works.",
+        "engineering": {
+            "title": "Project Engineering",
+            "description": "We develop engineering projects in their different stages, ensuring efficient, safe technical solutions in accordance with the requirements of each work."
+        },
+        "construction": {
+            "title": "Construction",
+            "description": "We develop engineering projects in their different stages, ensuring efficient, safe technical solutions in accordance with the requirements of each work."
+        },
+        "real-estate": {
+            "title": "Real Estate Developments",
+            "description": "We have focused this business unit on the \"Projection, Execution And Commercialization Of Gated Communities\" of high construction quality, standing out for its urban qualities, strategic location and rapid consolidation."
+        },
+        "architecture": {
+            "title": "Architecture",
+            "description": "We execute \"Civil And Architectural Works\" for the public and private sector, spanning from planning and construction to the integral coordination of the works, guaranteeing construction quality, compliance with deadlines and site safety."
+        },
+        "mining": {
+            "title": "Mining",
+            "description": "We have a \"Specialized Technical Team\" to develop and execute projects in mining locations, incorporating cutting-edge technology at the service of construction. We provide services to mining companies in \"Massive Earthworks\", \"Civil Works\" and associated works."
+        },
+        "equipment": {
+            "title": "Heavy Equipment Supply",
+            "description": "We have our \"Own Fleet Of Equipment\" that allows us to offer heavy equipment supply and operation services in all stages, sectors and facilities of mining projects, with \"Highly Trained And Qualified Personnel\"."
+        }
+    }
 }

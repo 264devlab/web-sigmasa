@@ -4,14 +4,16 @@ import { ProjectsMap } from '../../shared/components/projects-map/projects-map';
 import { ClientsComponent } from '../../shared/components/clients/clients.component';
 import { CarouselComponent, HeroSlide } from '../../shared/components/carousel/carousel.component';
 import { I18nService } from '../../shared/i18n/i18n.service';
+import { ServicesComponent } from '../../shared/components/services/services.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [I18nPipe, ProjectsMap, ClientsComponent, CarouselComponent],
+  imports: [I18nPipe, ProjectsMap, ClientsComponent, CarouselComponent, ServicesComponent],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
+
 export class HomeComponent {
   private i18n = inject(I18nService);
 
