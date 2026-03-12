@@ -147,6 +147,45 @@
             "description": "We have our \"Own Fleet Of Equipment\" that allows us to offer heavy equipment supply and operation services in all stages, sectors and facilities of mining projects, with \"Highly Trained And Qualified Personnel\"."
         }
     },
+    "projects_1": {
+        "centauri_adium": {
+            "title": "Centauri Adium Project",
+            "description": "Construction of Building 2 (approx. 4,370 m²) for solid production, offices, and dining area. Includes Power Plant 5 and service area, essential infrastructure for the complex's operational capacity.",
+            "button": "Learn more"
+        },
+        "los_molinos": {
+            "title": "Los Molinos Residential Complex",
+            "description": "A high-scale residential development with 260 functional units. Built with traditional methods, featuring reinforced concrete, high-end aluminum/wood finishes, and quality ceramic tile work.",
+            "button": "Learn more"
+        },
+        "punta_negra": {
+            "title": "Punta Negra Dam Water Treatment Plant",
+            "description": "Construction of a water treatment plant at Punta Negra Dam. Features specialized intake systems, 21 high-efficiency filters, and storage cisterns with a 20,000 m³ capacity.",
+            "button": "Learn more"
+        },
+        "linea_132": {
+            "title": "132 kV Power Line",
+            "description": "Construction of a 132 kV power line and expansion of transformer stations in San Juan. Enhances regional energy infrastructure and capacity for renewable energy transmission.",
+            "button": "Learn more"
+        }
+    },
+    "projects_2": {
+        "los_azules": {
+            "title": "Los Azules",
+            "description": "Road opening and maintenance within the project area, ensuring access and internal circulation for equipment and machinery. Fourth working season.",
+            "button": "Learn more"
+        },
+        "veladero": {
+            "title": "Veladero",
+            "description": "Operational works in process and mining sectors, along with opening and maintenance of access roads, supporting the project's operational needs.",
+            "button": "Learn more"
+        },
+        "hualilan": {
+            "title": "Hualilan",
+            "description": "Internal mineral transport works, along with PIT opening and infrastructure development for mine construction.",
+            "button": "Learn more"
+        }
+    },
     "contact-section": {
         "title": "Contact",
         "areas": {
