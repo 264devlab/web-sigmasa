@@ -147,6 +147,45 @@
             "description": "Disponemos De Una \"Flota De Equipos Propia\" Que Nos Permite Ofrecer Servicios De Provisión Y Operación De Equipos Pesados En Todas Las Etapas, Sectores E Instalaciones De Proyectos Mineros, Con \"Personal Altamente Capacitado Y Calificado\"."
         }
     },
+    "projects_1": {
+        "centauri_adium": {
+            "title": "Proyecto Centauri Adium",
+            "description": "La obra contempla la construcción del Edificio 2, de aproximadamente 4.370 m², destinado a áreas de producción de sólidos, oficinas y comedor, junto con la nueva Usina 5 y playa de servicios, un edificio de dos plantas que albergará la sala de cables y tableros de energía, fundamentales para la infraestructura operativa del complejo.",
+            "button": "Conocer más"
+        },
+        "los_molinos": {
+            "title": "Barrio Los Molinos",
+            "description": "Construcción de barrio de 260 unidades funcionales en torres de dos y tres plantas, con cinco prototipos y sistema constructivo tradicional: platea de fundación, mampostería de ladrillón, losas de hormigón armado, carpinterías de aluminio y madera, y terminaciones cerámicas en baños y cocina.",
+            "button": "Conocer más"
+        },
+        "punta_negra": {
+            "title": "Planta Potabilizadora Dique Punta Negra",
+            "description": "Construcción de planta potabilizadora en el Dique Punta Negra (Ullum, San Juan), con sistema de captación mediante acueducto desde el dique, conducción a cámara de derivación y tratamiento a través de 21 filtros de alta eficiencia, incluyendo cisternas de almacenamiento de 20.000 m³.",
+            "button": "Conocer más"
+        },
+        "linea_132": {
+            "title": "Linea 132",
+            "description": "Construcción de una línea eléctrica de 132 kV y ampliación de estaciones transformadoras en San Juan, que incluye la instalación de estructuras de hormigón para la nueva línea de interconexión y trabajos de infraestructura eléctrica destinados a fortalecer el sistema energético y aumentar la capacidad de transporte de energía renovable.",
+            "button": "Conocer más"
+        }
+    },
+    "projects_2": {
+        "los_azules": {
+            "title": "Los Azules",
+            "description": "Trabajos de apertura y mantenimiento de caminos dentro del proyecto, destinados a garantizar el acceso y la circulación interna de equipos y maquinaria. Cuarta temporada de trabajo.",
+            "button": "Conocer más"
+        },
+        "veladero": {
+            "title": "Veladero",
+            "description": "Desarrollo de trabajos operativos en sectores de proceso y mina, junto con tareas de apertura y mantenimiento de caminos de acceso, acompañando las necesidades operativas del proyecto.",
+            "button": "Conocer más"
+        },
+        "hualilan": {
+            "title": "Hualilan",
+            "description": "Trabajos vinculados al transporte interno de mineral, junto con tareas de apertura de PIT y desarrollo de infraestructura para la construcción de mina.",
+            "button": "Conocer más"
+        }
+    },
     "contact-section": {
         "title": "Contacto",
         "areas": {
