@@ -7,10 +7,11 @@ import { CarouselComponent, HeroSlide } from '../../shared/components/carousel/c
 import { I18nService } from '../../shared/i18n/i18n.service';
 import { ServicesComponent } from '../../shared/components/services/services.component';
 import { ContactSectionComponent } from '../../shared/components/contact-section/contact-section.component';
+import { StackingCardsSectionComponent } from '../../shared/components/stacking-cards-section/stacking-cards-section.component';
 
 @Component({
   selector: 'app-home',
-  imports: [ProjectsMap, ClientsComponent, ProjectsSectionComponent, CarouselComponent, ServicesComponent, ContactSectionComponent],
+  imports: [ProjectsMap, ClientsComponent, ProjectsSectionComponent, CarouselComponent, ServicesComponent, ContactSectionComponent, StackingCardsSectionComponent],
   standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.scss',
