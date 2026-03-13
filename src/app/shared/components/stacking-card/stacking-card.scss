@@ -2,12 +2,17 @@
 
 .card {
   position: sticky;
-  top: var(--top);
-  margin-bottom: 11rem;
+  top: calc(var(--index) * 50px + 20px);
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-bottom: var(--top); */
+  // Give some space at the bottom of each track
 
   // Create a view timeline for each card track
-  view-timeline-name: --card-view;
-  /* view-timeline-axis: block; */
+  view-timeline-name: --card-track;
+  view-timeline-axis: block;
 }
 
 .card-content {
@@ -22,28 +27,29 @@
   flex-direction: column;
   gap: $spacing-lg;
   width: 100%;
+  max-width: 1000px;
   min-height: 380px;
 
   // Transform origin for centered scaling
-  /* transform-origin: center center; */
+  transform-origin: center center;
 
-  // Animation logic
-  /* animation: shrink-and-fade linear forwards;
-  animation-timeline: --card-view;
-  animation-range: exit -20% exit 100%; */
+  // Animation logic: Shrink as it leaves (is overlapped)
+  animation: shrink-and-fade linear forwards;
+  animation-timeline: --card-track;
+  animation-range: exit 0% exit 100%;
 
   @media (max-width: $mobile) {
     padding: $spacing-lg;
     min-height: 300px;
+    width: 90%;
   }
 }
 
 @keyframes shrink-and-fade {
   to {
-    transform: scale(0.85) translateY(-20px);
-    filter: brightness(0.7) blur(1px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    opacity: 0.8;
+    transform: scale(0.85) translateY(-50px);
+    filter: brightness(0.7) blur(2px);
+    opacity: 0.5;
   }
 }
 

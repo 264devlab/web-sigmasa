@@ -1,11 +1,6 @@
 <section class="stacking-section">
-  <div class="stacking-container">
-    @for (item of cards; track $index) {
-    <app-stacking-card 
-      [title]="item.titleKey | i18n" 
-      [description]="item.descriptionKey | i18n" 
-      [index]="$index"
-    ></app-stacking-card>
-    }
-  </div>
+  @for (item of cards; track $index) {
+  <app-stacking-card [title]="item.titleKey | i18n" [description]="item.descriptionKey | i18n" [index]="$index"
+    [totalCards]="cards.length"></app-stacking-card>
+  }
 </section>

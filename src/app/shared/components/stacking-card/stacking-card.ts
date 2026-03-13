@@ -10,4 +10,5 @@ export class StackingCardComponent {
   @Input() title: string = '';
   @Input() description: string = '';
   @Input() index: number = 0;
+  @Input() totalCards: number = 0;
 }
