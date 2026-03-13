@@ -2,17 +2,11 @@
 
 .card {
   position: sticky;
-  top: calc(var(--index) * 50px + 20px);
-  height: 75vh;
+  top: calc(var(--index) * 30px + 20px);
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-bottom: var(--top); */
-  // Give some space at the bottom of each track
-
-  // Create a view timeline for each card track
-  view-timeline-name: --card-track;
-  view-timeline-axis: block;
 }
 
 .card-content {
@@ -30,28 +24,33 @@
   max-width: 1000px;
   min-height: 380px;
 
-  // Transform origin for centered scaling
-  transform-origin: center center;
+  /* transform: scale(calc(1 + (var(--index) - 1) * 0.05)); */
 
-  // Animation logic: Shrink as it leaves (is overlapped)
-  animation: shrink-and-fade linear forwards;
-  animation-timeline: --card-track;
-  animation-range: exit 0% exit 100%;
+  transform-origin: top center;
+
+  animation: scaleCard linear;
+  animation-timeline: view();
+  animation-range: entry 0% exit 100%;
 
   @media (max-width: $mobile) {
-    padding: $spacing-lg;
+    padding: $spacing-md;
+    gap: $spacing-sm;
     min-height: 300px;
-    width: 90%;
+    width: 80%;
+    height: 60vh;
   }
 }
 
-@keyframes shrink-and-fade {
+@keyframes scaleCard {
+  from {
+    transform: scale(1);
+  }
+
   to {
-    transform: scale(0.85) translateY(-50px);
-    filter: brightness(0.7) blur(2px);
-    opacity: 0.5;
+    transform: scale(0.9);
   }
 }
+
 
 .card-title {
   color: $color-white;
@@ -70,4 +69,8 @@
   line-height: 1.6;
   margin: 0;
   opacity: 0.9;
+
+  @media (max-width: $mobile) {
+    font-size: 14px;
+  }
 }
