@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { I18nPipe } from '../../i18n/i18n.pipe';
-import { StackingCardComponent } from "../stacking-card/stacking-card";
+import { StackingCardComponent } from "./stacking-card/stacking-card";
 
 @Component({
   selector: 'app-stacking-cards-section',
