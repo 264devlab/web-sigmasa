@@ -202,6 +202,23 @@
             "send": "Enviar"
         }
     },
+    "about": {
+        "history": {
+            "title": "Historia",
+            "description": "SIGMA S.A. nace en 1988 con la convicción de desarrollar sistemas y modalidades de construcción de alta calidad en la provincia de San Juan y en todo el país. Desde sus inicios, la empresa apuesta a la innovación, incorporando tecnologías y técnicas de trabajo de vanguardia, optimizando recursos y potenciando el trabajo de un equipo profesional altamente capacitado, con foco en la mejora continua, la seguridad y la eficiencia en cada obra."
+        },
+        "mission": {
+            "title": "Misión",
+            "description": "Brindar servicios de ingeniería y arquitectura con altos estándares de calidad, optimizando tiempos y recursos, garantizando la seguridad en obra y maximizando la rentabilidad de nuestros clientes. Buscamos ejecutar proyectos de manera sustentable, innovadora y eficiente, consolidándonos como un actor de referencia en el sector de la construcción en San Juan y Argentina."
+        },
+        "vision": {
+            "title": "Visión",
+            "description": "Posicionarnos como la mejor y más innovadora empresa en el ramo de la construcción e ingeniería y mantenernos a la vanguardia en cuanto a las nuevas tecnologías, basándonos en la especialización y capacitación de nuestro personal, respetando las normas para la conservación del medio ambiente."
+        },
+        "values": {
+            "title": "Valores",
+            "description": "En SIGMA S.A. actuamos con ética, honestidad y transparencia en todos nuestros procesos. Promovemos el trabajo en equipo y la mejora continua, cuidando la salud y seguridad de nuestros colaboradores, respetando el ambiente y fomentando prácticas sostenibles. Asumimos un fuerte compromiso con las comunidades donde operamos, construyendo vínculos basados en la confianza y la responsabilidad social."
+        }
     "policy": {
         "title": "Política De Calidad, Seguridad Y Medio Ambiente.",
         "description": "En \"SIGMA S.A.\" Asumimos El Compromiso De Satisfacer Los Requisitos Y Expectativas De Nuestros Clientes Y Demás Partes Interesadas, Brindando Servicios De Manera Eficiente, Responsable Y Sostenible. Para Ello, Implementamos Y Mantenemos Un Sistema De Gestión Integrado, Alineado Con Las Normas \"ISO 9001:2015\", \"ISO 14001:2015\" E \"ISO 45001:2018\", Orientado A La Calidad, La Seguridad Y Salud Ocupacional, Y La Protección Del Medio Ambiente A De Gestión Integrado.",

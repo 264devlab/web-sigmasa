@@ -1,0 +1,93 @@
+@use 'variables' as *;
+
+.card {
+  position: sticky;
+  top: calc(var(--index) * 30px);
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 $spacing-lg;
+
+  @media (max-width: ($mobile - 0.02px)) {
+    padding: 0;
+    height: 65dvh;
+  }
+
+  // Responsive design para dimensiones muy especificas
+  @media (max-height: 750px) {
+    height: 80vh;
+  }
+}
+
+.card-content {
+  background-image: url('/assets/images/tarjeta-1.svg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 28px;
+  padding: $spacing-xl;
+  color: $color-white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  width: 100%;
+  max-width: 1500px;
+  min-height: 380px;
+
+  transform-origin: top center;
+
+  animation: scaleCard linear;
+  animation-timeline: view();
+  animation-range: entry 0% exit 100%;
+
+  @media (max-width: ($mobile - 0.02px)) {
+    padding: $spacing-lg;
+    gap: $spacing-lg;
+    min-height: 300px;
+    width: 90%;
+    height: 80%;
+  }
+
+  // Responsive design para dimensiones muy especificas
+  @media (max-height: 750px) {
+    height: 80%;
+  }
+}
+
+@keyframes scaleCard {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.8);
+  }
+}
+
+.card-title {
+  color: $color-white;
+  font-family: $font-family-raleway;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-h2;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: ($mobile - 0.02px)) {
+    font-size: $font-size-h3;
+  }
+}
+
+.card-description {
+  color: $color-white;
+  font-family: $font-family-raleway;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-base; // Using base as refining choice
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.9;
+
+  @media (max-width: ($mobile - 0.02px)) {
+    font-size: 14px;
+  }
+}

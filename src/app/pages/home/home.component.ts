@@ -6,12 +6,13 @@ import { ProjectsSectionComponent } from '../../shared/components/projects-secti
 import { CarouselComponent, HeroSlide } from '../../shared/components/carousel/carousel.component';
 import { ServicesComponent } from '../../shared/components/services/services.component';
 import { ContactSectionComponent } from '../../shared/components/contact-section/contact-section.component';
+import { StackingCardsSectionComponent } from '../../shared/components/stacking-cards-section/stacking-cards-section.component';
 import { PolicySectionComponent } from '../../shared/components/policy-section/policy-section.component';
 import { HomeDataService } from './home-data.service';
 
 @Component({
   selector: 'app-home',
-  imports: [ProjectsMap, ClientsComponent, ProjectsSectionComponent, CarouselComponent, ServicesComponent, ContactSectionComponent, PolicySectionComponent],
+  imports: [ProjectsMap, ClientsComponent, ProjectsSectionComponent, CarouselComponent, ServicesComponent, ContactSectionComponent, PolicySectionComponent, StackingCardsSectionComponent],
   standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.scss',

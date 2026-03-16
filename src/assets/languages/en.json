@@ -202,6 +202,23 @@
             "send": "Send"
         }
     },
+    "about": {
+        "history": {
+            "title": "History",
+            "description": "SIGMA S.A. was founded in 1988 with the conviction of developing high-quality construction systems and modalities in the province of San Juan and throughout the country. Since its inception, the company has committed to innovation, incorporating cutting-edge technologies and work techniques, optimizing resources, and empowering a highly trained professional team, with a focus on continuous improvement, safety, and efficiency in every project."
+        },
+        "mission": {
+            "title": "Mission",
+            "description": "To provide engineering and architecture services with high-quality standards, optimizing time and resources, guaranteeing site safety, and maximizing our clients' profitability. We seek to execute projects in a sustainable, innovative, and efficient manner, solidifying ourselves as a reference in the construction sector in San Juan and Argentina."
+        },
+        "vision": {
+            "title": "Vision",
+            "description": "To position ourselves as the best and most innovative company in the construction and engineering field, remaining at the forefront of new technologies based on the specialization and training of our staff, while respecting environmental conservation standards."
+        },
+        "values": {
+            "title": "Values",
+            "description": "At SIGMA S.A., we act with ethics, honesty, and transparency in all our processes. We promote teamwork and continuous improvement, caring for the health and safety of our collaborators, respecting the environment, and fostering sustainable practices. We assume a strong commitment to the communities where we operate, building bonds based on trust and social responsibility."
+        }
     "policy": {
         "title": "Quality, Safety And Environment Policy.",
         "description": "In \"SIGMA S.A.\" we assume the commitment of satisfying the requirements and expectations of our clients and other interested parties, providing services in an efficient, responsible and sustainable manner. For this, we implement and maintain an Integrated Management System, aligned with the standards \"ISO 9001:2015\", \"ISO 14001:2015\" and \"ISO 45001:2018\", oriented to quality, safety and occupational health, and the protection of the environment to Integrated Management.",
