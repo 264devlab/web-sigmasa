@@ -1,0 +1,22 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Global layout utility classes
+.container {
+    width: 100%;
+    max-width: $margin-max;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $spacing-xl;
+    padding-right: $spacing-xl;
+
+    @include respond-to(tablet) {
+        padding-left: $spacing-lg;
+        padding-right: $spacing-lg;
+    }
+
+    @include respond-to(mobile) {
+        padding-left: $spacing-md;
+        padding-right: $spacing-md;
+    }
+}

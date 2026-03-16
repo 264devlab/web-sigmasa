@@ -1,0 +1,99 @@
+@use 'index' as *;
+
+.policy-section {
+    background-color: #000000;
+    padding: $spacing-2xl 0;
+    color: $color-white;
+
+    @include respond-to(tablet) {
+        padding: $spacing-lg 0;
+    }
+}
+
+.policy-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: $spacing-xl;
+
+    @include respond-to(tablet) {
+        flex-direction: column;
+        text-align: center;
+        gap: $spacing-lg;
+    }
+}
+
+.policy-text {
+    flex: 1 1 50%; // Toma el 50% de base, pero permite crecer/encoger
+
+    .policy-title {
+        font-family: $font-family-raleway;
+        font-weight: $font-weight-semibold;
+        font-size: $font-size-h2;
+        margin-bottom: $spacing-md;
+        line-height: 1.1;
+        text-transform: capitalize;
+
+        @include respond-to(mobile) {
+            font-size: 32px;
+        }
+    }
+
+    .policy-description {
+        font-family: $font-family-raleway;
+        font-weight: $font-weight-light;
+        font-size: $font-size-base;
+        margin-bottom: $spacing-lg;
+        max-width: 600px;
+
+        @include respond-to(tablet) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.policy-actions {
+    display: flex;
+    gap: $spacing-lg;
+    flex-wrap: wrap; // Permite que bajen si no entran
+
+    app-action-button {
+        flex-shrink: 0; // Evita que el botón se deforme o achique el texto interno
+    }
+
+    @include respond-to(tablet) {
+        justify-content: center;
+    }
+
+    @include respond-to(mobile) {
+        flex-direction: column;
+        align-items: center;
+        gap: $spacing-md;
+        
+        app-action-button {
+            width: 100%; // En móvil que ocupen el ancho completo si es necesario
+        }
+    }
+}
+
+.policy-image {
+    flex: 1 1 50%; // Mismo peso que el texto para escalar proporcional
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+        max-width: 100%; // Asegura que no se salga de su contenedor
+        height: auto; // Mantiene proporción real
+        border-radius: 12px;
+        display: block;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    @include respond-to(tablet) {
+        flex: 0 0 100%;
+        justify-content: center;
+        max-width: 800px;
+    }
+}
