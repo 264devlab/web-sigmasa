@@ -1,0 +1,19 @@
+<section class="policy-section">
+    <div class="container">
+        <div class="policy-content">
+            <div class="policy-text">
+                <h2 class="policy-title">{{ 'policy.title' | i18n }}</h2>
+                <p class="policy-description">
+                    {{ 'policy.description' | i18n }}
+                </p>
+                <div class="policy-actions">
+                    <app-action-button [text]="'policy.button_policy' | i18n" link="/"></app-action-button>
+                    <app-action-button [text]="'policy.button_certifications' | i18n" link="/"></app-action-button>
+                </div>
+            </div>
+            <div class="policy-image">
+                <img src="assets/images/politica_calidad_seguridad.png" alt="Política de Calidad y Seguridad">
+            </div>
+        </div>
+    </div>
+</section>

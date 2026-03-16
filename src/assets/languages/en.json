@@ -201,5 +201,11 @@
             "message": "Message",
             "send": "Send"
         }
+    },
+    "policy": {
+        "title": "Quality, Safety And Environment Policy.",
+        "description": "In \"SIGMA S.A.\" we assume the commitment of satisfying the requirements and expectations of our clients and other interested parties, providing services in an efficient, responsible and sustainable manner. For this, we implement and maintain an Integrated Management System, aligned with the standards \"ISO 9001:2015\", \"ISO 14001:2015\" and \"ISO 45001:2018\", oriented to quality, safety and occupational health, and the protection of the environment to Integrated Management.",
+        "button_policy": "Quality Policy",
+        "button_certifications": "Certifications"
     }
 }

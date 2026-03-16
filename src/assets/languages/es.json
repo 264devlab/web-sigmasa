@@ -201,5 +201,11 @@
             "message": "Mensaje",
             "send": "Enviar"
         }
+    },
+    "policy": {
+        "title": "Política De Calidad, Seguridad Y Medio Ambiente.",
+        "description": "En \"SIGMA S.A.\" Asumimos El Compromiso De Satisfacer Los Requisitos Y Expectativas De Nuestros Clientes Y Demás Partes Interesadas, Brindando Servicios De Manera Eficiente, Responsable Y Sostenible. Para Ello, Implementamos Y Mantenemos Un Sistema De Gestión Integrado, Alineado Con Las Normas \"ISO 9001:2015\", \"ISO 14001:2015\" E \"ISO 45001:2018\", Orientado A La Calidad, La Seguridad Y Salud Ocupacional, Y La Protección Del Medio Ambiente A De Gestión Integrado.",
+        "button_policy": "Política De Calidad",
+        "button_certifications": "Certificaciones"
     }
 }
