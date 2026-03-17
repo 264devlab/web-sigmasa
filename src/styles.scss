@@ -1,6 +1,18 @@
 @use 'index' as *;
 
-html,
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-width: 360px;
+}
+
+#projects,
+#mining {
+    scroll-margin-top: 20px;
+}
+
+#services {
+    scroll-margin-top: 90px;
 }
