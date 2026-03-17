@@ -11,23 +11,22 @@
       <nav class="header-nav">
         <ul class="header-list">
           <li>
-            <a class="header-link" routerLink="[]" fragment="home" routerLinkActive="is-active"
-              [routerLinkActiveOptions]="{exact: true}">
+            <a class="header-link" [class.is-active]="activeSection() === 'home'" href="#home" (click)="scrollToSection('home', $event)">
               {{ 'navbar.home' | i18n }}
             </a>
           </li>
           <li>
-            <a class="header-link" routerLink="[]" fragment="services" routerLinkActive="is-active">
+            <a class="header-link" [class.is-active]="activeSection() === 'services'" href="#services" (click)="scrollToSection('services', $event)">
               {{ 'navbar.services' | i18n }}
             </a>
           </li>
           <li>
-            <a class="header-link" routerLink="[]" fragment="projects" routerLinkActive="is-active">
+            <a class="header-link" [class.is-active]="activeSection() === 'projects'" href="#projects" (click)="scrollToSection('projects', $event)">
               {{ 'navbar.projects' | i18n }}
             </a>
           </li>
           <li>
-            <a class="header-link" routerLink="[]" fragment="mining" routerLinkActive="is-active">
+            <a class="header-link" [class.is-active]="activeSection() === 'mining'" href="#mining" (click)="scrollToSection('mining', $event)">
               {{ 'navbar.mining' | i18n }}
             </a>
           </li>
@@ -80,26 +79,22 @@
       <nav class="header-mobile-nav">
         <ul class="header-mobile-list">
           <li>
-            <a class="header-mobile-link" routerLink="[]" fragment="home" routerLinkActive="is-active"
-              [routerLinkActiveOptions]="{exact: true}" (click)="isMenuOpen = false">
+            <a class="header-mobile-link" [class.is-active]="activeSection() === 'home'" href="#home" (click)="scrollToSection('home', $event)">
               {{ 'navbar.home' | i18n }}
             </a>
           </li>
           <li>
-            <a class="header-mobile-link" routerLink="[]" fragment="services" routerLinkActive="is-active"
-              (click)="isMenuOpen = false">
+            <a class="header-mobile-link" [class.is-active]="activeSection() === 'services'" href="#services" (click)="scrollToSection('services', $event)">
               {{ 'navbar.services' | i18n }}
             </a>
           </li>
           <li>
-            <a class="header-mobile-link" routerLink="[]" fragment="projects" routerLinkActive="is-active"
-              (click)="isMenuOpen = false">
+            <a class="header-mobile-link" [class.is-active]="activeSection() === 'projects'" href="#projects" (click)="scrollToSection('projects', $event)">
               {{ 'navbar.projects' | i18n }}
             </a>
           </li>
           <li>
-            <a class="header-mobile-link" routerLink="[]" fragment="mining" routerLinkActive="is-active"
-              (click)="isMenuOpen = false">
+            <a class="header-mobile-link" [class.is-active]="activeSection() === 'mining'" href="#mining" (click)="scrollToSection('mining', $event)">
               {{ 'navbar.mining' | i18n }}
             </a>
           </li>
