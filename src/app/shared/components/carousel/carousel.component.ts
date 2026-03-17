@@ -27,6 +27,8 @@ export class CarouselComponent implements OnInit, OnDestroy {
     // To satisfy "same direction", we keep modulo.
     currentIndex = signal(0);
     private autoPlayInterval: any;
+    private touchStartX: number = 0;
+    private touchEndX: number = 0;
 
     ngOnInit() {
         this.startAutoPlay();
@@ -66,5 +68,23 @@ export class CarouselComponent implements OnInit, OnDestroy {
     private resetAutoPlay() {
         this.stopAutoPlay();
         this.startAutoPlay();
+    }
+
+    onTouchStart(event: TouchEvent): void {
+        this.touchStartX = event.changedTouches[0].screenX;
+    }
+
+    onTouchEnd(event: TouchEvent): void {
+        this.touchEndX = event.changedTouches[0].screenX;
+        this.handleSwipe();
+    }
+
+    private handleSwipe(): void {
+        const swipeThreshold = 50;
+        if (this.touchStartX - this.touchEndX > swipeThreshold) {
+            this.nextSlide();
+        } else if (this.touchEndX - this.touchStartX > swipeThreshold) {
+            this.prevSlide();
+        }
     }
 }

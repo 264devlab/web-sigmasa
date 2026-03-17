@@ -18,17 +18,19 @@
 
     <div class="pagination" *ngIf="totalPages() > 1">
         <button (click)="prevPage()" class="page-btn prev">
-            <span class="material-icons">chevron_left</span>
+            <span class="material-symbols-outlined">keyboard_arrow_left</span>
         </button>
-
+        
         <div class="page-indicators">
-            <span *ngFor="let p of [].constructor(totalPages()); let i = index" (click)="changePage(i + 1)"
-                [class.active]="currentPage() === i + 1" class="indicator">
-            </span>
+            <button *ngFor="let p of [].constructor(totalPages()); let i = index" 
+                (click)="changePage(i + 1)"
+                [class.active]="currentPage() === i + 1" 
+                class="indicator">
+            </button>
         </div>
 
         <button (click)="nextPage()" class="page-btn next">
-            <span class="material-icons">chevron_right</span>
+            <span class="material-symbols-outlined">keyboard_arrow_right</span>
         </button>
     </div>
 </div>
