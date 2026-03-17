@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { I18nPipe } from '../../i18n/i18n.pipe';
 import { ServiceCardComponent } from './service-card/service-card.component';
+import { RevealDirective } from '../../directives/reveal.directive';
 
 interface ServiceItem {
     icon: string;
@@ -12,7 +13,7 @@ interface ServiceItem {
 @Component({
     selector: 'app-services',
     standalone: true,
-    imports: [CommonModule, I18nPipe, ServiceCardComponent],
+    imports: [CommonModule, I18nPipe, ServiceCardComponent, RevealDirective],
     templateUrl: './services.component.html',
     styleUrl: './services.component.scss'
 })

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RevealDirective } from '../../directives/reveal.directive';
 
 @Component({
   selector: 'app-clients',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RevealDirective],
   templateUrl: './clients.component.html',
   styleUrl: './clients.component.scss'
 })
