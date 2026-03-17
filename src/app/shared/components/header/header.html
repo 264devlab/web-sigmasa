@@ -11,23 +11,23 @@
       <nav class="header-nav">
         <ul class="header-list">
           <li>
-            <a class="header-link" routerLink="/" routerLinkActive="is-active"
+            <a class="header-link" routerLink="[]" fragment="home" routerLinkActive="is-active"
               [routerLinkActiveOptions]="{exact: true}">
               {{ 'navbar.home' | i18n }}
             </a>
           </li>
           <li>
-            <a class="header-link" routerLink="/services" routerLinkActive="is-active">
+            <a class="header-link" routerLink="[]" fragment="services" routerLinkActive="is-active">
               {{ 'navbar.services' | i18n }}
             </a>
           </li>
           <li>
-            <a class="header-link" routerLink="/projects" routerLinkActive="is-active">
+            <a class="header-link" routerLink="[]" fragment="projects" routerLinkActive="is-active">
               {{ 'navbar.projects' | i18n }}
             </a>
           </li>
           <li>
-            <a class="header-link" routerLink="/mining" routerLinkActive="is-active">
+            <a class="header-link" routerLink="[]" fragment="mining" routerLinkActive="is-active">
               {{ 'navbar.mining' | i18n }}
             </a>
           </li>
@@ -80,25 +80,25 @@
       <nav class="header-mobile-nav">
         <ul class="header-mobile-list">
           <li>
-            <a class="header-mobile-link" routerLink="/" routerLinkActive="is-active"
+            <a class="header-mobile-link" routerLink="[]" fragment="home" routerLinkActive="is-active"
               [routerLinkActiveOptions]="{exact: true}" (click)="isMenuOpen = false">
               {{ 'navbar.home' | i18n }}
             </a>
           </li>
           <li>
-            <a class="header-mobile-link" routerLink="/services" routerLinkActive="is-active"
+            <a class="header-mobile-link" routerLink="[]" fragment="services" routerLinkActive="is-active"
               (click)="isMenuOpen = false">
               {{ 'navbar.services' | i18n }}
             </a>
           </li>
           <li>
-            <a class="header-mobile-link" routerLink="/projects" routerLinkActive="is-active"
+            <a class="header-mobile-link" routerLink="[]" fragment="projects" routerLinkActive="is-active"
               (click)="isMenuOpen = false">
               {{ 'navbar.projects' | i18n }}
             </a>
           </li>
           <li>
-            <a class="header-mobile-link" routerLink="/mining" routerLinkActive="is-active"
+            <a class="header-mobile-link" routerLink="[]" fragment="mining" routerLinkActive="is-active"
               (click)="isMenuOpen = false">
               {{ 'navbar.mining' | i18n }}
             </a>
