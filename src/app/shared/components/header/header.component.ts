@@ -15,7 +15,7 @@ export class HeaderComponent implements OnDestroy {
   private document = inject(DOCUMENT);
 
   isMenuOpen = false;
-  activeSection = signal<string>('home');
+  activeSection = signal<string>('');
   private observer: IntersectionObserver | null = null;
 
   constructor() {
@@ -54,16 +54,35 @@ export class HeaderComponent implements OnDestroy {
       threshold: 0
     };
 
+    const intersectingSections = new Set<string>();
+
     this.observer = new IntersectionObserver((entries) => {
+      let isChanged = false;
+
       entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        if (!id) return;
+
         if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          if (id) {
-            this.activeSection.set(id);
-            history.replaceState(null, '', `#${id}`);
+          intersectingSections.add(id);
+          this.activeSection.set(id);
+          history.replaceState(null, '', `#${id}`);
+          isChanged = true;
+        } else {
+          // If a section leaves the viewport, remove it from the active set
+          if (intersectingSections.has(id)) {
+            intersectingSections.delete(id);
+            isChanged = true;
           }
         }
       });
+
+      // If no sections are intersecting anymore, clear the active section
+      if (isChanged && intersectingSections.size === 0) {
+        this.activeSection.set('');
+        history.replaceState(null, '', ' '); // Clear fragment
+      }
+
     }, options);
 
     // List of sections to monitor
