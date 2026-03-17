@@ -2,10 +2,9 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-container">
-        <div class="hero-content">
+        <div class="hero-content" appReveal>
             <h1 class="hero-title">{{ title }}</h1>
             <p class="hero-description">{{ description }}</p>
-
             <app-action-button [text]="buttonText" [link]="buttonLink"></app-action-button>
         </div>
     </div>

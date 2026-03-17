@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { I18nPipe } from '../../i18n/i18n.pipe';
+import { RevealDirective } from '../../directives/reveal.directive';
 
 @Component({
   selector: 'app-contact-section',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, I18nPipe],
+  imports: [CommonModule, ReactiveFormsModule, I18nPipe, RevealDirective],
   templateUrl: './contact-section.component.html',
   styleUrl: './contact-section.component.scss'
 })
