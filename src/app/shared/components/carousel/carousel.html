@@ -3,7 +3,7 @@
         <div class="carousel-slide" *ngFor="let slide of slides; let i = index"
             [class.is-active]="i === currentIndex()">
             <app-hero [title]="slide.title" [description]="slide.description" [backgroundImage]="slide.backgroundImage"
-                [buttonText]="slide.buttonText" [buttonLink]="slide.buttonLink"></app-hero>
+                [buttonText]="slide.buttonText" [buttonLink]="slide.buttonLink" [priority]="i === 0"></app-hero>
         </div>
     </div>
 

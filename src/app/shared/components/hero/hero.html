@@ -1,4 +1,7 @@
-<section class="hero-section" [style.background-image]="'url(' + backgroundImage + ')'">
+<section class="hero-section">
+    <div class="hero-image-container">
+        <img [ngSrc]="backgroundImage" [priority]="priority" fill alt="" class="hero-img" (load)="onImageLoad()">
+    </div>
     <div class="hero-overlay"></div>
 
     <div class="hero-container">

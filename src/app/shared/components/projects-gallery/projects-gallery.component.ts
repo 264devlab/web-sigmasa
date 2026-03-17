@@ -28,7 +28,7 @@ export class ProjectsGalleryComponent implements OnInit {
             id: i + 1,
             name: item.name,
             description: item.description,
-            image: `assets/images/projects/project-${i + 1}.png`
+            image: `assets/images/projects/project-${i + 1}.webp`
         }));
     });
 
