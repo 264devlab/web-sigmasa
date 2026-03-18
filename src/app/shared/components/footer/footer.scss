@@ -1,14 +1,183 @@
 @use 'index' as *;
 
 .footer {
-    padding: $spacing-lg;
-    background-color: $color-primary;
+    background-color: #000000;
     color: $color-white;
-    text-align: center;
-    margin-top: auto;
+    padding: $spacing-xl 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-    &__text {
-        font-size: 0.9rem;
-        opacity: 0.8;
+    &__container {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 clamp($spacing-sm, 3.5vw, $spacing-xl);
+        
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp($spacing-md, 5vw, $spacing-3xl);
+        align-items: start;
+
+        @media (max-width: 550px) {
+            grid-template-columns: 1fr;
+            gap: $spacing-md;
+        }
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-lg;
+        width: 100%;
+
+        &--brand {
+            @media (max-width: 550px) {
+                flex-direction: row; // Logo y sociales en la misma fila
+                align-items: center;
+                justify-content: center; // Centrado
+                gap: $spacing-xl;
+            }
+        }
+
+        &--nav {
+            align-items: flex-start;
+            @media (min-width: 951px) {
+                align-items: center;
+            }
+
+            @media (max-width: 550px) {
+                align-items: center; // Centrado en mobile
+            }
+        }
+
+        &--contact {
+            @media (max-width: 550px) {
+                align-items: flex-start; // Se mantiene a la izquierda
+            }
+        }
+
+        @media (max-width: 550px) {
+            position: relative;
+            padding-bottom: $spacing-md;
+            text-align: left;
+
+            &:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%; // Centrado
+                transform: translateX(-50%);
+                width: 150px; // Mas ancho
+                height: 1px;
+                background: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+
+    &__logo-img {
+        height: auto;
+        max-height: 60px;
+        width: 100%;
+        max-width: 220px;
+        display: block;
+        object-fit: contain;
+
+        @media (max-width: 550px) {
+            max-height: 40px;
+            max-width: 140px;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        gap: $spacing-md;
+    }
+
+    &__social-link {
+        color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include transition-standard;
+
+        svg {
+            width: 28px; // Un poco más grandes al no tener fondo
+            height: 28px;
+        }
+
+        &:hover {
+            color: $color-white;
+            transform: translateY(-3px);
+        }
+    }
+
+    &__nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-md;
+
+        @media (max-width: 550px) {
+            align-items: center;
+        }
+    }
+
+    &__nav-link {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-weight: $font-weight-medium;
+        font-size: 0.95rem;
+        @include transition-standard;
+
+        &:hover {
+            color: $color-white;
+            transform: translateX(5px);
+            display: inline-block;
+        }
+
+        @media (max-width: 550px) {
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+
+    &__contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-lg;
+
+        @media (max-width: 550px) {
+            gap: $spacing-md;
+        }
+    }
+
+    &__contact-link {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        display: flex;
+        align-items: flex-start;
+        gap: $spacing-md;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        text-align: left;
+        @include transition-standard;
+
+        .material-symbols-outlined {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.9);
+            flex-shrink: 0;
+        }
+
+        &:hover {
+            color: $color-white;
+
+            .material-symbols-outlined {
+                transform: scale(1.1);
+            }
+        }
     }
 }
