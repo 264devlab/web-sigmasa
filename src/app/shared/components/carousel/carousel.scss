@@ -30,8 +30,9 @@
     z-index: 10;
 
     @include respond-to(mobile) {
-        right: clamp($spacing-md, 3.5vw, $spacing-xl);
-        bottom: 6rem;
+        /* right: clamp($spacing-md, 3.5vw, $spacing-xl);
+        bottom: 6rem; */
+        display: none;
     }
 }
 
