@@ -1,8 +1,14 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+@include respond-to(tablet) {
+    .clients-section {
+        padding: calc($spacing-lg / 2) 0 $spacing-lg 0;
+    }
+}
+
 .clients-section {
-    padding: $spacing-xl 0;
+    padding: calc($spacing-xl / 2) 0 $spacing-xl 0;
     background-color: $color-background;
     overflow: hidden;
 
@@ -79,7 +85,7 @@
 // Responsive adjustments
 @include respond-to(mobile) {
     .clients-section {
-        padding: $spacing-lg 0;
+        padding: calc($spacing-lg / 2) 0 $spacing-lg 0;
 
         .title {
             font-size: 32px;

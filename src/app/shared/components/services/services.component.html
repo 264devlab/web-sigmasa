@@ -1,18 +1,22 @@
-<section class="services-section">
-    <div class="container">
-        <div class="header" appReveal>
-            <h2 class="text-raleway-semibold-40 title">{{ 'services.title' | i18n }}</h2>
-            <p class="text-raleway-light-20 description">{{ 'services.description' | i18n }}</p>
-        </div>
-
-        <div class="services-grid">
-            @for (service of services; track service.titleKey; let i = $index) {
-            <app-service-card 
-                appReveal 
-                [revealDelay]="((i % 3) + 1) * 100 + ''"
-                [icon]="service.icon" [titleKey]="service.titleKey"
-                [descriptionKey]="service.descriptionKey"></app-service-card>
-            }
-        </div>
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="header" appReveal>
+      <h2 class="text-raleway-semibold-40 title">{{ 'services.title' | i18n }}</h2>
+      <p class="text-raleway-light-20 description">
+        {{ 'services.description' | i18n }}
+      </p>
     </div>
+
+    <div class="services-grid">
+      @for (service of services; track $index) {
+      <app-service-card
+        appReveal
+        [revealDelay]="(($index % 3) + 1) * 100 + ''"
+        [icon]="service.icon"
+        [titleKey]="service.titleKey"
+        [descriptionKey]="service.descriptionKey"
+      ></app-service-card>
+      }
+    </div>
+  </div>
 </section>

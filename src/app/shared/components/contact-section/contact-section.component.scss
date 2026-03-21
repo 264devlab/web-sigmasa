@@ -7,12 +7,10 @@
   flex-direction: column;
   gap: 0;
   background-color: #ffffff;
+  padding: $spacing-xl 0;
 
   .contact-card-container {
     width: 100%;
-    max-width: 1210px;
-    margin: 60px auto;
-    padding: 0 20px;
     position: relative;
     z-index: 10;
     display: flex;
@@ -286,10 +284,9 @@
 
   // Mobile
   @include respond-to(mobile) {
+    padding: $spacing-lg 0;
     .contact-card-container {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      padding: 0 10px;
+      width: 100%;
     }
 
     .contact-card {

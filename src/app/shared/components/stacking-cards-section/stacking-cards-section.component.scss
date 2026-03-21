@@ -4,4 +4,9 @@
   width: 100%;
   position: relative;
   background: $color-background;
+  padding: calc($spacing-xl / 2) 0;
+
+  @include respond-to(mobile) {
+    padding: calc($spacing-lg / 2) 0;
+  }
 }
