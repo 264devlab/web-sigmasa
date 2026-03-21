@@ -1,5 +1,5 @@
 <div class="hero-action">
-    <button class="hero-btn" [routerLink]="link">
+    <button class="hero-btn" [routerLink]="link" (click)="onButtonClick($event)">
         <span class="hero-btn-text">{{ text }}</span>
         <span class="hero-btn-icon">
             <span class="material-symbols-outlined" translate="no">arrow_forward</span>

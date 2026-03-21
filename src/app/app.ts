@@ -1,14 +1,18 @@
-import { Component, AfterViewInit, signal } from '@angular/core';
+import { Component, AfterViewInit, signal, inject } from '@angular/core';
 import { RouterOutlet, ActivatedRoute } from '@angular/router';
+import { ProjectModalComponent } from './shared/components/project-modal/project-modal.component';
+import { ProjectModalService } from './core/services/project-modal.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ProjectModalComponent, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App implements AfterViewInit {
   protected readonly title = signal('web-sigmasa');
+  modalService = inject(ProjectModalService);
 
   private navbarHeight = 65;
 
