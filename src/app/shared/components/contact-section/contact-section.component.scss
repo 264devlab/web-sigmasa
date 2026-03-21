@@ -88,7 +88,7 @@
 
           button {
             background: transparent;
-            border: 2px solid transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: rgba(255, 255, 255, 0.8);
             text-align: left;
             font-size: $font-size-large;
@@ -104,6 +104,7 @@
             &.active {
               background-color: white;
               color: #146DC6;
+              border-color: white;
               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             }
 
@@ -133,14 +134,20 @@
         .form-group {
           display: flex;
           flex-direction: column;
-          gap: 10px;
           position: relative;
+          margin-top: 15px; // Add margin to accommodate floating label
 
           label {
-            font-size: 12px;
-            font-weight: $font-weight-semibold;
-            color: rgba(255, 255, 255, 0.95);
+            position: absolute;
+            left: 15px;
+            top: 12px;
+            font-size: 13px;
+            font-weight: $font-weight-medium;
+            color: #777;
             font-family: $font-family-raleway;
+            pointer-events: none;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10;
           }
 
           input,
@@ -148,8 +155,8 @@
             background-color: white;
             border: 2px solid transparent;
             border-radius: 10px;
-            padding: 8px 15px;
-            font-size: 12px;
+            padding: 12px 15px;
+            font-size: 13px;
             font-weight: $font-weight-semibold;
             color: #1a1a1a;
             width: 100%;
@@ -157,13 +164,23 @@
             transition: all 0.3s ease;
 
             &::placeholder {
-              color: #aaa;
+              color: transparent;
             }
 
             &:focus {
               outline: none;
               border-color: rgba(255, 255, 255, 0.5);
               background-color: #fcfcfc;
+            }
+
+            // Floating Label logic
+            &:focus ~ label,
+            &:not(:placeholder-shown) ~ label {
+              top: -25px;
+              left: 0;
+              font-size: 11px;
+              font-weight: $font-weight-bold;
+              color: white;
             }
           }
 
@@ -269,9 +286,6 @@
             gap: 20px;
           }
 
-          .form-group {
-            gap: 8px;
-          }
 
           .form-actions.mobile-only {
             display: flex;
@@ -316,23 +330,23 @@
 
             button {
               font-size: 13px;
-              padding: 5px 10px;
+              padding: 7px 15px;
               border: 1px solid rgba(255, 255, 255, 0.3);
-              border-radius: 15px;
-              white-space: normal; // Allow text wrapping within buttons if needed
+              border-radius: 12px;
+              white-space: nowrap; 
               text-align: center;
               flex: 1 1 auto; // Grow to fill but shrink to fit
-              min-width: 100px; // Minimum width before wrapping
+              min-width: 80px; // Minimum width before wrapping
 
               &.active {
                 background-color: white;
                 color: #146DC6;
-                border-color: white;
-                font-weight: $font-weight-semibold;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+              }
 
-                &::before {
-                  display: none;
-                }
+              &:hover:not(.active) {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: white;
               }
             }
           }
@@ -349,19 +363,18 @@
           }
 
           .form-group {
-            gap: 5px;
             width: 100%;
-
-            label {
-              font-size: 11px;
-            }
 
             input,
             textarea {
-              font-size: 11px;
-              padding: 7px 12px;
+              padding: 10px 12px;
               width: 100%;
               box-sizing: border-box;
+
+              &:focus ~ label,
+              &:not(:placeholder-shown) ~ label {
+                top: -18px;
+              }
             }
           }
 

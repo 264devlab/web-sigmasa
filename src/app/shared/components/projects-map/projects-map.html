@@ -33,7 +33,7 @@
         <div class="buttons-container">
             <div #projectButton *ngFor="let project of projects" class="project-button-wrapper"
                 [class.active]="activeProject?.id === project.id" (mouseenter)="setActiveProject(project)"
-                (mouseleave)="setActiveProject(null)">
+                (mouseleave)="setActiveProject(null)" (contextmenu)="$event.preventDefault()">
                 <div class="button-content">
                     <span class="project-name">{{ project.name | i18n }}</span>
                     <!-- Mobile-only description expansion -->

@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use 'variables' as *;
 @use 'mixins' as *;
 
@@ -8,7 +9,7 @@
 }
 
 .clients-section {
-    padding: calc($spacing-xl / 2) 0 $spacing-xl 0;
+    padding: math.div($spacing-xl, 2) 0 $spacing-xl 0;
     background-color: $color-background;
     overflow: hidden;
 
@@ -85,7 +86,7 @@
 // Responsive adjustments
 @include respond-to(mobile) {
     .clients-section {
-        padding: calc($spacing-lg / 2) 0 $spacing-lg 0;
+        padding: math.div($spacing-lg, 2) 0 $spacing-lg 0;
 
         .title {
             font-size: 32px;

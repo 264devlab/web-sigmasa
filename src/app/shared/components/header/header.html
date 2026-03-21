@@ -23,15 +23,21 @@
             </a>
           </li>
           <li>
+            <a class="header-link" [class.is-active]="activeSection() === 'projects'" href="#projects"
+              (click)="scrollToSection('projects', $event)">
+              {{ 'navbar.projects' | i18n }}
+            </a>
+          </li>
+          <li>
             <a class="header-link" [class.is-active]="activeSection() === 'mining'" href="#mining"
               (click)="scrollToSection('mining', $event)">
               {{ 'navbar.mining' | i18n }}
             </a>
           </li>
           <li>
-            <a class="header-link" [class.is-active]="activeSection() === 'projects'" href="#projects"
-              (click)="scrollToSection('projects', $event)">
-              {{ 'navbar.projects' | i18n }}
+            <a class="header-link" [class.is-active]="activeSection() === 'contact'" href="#contact"
+              (click)="scrollToSection('contact', $event)">
+              {{ 'navbar.contact' | i18n }}
             </a>
           </li>
         </ul>
@@ -97,15 +103,21 @@
             </a>
           </li>
           <li>
+            <a class="header-mobile-link" [class.is-active]="activeSection() === 'projects'" href="#projects"
+              (click)="scrollToSection('projects', $event)">
+              {{ 'navbar.projects' | i18n }}
+            </a>
+          </li>
+          <li>
             <a class="header-mobile-link" [class.is-active]="activeSection() === 'mining'" href="#mining"
               (click)="scrollToSection('mining', $event)">
               {{ 'navbar.mining' | i18n }}
             </a>
           </li>
           <li>
-            <a class="header-mobile-link" [class.is-active]="activeSection() === 'projects'" href="#projects"
-              (click)="scrollToSection('projects', $event)">
-              {{ 'navbar.projects' | i18n }}
+            <a class="header-mobile-link" [class.is-active]="activeSection() === 'contact'" href="#contact"
+              (click)="scrollToSection('contact', $event)">
+              {{ 'navbar.contact' | i18n }}
             </a>
           </li>
         </ul>

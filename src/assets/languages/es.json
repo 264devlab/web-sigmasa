@@ -88,7 +88,8 @@
         "home": "Inicio",
         "services": "Servicios",
         "projects": "Proyectos",
-        "mining": "Minería"
+        "mining": "Minería",
+        "contact": "Contacto"
     },
     "hero": {
         "slides": {
@@ -199,7 +200,9 @@
             "email": "Email",
             "phone": "Teléfono",
             "message": "Mensaje",
-            "send": "Enviar"
+            "send": "Enviar",
+            "required": "Requerido",
+            "invalid_email": "Email inválido"
         }
     },
     "about": {

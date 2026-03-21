@@ -1,5 +1,26 @@
+@use 'sass:color';
 @use 'variables' as *;
 @use 'mixins' as *;
+
+:host {
+    display: block;
+    width: 100%;
+
+    // Special behavior for scroll reveal zoom-in
+    &.reveal {
+        opacity: 0;
+        transform: scale(0.9) translateY(40px);
+        transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease;
+        visibility: hidden;
+        will-change: transform, opacity;
+
+        &.active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            visibility: visible;
+        }
+    }
+}
 
 .service-card {
     width: 100%;
@@ -7,11 +28,16 @@
     border-radius: 12px;
     padding: $spacing-lg $spacing-xl;
     margin-bottom: $spacing-md;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease, box-shadow 0.3s ease;
     cursor: default;
+    will-change: transform;
 
     &:hover {
-        background-color: darken(#1a5ea8, 5%);
+        background-color: color.adjust(#135AA2, $lightness: -5%);
+        transform: scale(1.05);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        position: relative;
     }
 
     .card-content {

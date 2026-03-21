@@ -88,7 +88,8 @@
         "home": "Home",
         "services": "Services",
         "projects": "Projects",
-        "mining": "Mining"
+        "mining": "Mining",
+        "contact": "Contact"
     },
     "hero": {
         "slides": {
@@ -199,7 +200,9 @@
             "email": "Email",
             "phone": "Phone",
             "message": "Message",
-            "send": "Send"
+            "send": "Send",
+            "required": "Required",
+            "invalid_email": "Invalid email"
         }
     },
     "about": {

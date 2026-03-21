@@ -18,10 +18,10 @@ interface Project {
   styleUrl: './projects-map.scss',
 })
 export class ProjectsMap {
-  @ViewChildren('projectButton') projectButtons!: QueryList<ElementRef>;
-  @ViewChild('linesContainer') linesContainer!: ElementRef;
-  @ViewChild('mapImage') mapImage!: ElementRef;
-  @ViewChild('infoCard') infoCard!: ElementRef;
+  @ViewChildren('projectButton') projectButtons!: QueryList<ElementRef<any>>;
+  @ViewChild('linesContainer') linesContainer!: ElementRef<any>;
+  @ViewChild('mapImage') mapImage!: ElementRef<any>;
+  @ViewChild('infoCard') infoCard!: ElementRef<any>;
 
   projects: Project[] = [
     {
