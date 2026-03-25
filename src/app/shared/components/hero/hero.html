@@ -8,7 +8,7 @@
         <div class="hero-content" appReveal>
             <h1 class="hero-title">{{ title }}</h1>
             <p class="hero-description">{{ description }}</p>
-            <app-action-button [text]="buttonText" [link]="buttonLink"></app-action-button>
+            <app-action-button [text]="buttonText" (onClick)="openModal()"></app-action-button>
         </div>
     </div>
 </section>

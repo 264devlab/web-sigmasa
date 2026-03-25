@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -11,5 +11,13 @@ import { RouterModule } from '@angular/router';
 })
 export class ActionButtonComponent {
     @Input() text: string = '';
-    @Input() link: string = '/';
+    @Input() link: string = '';
+    @Output() onClick = new EventEmitter<void>();
+
+    onButtonClick(event: Event) {
+        if (this.onClick.observed) {
+            event.preventDefault();
+            this.onClick.emit();
+        }
+    }
 }

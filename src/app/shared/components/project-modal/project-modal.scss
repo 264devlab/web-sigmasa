@@ -1,0 +1,358 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-md;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+.modal-container {
+  background: $color-white;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  max-height: 90dvh;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transform: scale(0.9);
+  animation: scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.close-btn {
+  position: absolute;
+  top: $spacing-md;
+  right: $spacing-md;
+  background: rgba(0, 0, 0, 0.5);
+  color: $color-white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  @include transition-standard;
+
+  &:hover {
+    background: $color-primary;
+    transform: rotate(90deg);
+  }
+
+  .material-symbols-outlined {
+    font-size: 24px;
+  }
+}
+
+.modal-content {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  position: relative;
+  overflow: hidden;
+
+  @include respond-to(tablet) {
+    display: flex;
+    flex-direction: column;
+    touch-action: pan-y;
+  }
+}
+
+// Image Section Styles
+.image-section {
+  position: relative;
+  background: #f5f5f5;
+  height: 100%;
+
+  @include respond-to(tablet) {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 40dvh;
+    flex-shrink: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .carousel-indicators-mini {
+    position: absolute;
+    bottom: $spacing-md;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+
+    .indicator {
+      width: 24px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 1px;
+
+      &.active {
+        background: $color-white;
+        width: 36px;
+      }
+    }
+  }
+}
+
+// Sliding Info Track (Mobile)
+.modal-info-track {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  --slide-index: 0;
+
+  @include respond-to(tablet) {
+    display: flex;
+    flex-direction: row;
+    width: 200%; // 2 slides
+    height: auto;
+    flex-grow: 1;
+    overflow-y: visible;
+    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    transform: translateX(calc(var(--slide-index) * -50%));
+  }
+}
+
+.info-slide {
+  @include respond-to(tablet) {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+}
+
+// Info Section Styles
+.info-section {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  background: $color-white;
+  color: $color-text;
+  height: 100%;
+
+  @include respond-to(tablet) {
+    padding: 25px 30px 60px; // Extra padding at bottom for pagination
+    overflow-y: auto;
+    height: auto;
+    max-height: calc(90dvh - 250px); // At least some space for image
+  }
+
+  .header-category {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: $color-primary;
+    margin-bottom: 8px;
+  }
+
+  .project-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+  }
+
+  .short-description {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 25px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin-bottom: 25px;
+  }
+
+  .info-table {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #f5f5f5;
+      padding-bottom: 8px;
+
+      .label {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: #888;
+        text-transform: uppercase;
+      }
+
+      .value {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        color: #1a1a1a;
+      }
+    }
+  }
+
+  .extended-description {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #ddd;
+      border-radius: 10px;
+    }
+
+    .section-title {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #1a1a1a;
+    }
+
+    .description-text {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555;
+    }
+  }
+}
+
+.desktop-only {
+  display: block;
+
+  @include respond-to(tablet) {
+    display: none;
+  }
+}
+
+.mobile-only {
+  display: none;
+
+  @include respond-to(tablet) {
+    display: block;
+  }
+}
+
+// Pagination Dots (Site Style)
+.modal-pagination {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  gap: 8px;
+  z-index: 10;
+
+  @include respond-to(tablet) {
+    display: flex;
+  }
+
+  .indicator-dot {
+    width: 30px;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    @include transition-standard;
+
+    &.active {
+      background: $color-primary;
+      width: 50px;
+    }
+  }
+}
+
+// Navigation Arrows
+.modal-nav {
+  display: none;
+
+  @include respond-to(tablet) {
+    display: block;
+  }
+
+  .nav-btn {
+    position: absolute;
+    bottom: 15px;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 15;
+    @include transition-standard;
+
+    &:hover {
+      background: $color-primary;
+      color: $color-white;
+    }
+
+    &.prev {
+      left: 20px;
+    }
+
+    &.next {
+      right: 20px;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

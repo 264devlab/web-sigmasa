@@ -9,78 +9,340 @@
         "title": "Projects",
         "description": "Explore our project gallery where technical excellence meets innovation to deliver exceptional results.",
         "read-more": "Read more",
+        "modal": {
+            "date": "Date",
+            "client": "Client",
+            "status": "Project Status",
+            "extended_description": "Extended Description"
+        },
         "items": [
             {
+                "id": "legislature_annex",
+                "name": "San Juan Legislature Annex Building",
+                "description": "Construction of a 5,960 m² architectural landmark featuring three underground levels and five service floors. Highlights include a state-of-the-art auditorium, library, and interactive spaces, designed with a bioclimatic longitudinal courtyard.",
+                "image": "assets/images/projects/anexo_legislatura.webp",
+                "button": "Learn more",
+                "link": "/proyectos",
+                "status": "Completed",
+                "location": "San Juan",
+                "surface_area": "5,960 m²",
+                "client": "San Juan Government",
+                "date": "2023",
+                "extra_description": "One of the most emblematic works in the province, designed with cutting-edge technology and bioclimatic criteria to house modern legislative functions."
+            },
+            {
+                "id": "ayres_village_gallery",
+                "name": "Ayres Village Commercial Gallery",
+                "description": "A premium two-story Strip Mall development featuring 20 commercial spaces ranging from 45 m² to 160 m². Built with a sophisticated mixed system of masonry, steel frame, and reinforced concrete for maximum durability.",
+                "image": "assets/images/projects/galeria_ayres_village.webp",
+                "button": "Learn more",
+                "link": "/proyectos",
+                "status": "Completed",
+                "location": "Chimbas, San Juan",
+                "surface_area": "2,000 m²",
+                "client": "Private",
+                "date": "2024",
+                "extra_description": "An open-air commercial center that blends modernity and functionality, optimizing the shopping experience in a rapidly growing area."
+            },
+            {
+                "id": "ayres_village_neighborhood",
+                "name": "Ayres Village Premium Residences",
+                "description": "Urban development of 77 premium lots and luxury 3-bedroom residences. Complete with underground utilities, paved streets, and expansive landscaped green spaces across nearly 50,000 m².",
+                "image": "assets/images/projects/barrio_ayres_village.webp",
+                "button": "Learn more",
+                "link": "/proyectos",
+                "status": "Completed",
+                "location": "Chimbas, San Juan",
+                "surface_area": "49,934.88 m²",
+                "client": "Private"
+            },
+            {
+                "id": "los_molinos",
+                "name": "Los Molinos Residential Complex",
+                "description": "A large-scale housing project comprising 260 functional units across modern towers. Built with traditional excellence, featuring reinforced concrete and high-end aluminum and wood finishes.",
+                "image": "assets/images/projects/barrio_los_molinos.webp",
+                "button": "Learn more",
+                "link": "/proyectos",
+                "status": "Completed",
+                "location": "San Juan",
+                "surface_area": "Variable",
+                "client": "San Juan Government"
+            },
+            {
+                "id": "los_molinos_2",
+                "name": "Los Molinos Residential Complex",
+                "description": "A large-scale housing project comprising 260 functional units across modern towers. Built with traditional excellence, featuring reinforced concrete and high-end aluminum and wood finishes.",
+                "image": "assets/images/projects/barrio_los_molinos_2.webp",
+                "button": "Learn more",
+                "link": "/proyectos",
+                "status": "Completed",
+                "location": "San Juan",
+                "surface_area": "Variable",
+                "client": "San Juan Government"
+            },
+            {
+                "id": "skate_park",
+                "name": "San Juan Skate Park",
+                "description": "A world-class sports facility at the San Juan Sports City. Featuring over 2,200 m² of precision-engineered reinforced concrete with professional-grade flat, curved, and inclined surfaces for high competition.",
+                "image": "assets/images/projects/skatepark.webp",
+                "button": "Learn more",
+                "link": "/proyectos",
+                "status": "Completed",
+                "location": "Pocito, San Juan",
+                "surface_area": "2,200 m²",
+                "client": "San Juan Government"
+            },
+            {
+                "id": "centauri_adium",
+                "name": "Centauri Adium Production Facility",
+                "description": "A massive 4,370 m² industrial expansion including specialized production zones, advanced office spaces, and modern service utilities. Engineered for operational excellence in the pharmaceutical complex.",
+                "image": "assets/images/projects/project_centauri_adium.webp",
+                "button": "Learn more",
+                "link": "/proyectos",
+                "status": "In Progress",
+                "location": "San Juan",
+                "surface_area": "4,370 m²",
+                "client": "Adium"
+            },
+            {
+                "id": "punta_negra",
+                "name": "Punta Negra Dam Water Treatment Plant",
+                "description": "A critical infrastructure project featuring a high-efficiency intake system and 21 filters. Includes massive 20,000 m³ storage tanks to secure water supply for the Ullum region.",
+                "image": "assets/images/projects/planta_potabilizadora_dique_punta_negra.webp",
+                "button": "Learn more",
+                "link": "/proyectos",
+                "status": "Completed",
+                "location": "Ullum, San Juan",
+                "surface_area": "20,000 m³ (storage)",
+                "client": "OSSE"
+            },
+            {
+                "id": "linea_132",
+                "name": "132 kV Power Line & Substation",
+                "description": "Installation of high-voltage electrical infrastructure and substation expansions to strengthen the regional energy grid and increase renewable energy transport capacity.",
+                "image": "assets/images/projects/linea_132.webp",
+                "button": "Learn more",
+                "link": "/proyectos",
+                "status": "Completed",
+                "location": "San Juan",
+                "surface_area": "N/A",
+                "client": "EPRE"
+            },
+            {
+                "id": "los_azules",
+                "name": "Los Azules Copper Project",
+                "description": "Critical road construction and infrastructure maintenance for internal project access, supporting large-scale mining operations in its fourth active season.",
+                "image": "assets/images/projects/los_azules.webp",
+                "button": "Learn more",
+                "link": "/mineria",
+                "status": "Active",
+                "location": "Calingasta, San Juan",
+                "surface_area": "Extensive",
+                "client": "McEwen Copper"
+            },
+            {
+                "id": "veladero",
+                "name": "Veladero Mine Infrastructure",
+                "description": "Comprehensive operational support including road maintenance and access development in key process and mining sectors, facilitating year-round project efficiency.",
+                "image": "assets/images/projects/veladero.webp",
+                "button": "Learn more",
+                "link": "/mineria",
+                "status": "Active",
+                "location": "Iglesia, San Juan",
+                "surface_area": "Extensive",
+                "client": "Barrick Gold"
+            },
+            {
+                "id": "hualilan",
+                "name": "Hualilan Mineral Project",
+                "description": "Mine development support including internal mineral transport infrastructure and pit opening operations to facilitate gold exploration and construction phases.",
+                "image": "assets/images/projects/hualilan.webp",
+                "button": "Learn more",
+                "link": "/mineria",
+                "status": "Active",
+                "location": "Ullum, San Juan",
+                "surface_area": "Extensive",
+                "client": "Challenger Exploration"
+            },
+            {
+                "id": "proyecto_1",
                 "name": "Project 1",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-1.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_2",
                 "name": "Project 2",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-2.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_3",
                 "name": "Project 3",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-3.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_4",
                 "name": "Project 4",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-4.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_5",
                 "name": "Project 5",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-5.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_6",
                 "name": "Project 6",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-6.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_7",
                 "name": "Project 7",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-7.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_8",
                 "name": "Project 8",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-8.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_9",
                 "name": "Project 9",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-9.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_10",
                 "name": "Project 10",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-10.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_11",
                 "name": "Project 11",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-11.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_12",
                 "name": "Project 12",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-12.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_13",
                 "name": "Project 13",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-13.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_14",
                 "name": "Project 14",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-14.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_15",
                 "name": "Project 15",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-15.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_16",
                 "name": "Project 16",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-16.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_17",
                 "name": "Project 17",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-17.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             },
             {
+                "id": "proyecto_18",
                 "name": "Project 18",
-                "description": "Brief description of the project executed with technical excellence."
+                "description": "Brief description of the project achieved with technical excellence.",
+                "image": "assets/images/projects/project-18.webp",
+                "status": "TBD",
+                "location": "TBD",
+                "surface_area": "TBD",
+                "client": "TBD"
             }
         ]
     },
@@ -92,100 +354,56 @@
         "contact": "Contact"
     },
     "hero": {
-        "slides": {
-            "legislature_annex": {
-                "title": "San Juan Legislature Annex Building",
-                "description": "Construction of a 5,960 m² architectural landmark featuring three underground levels and five service floors. Highlights include a state-of-the-art auditorium, library, and interactive spaces, designed with a bioclimatic longitudinal courtyard.",
-                "button": "Learn more"
-            },
-            "ayres_village_gallery": {
-                "title": "Ayres Village Commercial Gallery",
-                "description": "A premium two-story Strip Mall development featuring 20 commercial spaces ranging from 45 m² to 160 m². Built with a sophisticated mixed system of masonry, steel frame, and reinforced concrete for maximum durability.",
-                "button": "Learn more"
-            },
-            "ayres_village_neighborhood": {
-                "title": "Ayres Village Premium Residences",
-                "description": "Urban development of 77 premium lots and luxury 3-bedroom residences. Complete with underground utilities, paved streets, and expansive landscaped green spaces across nearly 50,000 m².",
-                "button": "Learn more"
-            },
-            "los_molinos_neighborhood": {
-                "title": "Los Molinos Residential Complex",
-                "description": "A large-scale housing project comprising 260 functional units across modern towers. Built with traditional excellence, featuring reinforced concrete and high-end aluminum and wood finishes.",
-                "button": "Learn more"
-            },
-            "skate_park": {
-                "title": "San Juan Skate Park",
-                "description": "A world-class sports facility at the San Juan Sports City. Featuring over 2,200 m² of precision-engineered reinforced concrete with professional-grade flat, curved, and inclined surfaces for high competition.",
-                "button": "Learn more"
-            }
-        }
+        "slides": [
+            "legislature_annex",
+            "ayres_village_gallery",
+            "ayres_village_neighborhood",
+            "los_molinos",
+            "skate_park"
+        ]
     },
     "services": {
         "title": "Services",
-        "description": "More Than 35 Years Offering Concrete Solutions To Complex Requirements. Through \"Personalized Technical Advice\" For The Analysis, Development, Monitoring And Assistance Of Projects And Works.",
+        "description": "Offering Concrete Solutions To Complex Requirements For Over 35 Years Through Personalized Technical Advice For Project And Construction Management.",
         "engineering": {
             "title": "Project Engineering",
-            "description": "We develop engineering projects in their different stages, ensuring efficient, safe technical solutions in accordance with the requirements of each work."
+            "description": "We develop engineering projects in their various stages, ensuring efficient, safe technical solutions that align with the requirements of each work."
         },
         "construction": {
             "title": "Construction",
-            "description": "We develop engineering projects in their different stages, ensuring efficient, safe technical solutions in accordance with the requirements of each work."
+            "description": "We execute civil and industrial construction projects with high quality standards, optimizing resources and potentalizing the work of our professional team."
         },
         "real-estate": {
             "title": "Real Estate Developments",
-            "description": "We have focused this business unit on the \"Projection, Execution And Commercialization Of Gated Communities\" of high construction quality, standing out for its urban qualities, strategic location and rapid consolidation."
+            "description": "We focus on the planning, execution, and commercialization of high-quality private neighborhoods, distinguished by urban qualities and strategic locations."
         },
         "architecture": {
             "title": "Architecture",
-            "description": "We execute \"Civil And Architectural Works\" for the public and private sector, spanning from planning and construction to the integral coordination of the works, guaranteeing construction quality, compliance with deadlines and site safety."
+            "description": "Implementing civil and architectural works for public and private sectors, covering everything from planning to coordination, ensuring quality and safety."
         },
         "mining": {
             "title": "Mining",
-            "description": "We have a \"Specialized Technical Team\" to develop and execute projects in mining locations, incorporating cutting-edge technology at the service of construction. We provide services to mining companies in \"Massive Earthworks\", \"Civil Works\" and associated works."
+            "description": "Specialized technical team for executing projects in mining locations with cutting-edge technology for massive soil movements and civil works."
         },
         "equipment": {
-            "title": "Heavy Equipment Supply",
-            "description": "We have our \"Own Fleet Of Equipment\" that allows us to offer heavy equipment supply and operation services in all stages, sectors and facilities of mining projects, with \"Highly Trained And Qualified Personnel\"."
+            "title": "Heavy Equipment Provision",
+            "description": "We have our own fleet of equipment to offer provision and operation services in all stages of mining projects with highly qualified personnel."
         }
     },
     "projects_1": {
-        "centauri_adium": {
-            "title": "Centauri Adium Project",
-            "description": "Construction of Building 2 (approx. 4,370 m²) for solid production, offices, and dining area. Includes Power Plant 5 and service area, essential infrastructure for the complex's operational capacity.",
-            "button": "Learn more"
-        },
-        "los_molinos": {
-            "title": "Los Molinos Residential Complex",
-            "description": "A high-scale residential development with 260 functional units. Built with traditional methods, featuring reinforced concrete, high-end aluminum/wood finishes, and quality ceramic tile work.",
-            "button": "Learn more"
-        },
-        "punta_negra": {
-            "title": "Punta Negra Dam Water Treatment Plant",
-            "description": "Construction of a water treatment plant at Punta Negra Dam. Features specialized intake systems, 21 high-efficiency filters, and storage cisterns with a 20,000 m³ capacity.",
-            "button": "Learn more"
-        },
-        "linea_132": {
-            "title": "132 kV Power Line",
-            "description": "Construction of a 132 kV power line and expansion of transformer stations in San Juan. Enhances regional energy infrastructure and capacity for renewable energy transmission.",
-            "button": "Learn more"
-        }
+        "slides": [
+            "centauri_adium",
+            "los_molinos_2",
+            "punta_negra",
+            "linea_132"
+        ]
     },
     "projects_2": {
-        "los_azules": {
-            "title": "Los Azules",
-            "description": "Road opening and maintenance within the project area, ensuring access and internal circulation for equipment and machinery. Fourth working season.",
-            "button": "Learn more"
-        },
-        "veladero": {
-            "title": "Veladero",
-            "description": "Operational works in process and mining sectors, along with opening and maintenance of access roads, supporting the project's operational needs.",
-            "button": "Learn more"
-        },
-        "hualilan": {
-            "title": "Hualilan",
-            "description": "Internal mineral transport works, along with PIT opening and infrastructure development for mine construction.",
-            "button": "Learn more"
-        }
+        "slides": [
+            "los_azules",
+            "veladero",
+            "hualilan"
+        ]
     },
     "contact-section": {
         "title": "Contact",
@@ -208,24 +426,24 @@
     "about": {
         "history": {
             "title": "History",
-            "description": "SIGMA S.A. was founded in 1988 with the conviction of developing high-quality construction systems and modalities in the province of San Juan and throughout the country. Since its inception, the company has committed to innovation, incorporating cutting-edge technologies and work techniques, optimizing resources, and empowering a highly trained professional team, with a focus on continuous improvement, safety, and efficiency in every project."
+            "description": "SIGMA S.A. was founded in 1988 with the conviction of developing high-quality construction systems in San Juan and across the country. Since its inception, the company has focused on innovation, incorporating cutting-edge technologies and work techniques to optimize resources and empower a highly trained professional team."
         },
         "mission": {
             "title": "Mission",
-            "description": "To provide engineering and architecture services with high-quality standards, optimizing time and resources, guaranteeing site safety, and maximizing our clients' profitability. We seek to execute projects in a sustainable, innovative, and efficient manner, solidifying ourselves as a reference in the construction sector in San Juan and Argentina."
+            "description": "To provide engineering and architecture services with high quality standards, optimizing time and resources, ensuring safety on site, and maximizing our clients' profitability. We strive to execute projects sustainably and efficiently."
         },
         "vision": {
             "title": "Vision",
-            "description": "To position ourselves as the best and most innovative company in the construction and engineering field, remaining at the forefront of new technologies based on the specialization and training of our staff, while respecting environmental conservation standards."
+            "description": "To position ourselves as the best and most innovative company in construction and engineering, staying at the forefront of new technologies while respecting environmental conservation standards."
         },
         "values": {
             "title": "Values",
-            "description": "At SIGMA S.A., we act with ethics, honesty, and transparency in all our processes. We promote teamwork and continuous improvement, caring for the health and safety of our collaborators, respecting the environment, and fostering sustainable practices. We assume a strong commitment to the communities where we operate, building bonds based on trust and social responsibility."
+            "description": "At SIGMA S.A. we act with ethics, honesty, and transparency. We promote teamwork and continuous improvement, caring for the health and safety of our collaborators and respecting the environment through sustainable practices."
         }
     },
     "policy": {
-        "title": "Quality, Safety And Environment Policy.",
-        "description": "In \"SIGMA S.A.\" we assume the commitment of satisfying the requirements and expectations of our clients and other interested parties, providing services in an efficient, responsible and sustainable manner. For this, we implement and maintain an Integrated Management System, aligned with the standards \"ISO 9001:2015\", \"ISO 14001:2015\" and \"ISO 45001:2018\", oriented to quality, safety and occupational health, and the protection of the environment to Integrated Management.",
+        "title": "Quality, Safety, and Environment Policy.",
+        "description": "At \"SIGMA S.A.\" we assume the commitment to satisfy the requirements and expectations of our clients and stakeholders, providing services efficiently and responsibly aligned with ISO 9001:2015, ISO 14001:2015, and ISO 45001:2018 standards.",
         "button_policy": "Quality Policy",
         "button_certifications": "Certificaciones"
     },

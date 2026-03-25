@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ActionButtonComponent } from '../action-button/action-button.component';
 import { RevealDirective } from '../../directives/reveal.directive';
 import { NgOptimizedImage } from '@angular/common';
+import { ProjectModalService } from '../../../core/services/project-modal.service';
 
 @Component({
     selector: 'app-hero',
@@ -17,8 +18,17 @@ export class HeroComponent {
     @Input() description: string = '';
     @Input() backgroundImage: string = '';
     @Input() priority: boolean = false;
-    @Input() buttonLink: string = '/';
+
     @Input() buttonText: string = 'Ver más';
+    @Input() project?: any;
+
+    private modalService = inject(ProjectModalService);
+
+    openModal() {
+        if (this.project) {
+            this.modalService.open(this.project);
+        }
+    }
 
     onImageLoad() {
         const img = document.querySelector('.hero-img[src*="' + this.backgroundImage + '"]');

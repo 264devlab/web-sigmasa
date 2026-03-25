@@ -9,78 +9,346 @@
         "title": "Proyectos",
         "description": "Explora nuestra galería de proyectos donde la excelencia técnica se une con la innovación para entregar resultados excepcionales.",
         "read-more": "Leer más",
+        "modal": {
+            "date": "Fecha",
+            "client": "Comitente",
+            "status": "Estado de obra",
+            "extended_description": "Descripción ampliada"
+        },
         "items": [
             {
+                "id": "legislature_annex",
+                "name": "Edificio Anexo Legislatura San Juan",
+                "description": "Construcción de edificio de 5960 m² compuesto por tres subsuelos, planta baja y cuatro niveles superiores, más un quinto nivel de servicios. Incluye auditorio, biblioteca y sala interactiva, con núcleo de circulaciones verticales (escalera y ascensores) y patio longitudinal que actúa como regulador bioclimático.",
+                "image": "assets/images/projects/anexo_legislatura.webp",
+                "button": "Conocer más",
+                "link": "/proyectos",
+                "estado": "Completado",
+                "localidad": "San Juan",
+                "superficie": "5960 m²",
+                "comitente": "Gobierno de San Juan",
+                "fecha": "2023",
+                "descripcion_ampliada": "Detalles ampliados sobre la construcción del Edificio Anexo Legislatura..."
+            },
+            {
+                "id": "ayres_village_gallery",
+                "name": "Galeria Comercial Ayres Village",
+                "description": "Construcción de edificio comercial en dos plantas tipo Strip Mall, con galería semicubierta frontal y 20 locales de entre 45 m² y 160 m². Ejecutado con sistema constructivo mixto que incluye mampostería, pórticos, cerchas metálicas, losas de hormigón armado y steel frame.",
+                "image": "assets/images/projects/galeria_ayres_village.webp",
+                "button": "Conocer más",
+                "link": "/proyectos",
+                "estado": "Completado",
+                "localidad": "Chimbas, San Juan",
+                "superficie": "2000 m²",
+                "comitente": "Privado",
+                "fecha": "2024",
+                "descripcion_ampliada": "Centro comercial a cielo abierto que combina modernidad y funcionalidad, optimizando la experiencia de compra en una zona en pleno crecimiento."
+            },
+            {
+                "id": "ayres_village_neighborhood",
+                "name": "Barrio Ayres Village",
+                "description": "Urbanización de 77 lotes y construcción de 12 viviendas de 3 dormitorios de 150,96 m² cada una (1811,52 m² totales), incluyendo redes de agua potable, cloaca, gas natural y tendido eléctrico subterráneo, calles pavimentadas, veredas de hormigón, alumbrado público y acondicionamiento de espacios verdes en un terreno de 49.934,88 m².",
+                "image": "assets/images/projects/barrio_ayres_village.webp",
+                "button": "Conocer más",
+                "link": "/proyectos",
+                "estado": "Completado",
+                "localidad": "Chimbas, San Juan",
+                "superficie": "49.934,88 m²",
+                "comitente": "Privado"
+            },
+            {
+                "id": "los_molinos",
+                "name": "Barrio Los Molinos",
+                "description": "Construcción de barrio de 260 unidades funcionales en torres de dos y tres plantas, con cinco prototipos y sistema constructivo tradicional: platea de fundación, mampostería de ladrillón, losas de hormigón armado, carpinterías de aluminio y madera, y terminaciones cerámicas en baños y cocina.",
+                "image": "assets/images/projects/barrio_los_molinos.webp",
+                "button": "Conocer más",
+                "link": "/proyectos",
+                "estado": "Completado",
+                "localidad": "San Juan",
+                "superficie": "Variable",
+                "comitente": "Gobierno de San Juan",
+                "fecha": "2023",
+                "descripcion_ampliada": "Detalles ampliados sobre la construcción del Edificio Anexo Legislatura..."
+            },
+            {
+                "id": "los_molinos_2",
+                "name": "Barrio Los Molinos",
+                "description": "Construcción de barrio de 260 unidades funcionales en torres de dos y tres plantas, con cinco prototipos y sistema constructivo tradicional: platea de fundación, mampostería de ladrillón, losas de hormigón armado, carpinterías de aluminio y madera, y terminaciones cerámicas en baños y cocina.",
+                "image": "assets/images/projects/barrio_los_molinos_2.webp",
+                "button": "Conocer más",
+                "link": "/proyectos",
+                "estado": "Completado",
+                "localidad": "San Juan",
+                "superficie": "Variable",
+                "comitente": "Gobierno de San Juan",
+                "fecha": "2023",
+                "descripcion_ampliada": "Detalles ampliados sobre la construcción del Edificio Anexo Legislatura..."
+            },
+            {
+                "id": "skate_park",
+                "name": "Skate Park San Juan",
+                "description": "Construcción de la pista de Skate Park en la Ciudad Deportiva de San Juan (Pocito), incluyendo movimiento y compactación de suelos, ejecución de muros de contención, más de 2200 m² de pisos de hormigón armado (planos, curvos e inclinados) veredas perimetrales y la instalación de obstáculos metálicos.",
+                "image": "assets/images/projects/skatepark.webp",
+                "button": "Conocer más",
+                "link": "/proyectos",
+                "estado": "Completado",
+                "localidad": "Pocito, San Juan",
+                "superficie": "2200 m²",
+                "comitente": "Gobierno de San Juan",
+                "fecha": "2023",
+                "descripcion_ampliada": "Detalles ampliados sobre la construcción del Edificio Anexo Legislatura..."
+            },
+            {
+                "id": "centauri_adium",
+                "name": "Proyecto Centauri Adium",
+                "description": "La obra contempla la construcción del Edificio 2, de aproximadamente 4.370 m², destinado a áreas de producción de sólidos, oficinas y comedor, junto con la nueva Usina 5 y playa de servicios, un edificio de dos plantas que albergará la sala de cables y tableros de energía, fundamentales para la infraestructura operativa del complejo.",
+                "image": "assets/images/projects/project_centauri_adium.webp",
+                "button": "Conocer más",
+                "link": "/proyectos",
+                "estado": "En progreso",
+                "localidad": "San Juan",
+                "superficie": "4370 m²",
+                "comitente": "Adium"
+            },
+            {
+                "id": "punta_negra",
+                "name": "Planta Potabilizadora Dique Punta Negra",
+                "description": "Construcción de planta potabilizadora en el Dique Punta Negra (Ullum, San Juan), con sistema de captación mediante acueducto desde el dique, conducción a cámara de derivación y tratamiento a través de 21 filtros de alta eficiencia, incluyendo cisternas de almacenamiento de 20.000 m³.",
+                "image": "assets/images/projects/planta_potabilizadora_dique_punta_negra.webp",
+                "button": "Conocer más",
+                "link": "/proyectos",
+                "estado": "Completado",
+                "localidad": "Ullum, San Juan",
+                "superficie": "20.000 m³ (cisternas)",
+                "comitente": "OSSE"
+            },
+            {
+                "id": "linea_132",
+                "name": "Linea 132",
+                "description": "Construcción de una línea eléctrica de 132 kV y ampliación de estaciones transformadoras en San Juan, que incluye la instalación de estructuras de hormigón para la nueva línea de interconexión y trabajos de infraestructura eléctrica destinados a fortalecer el sistema energético y aumentar la capacidad de transporte de energía renovable.",
+                "image": "assets/images/projects/linea_132.webp",
+                "button": "Conocer más",
+                "link": "/proyectos",
+                "estado": "Completado",
+                "localidad": "San Juan",
+                "superficie": "N/A",
+                "comitente": "EPRE"
+            },
+            {
+                "id": "los_azules",
+                "name": "Los Azules",
+                "description": "Trabajos de apertura y mantenimiento de caminos dentro del proyecto, destinados a garantizar el acceso y la circulación interna de equipos y maquinaria. Cuarta temporada de trabajo.",
+                "image": "assets/images/projects/los_azules.webp",
+                "button": "Conocer más",
+                "link": "/mineria",
+                "estado": "Activo",
+                "localidad": "Calingasta, San Juan",
+                "superficie": "Extensa",
+                "comitente": "McEwen Copper"
+            },
+            {
+                "id": "veladero",
+                "name": "Veladero",
+                "description": "Desarrollo de trabajos operativos en sectores de proceso y mina, junto con tareas de apertura y mantenimiento de caminos de acceso, acompañando las necesidades operativas del proyecto.",
+                "image": "assets/images/projects/veladero.webp",
+                "button": "Conocer más",
+                "link": "/mineria",
+                "estado": "Activo",
+                "localidad": "Iglesia, San Juan",
+                "superficie": "Extensa",
+                "comitente": "Barrick Gold"
+            },
+            {
+                "id": "hualilan",
+                "name": "Hualilan",
+                "description": "Trabajos vinculados al transporte interno de mineral, junto con tareas de apertura de PIT y desarrollo de infraestructura para la construcción de mina.",
+                "image": "assets/images/projects/hualilan.webp",
+                "button": "Conocer más",
+                "link": "/mineria",
+                "estado": "Activo",
+                "localidad": "Ullum, San Juan",
+                "superficie": "Extensa",
+                "comitente": "Challenger Exploration"
+            },
+            {
+                "id": "proyecto_1",
                 "name": "Proyecto 1",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-1.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_2",
                 "name": "Proyecto 2",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-2.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_3",
                 "name": "Proyecto 3",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-3.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_4",
                 "name": "Proyecto 4",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-4.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_5",
                 "name": "Proyecto 5",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-5.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_6",
                 "name": "Proyecto 6",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-6.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_7",
                 "name": "Proyecto 7",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-7.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_8",
                 "name": "Proyecto 8",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-8.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_9",
                 "name": "Proyecto 9",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-9.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_10",
                 "name": "Proyecto 10",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-10.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_11",
                 "name": "Proyecto 11",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-11.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_12",
                 "name": "Proyecto 12",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-12.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_13",
                 "name": "Proyecto 13",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-13.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_14",
                 "name": "Proyecto 14",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-14.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_15",
                 "name": "Proyecto 15",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-15.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_16",
                 "name": "Proyecto 16",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-16.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_17",
                 "name": "Proyecto 17",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-17.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             },
             {
+                "id": "proyecto_18",
                 "name": "Proyecto 18",
-                "description": "Descripción breve del proyecto realizado con excelencia técnica."
+                "description": "Descripción breve del proyecto realizado con excelencia técnica.",
+                "image": "assets/images/projects/project-18.webp",
+                "estado": "TBD",
+                "localidad": "TBD",
+                "superficie": "TBD",
+                "comitente": "TBD"
             }
         ]
     },
@@ -92,33 +360,7 @@
         "contact": "Contacto"
     },
     "hero": {
-        "slides": {
-            "legislature_annex": {
-                "title": "Edificio Anexo Legislatura San Juan",
-                "description": "Construcción de edificio de 5960 m² compuesto por tres subsuelos, planta baja y cuatro niveles superiores, más un quinto nivel de servicios. Incluye auditorio, biblioteca y sala interactiva, con núcleo de circulaciones verticales (escalera y ascensores) y patio longitudinal que actúa como regulador bioclimático.",
-                "button": "Conocer más"
-            },
-            "ayres_village_gallery": {
-                "title": "Galeria Comercial Ayres Village",
-                "description": "Construcción de edificio comercial en dos plantas tipo Strip Mall, con galería semicubierta frontal y 20 locales de entre 45 m² y 160 m². Ejecutado con sistema constructivo mixto que incluye mampostería, pórticos, cerchas metálicas, losas de hormigón armado y steel frame.",
-                "button": "Conocer más"
-            },
-            "ayres_village_neighborhood": {
-                "title": "Barrio Ayres Village",
-                "description": "Urbanización de 77 lotes y construcción de 12 viviendas de 3 dormitorios de 150,96 m² cada una (1811,52 m² totales), incluyendo redes de agua potable, cloaca, gas natural y tendido eléctrico subterráneo, calles pavimentadas, veredas de hormigón, alumbrado público y acondicionamiento de espacios verdes en un terreno de 49.934,88 m².",
-                "button": "Conocer más"
-            },
-            "los_molinos_neighborhood": {
-                "title": "Barrio Los Molinos",
-                "description": "Construcción de barrio de 260 unidades funcionales en torres de dos y tres plantas, con cinco prototipos y sistema constructivo tradicional: platea de fundación, mampostería de ladrillón, losas de hormigón armado, carpinterías de aluminio y madera, y terminaciones cerámicas en baños y cocina.",
-                "button": "Conocer más"
-            },
-            "skate_park": {
-                "title": "Skate Park San Juan",
-                "description": "Construcción de la pista de Skate Park en la Ciudad Deportiva de San Juan (Pocito), incluyendo movimiento y compactación de suelos, ejecución de muros de contención, más de 2200 m² de pisos de hormigón armado (planos, curvos e inclinados) veredas perimetrales y la instalación de obstáculos metálicos.",
-                "button": "Conocer más"
-            }
-        }
+        "slides": ["legislature_annex", "ayres_village_gallery", "ayres_village_neighborhood", "los_molinos", "skate_park"]
     },
     "services": {
         "title": "Servicios",
@@ -149,43 +391,10 @@
         }
     },
     "projects_1": {
-        "centauri_adium": {
-            "title": "Proyecto Centauri Adium",
-            "description": "La obra contempla la construcción del Edificio 2, de aproximadamente 4.370 m², destinado a áreas de producción de sólidos, oficinas y comedor, junto con la nueva Usina 5 y playa de servicios, un edificio de dos plantas que albergará la sala de cables y tableros de energía, fundamentales para la infraestructura operativa del complejo.",
-            "button": "Conocer más"
-        },
-        "los_molinos": {
-            "title": "Barrio Los Molinos",
-            "description": "Construcción de barrio de 260 unidades funcionales en torres de dos y tres plantas, con cinco prototipos y sistema constructivo tradicional: platea de fundación, mampostería de ladrillón, losas de hormigón armado, carpinterías de aluminio y madera, y terminaciones cerámicas en baños y cocina.",
-            "button": "Conocer más"
-        },
-        "punta_negra": {
-            "title": "Planta Potabilizadora Dique Punta Negra",
-            "description": "Construcción de planta potabilizadora en el Dique Punta Negra (Ullum, San Juan), con sistema de captación mediante acueducto desde el dique, conducción a cámara de derivación y tratamiento a través de 21 filtros de alta eficiencia, incluyendo cisternas de almacenamiento de 20.000 m³.",
-            "button": "Conocer más"
-        },
-        "linea_132": {
-            "title": "Linea 132",
-            "description": "Construcción de una línea eléctrica de 132 kV y ampliación de estaciones transformadoras en San Juan, que incluye la instalación de estructuras de hormigón para la nueva línea de interconexión y trabajos de infraestructura eléctrica destinados a fortalecer el sistema energético y aumentar la capacidad de transporte de energía renovable.",
-            "button": "Conocer más"
-        }
+        "slides": ["centauri_adium", "los_molinos_2", "punta_negra", "linea_132"]
     },
     "projects_2": {
-        "los_azules": {
-            "title": "Los Azules",
-            "description": "Trabajos de apertura y mantenimiento de caminos dentro del proyecto, destinados a garantizar el acceso y la circulación interna de equipos y maquinaria. Cuarta temporada de trabajo.",
-            "button": "Conocer más"
-        },
-        "veladero": {
-            "title": "Veladero",
-            "description": "Desarrollo de trabajos operativos en sectores de proceso y mina, junto con tareas de apertura y mantenimiento de caminos de acceso, acompañando las necesidades operativas del proyecto.",
-            "button": "Conocer más"
-        },
-        "hualilan": {
-            "title": "Hualilan",
-            "description": "Trabajos vinculados al transporte interno de mineral, junto con tareas de apertura de PIT y desarrollo de infraestructura para la construcción de mina.",
-            "button": "Conocer más"
-        }
+        "slides": ["los_azules", "veladero", "hualilan"]
     },
     "contact-section": {
         "title": "Contacto",

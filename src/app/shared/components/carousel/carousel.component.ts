@@ -1,13 +1,15 @@
-import { Component, Input, OnInit, OnDestroy, signal, computed } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, signal, computed, inject, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from '../hero/hero.component';
+import { ProjectModalService } from '../../../core/services/project-modal.service';
 
 export interface HeroSlide {
     title: string;
     description: string;
     backgroundImage: string;
     buttonText: string;
-    buttonLink: string;
+
+    project?: any;
 }
 
 @Component({
@@ -29,9 +31,20 @@ export class CarouselComponent implements OnInit, OnDestroy {
     private autoPlayInterval: any;
     private touchStartX: number = 0;
     private touchEndX: number = 0;
+    private modalService = inject(ProjectModalService);
+
+    constructor() {
+        effect(() => {
+            if (this.modalService.isOpen()) {
+                this.stopAutoPlay();
+            } else {
+                this.startAutoPlay();
+            }
+        });
+    }
 
     ngOnInit() {
-        this.startAutoPlay();
+        // startAutoPlay is handled by the effect in the constructor
     }
 
     ngOnDestroy() {
@@ -54,6 +67,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
     }
 
     private startAutoPlay() {
+        if (this.modalService.isOpen() || this.autoPlayInterval) return;
         this.autoPlayInterval = setInterval(() => {
             this.nextSlide();
         }, this.interval);
@@ -62,12 +76,15 @@ export class CarouselComponent implements OnInit, OnDestroy {
     private stopAutoPlay() {
         if (this.autoPlayInterval) {
             clearInterval(this.autoPlayInterval);
+            this.autoPlayInterval = null;
         }
     }
 
     private resetAutoPlay() {
         this.stopAutoPlay();
-        this.startAutoPlay();
+        if (!this.modalService.isOpen()) {
+            this.startAutoPlay();
+        }
     }
 
     onTouchStart(event: TouchEvent): void {

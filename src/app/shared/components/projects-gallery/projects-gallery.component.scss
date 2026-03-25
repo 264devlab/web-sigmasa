@@ -91,6 +91,10 @@
                 transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s, opacity 0.5s 0.3s;
                 transform: translateY(20px);
                 text-decoration: none;
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: inherit;
 
                 &:hover {
                     transform: scale(1.05);

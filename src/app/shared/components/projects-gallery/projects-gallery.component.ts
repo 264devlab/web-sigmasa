@@ -2,12 +2,21 @@ import { Component, HostListener, OnInit, signal, computed, inject, effect } fro
 import { CommonModule } from '@angular/common';
 import { I18nService } from '../../i18n/i18n.service';
 import { I18nPipe } from '../../i18n/i18n.pipe';
+import { ProjectModalService } from '../../../core/services/project-modal.service';
 
 interface Project {
-    id: number;
+    id: string | number;
     name: string;
     description: string;
     image: string;
+    estado?: string;
+    localidad?: string;
+    superficie?: string;
+    comitente?: string;
+    status?: string;
+    location?: string;
+    surface_area?: string;
+    client?: string;
 }
 
 @Component({
@@ -19,16 +28,25 @@ interface Project {
 })
 export class ProjectsGalleryComponent implements OnInit {
     private i18nService = inject(I18nService);
+    private modalService = inject(ProjectModalService);
 
     projects = computed(() => {
         const items = (this.i18nService.translate('projects.items')() as unknown) as any[];
         if (!Array.isArray(items)) return [];
 
         return items.map((item, i) => ({
-            id: i + 1,
+            id: item.id || i + 1,
             name: item.name,
             description: item.description,
-            image: `assets/images/projects/project-${i + 1}.webp`
+            image: item.image || `assets/images/projects/project-${i + 1}.webp`,
+            estado: item.estado,
+            localidad: item.localidad,
+            superficie: item.superficie,
+            comitente: item.comitente,
+            status: item.status,
+            location: item.location,
+            surface_area: item.surface_area,
+            client: item.client
         }));
     });
 
@@ -109,6 +127,10 @@ export class ProjectsGalleryComponent implements OnInit {
     private triggerAnimation(): void {
         this.isAnimating.set(true);
         setTimeout(() => this.isAnimating.set(false), 600);
+    }
+
+    openProject(project: any): void {
+        this.modalService.open(project);
     }
 
     onTouchStart(event: TouchEvent): void {
