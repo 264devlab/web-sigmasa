@@ -88,7 +88,8 @@
         "home": "Inicio",
         "services": "Servicios",
         "projects": "Proyectos",
-        "mining": "Minería"
+        "mining": "Minería",
+        "contact": "Contacto"
     },
     "hero": {
         "slides": {
@@ -199,7 +200,9 @@
             "email": "Email",
             "phone": "Teléfono",
             "message": "Mensaje",
-            "send": "Enviar"
+            "send": "Enviar",
+            "required": "Requerido",
+            "invalid_email": "Email inválido"
         }
     },
     "about": {
@@ -225,5 +228,29 @@
         "description": "En \"SIGMA S.A.\" Asumimos El Compromiso De Satisfacer Los Requisitos Y Expectativas De Nuestros Clientes Y Demás Partes Interesadas, Brindando Servicios De Manera Eficiente, Responsable Y Sostenible. Para Ello, Implementamos Y Mantenemos Un Sistema De Gestión Integrado, Alineado Con Las Normas \"ISO 9001:2015\", \"ISO 14001:2015\" E \"ISO 45001:2018\", Orientado A La Calidad, La Seguridad Y Salud Ocupacional, Y La Protección Del Medio Ambiente A De Gestión Integrado.",
         "button_policy": "Política De Calidad",
         "button_certifications": "Certificaciones"
+    },
+    "projects-map": {
+        "items": {
+            "veladero": {
+                "name": "Proyecto Minero Veladero",
+                "description": "Extracción de oro y plata en la cordillera de los Andes."
+            },
+            "solar": {
+                "name": "Parque Solar Ullum",
+                "description": "Generación de energía renovable a gran escala."
+            },
+            "dique": {
+                "name": "Dique Caracoles",
+                "description": "Aprovechamiento hidroeléctrico y riego sobre el río San Juan."
+            },
+            "ruta": {
+                "name": "Ruta Nacional 150",
+                "description": "Conexión vial estratégica del corredor bioceánico."
+            },
+            "civic": {
+                "name": "Centro Cívico San Juan",
+                "description": "Edificio administrativo central de la provincia."
+            }
+        }
     }
 }

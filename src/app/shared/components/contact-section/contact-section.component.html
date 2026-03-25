@@ -1,97 +1,99 @@
 <section class="contact-section">
-  <div class="contact-card-container">
-    <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.123456789012!2d-68.5521886588281!3d-31.536294210049416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDMyJzEwLjEiUyA2OMKwMzMnMDcuOSJX!5e0!3m2!1sen!2sar!4v1710188400000!5m2!1sen!2sar"
-        width="100%"
-        height="450"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-      <div class="map-overlay" onclick="window.open('https://maps.app.goo.gl/e8Mu7GVZhouj2yZ97', '_blank')">
+  <div class="container contact-container">
+    <div class="contact-card-container">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.123456789012!2d-68.5521886588281!3d-31.536294210049416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDMyJzEwLjEiUyA2OMKwMzMnMDcuOSJX!5e0!3m2!1sen!2sar!4v1710188400000!5m2!1sen!2sar"
+          width="100%"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <div class="map-overlay" onclick="window.open('https://maps.app.goo.gl/e8Mu7GVZhouj2yZ97', '_blank')">
           <img src="https://www.gstatic.com/images/branding/product/2x/maps_96dp.png" alt="Google Maps Pin" class="map-pin">
-      </div>
-    </div>
-
-    <div class="contact-card" appReveal [style.background-image]="'url(/assets/images/tarjeta-1.svg)'">
-      <div class="contact-content">
-        <div class="left-column">
-          <div class="contact-header">
-            <h2>{{ 'contact-section.title' | i18n }}</h2>
-          </div>
-
-          <div class="area-selection">
-            <button
-              type="button"
-              [class.active]="selectedArea === 'hr'"
-              (click)="selectArea('hr')"
-            >
-              {{ 'contact-section.areas.hr' | i18n }}
-            </button>
-            <button
-              type="button"
-              [class.active]="selectedArea === 'commercial'"
-              (click)="selectArea('commercial')"
-            >
-              {{ 'contact-section.areas.commercial' | i18n }}
-            </button>
-            <button
-              type="button"
-              [class.active]="selectedArea === 'suppliers'"
-              (click)="selectArea('suppliers')"
-            >
-              {{ 'contact-section.areas.suppliers' | i18n }}
-            </button>
-          </div>
-
-          <div class="form-actions desktop-only">
-            <button type="submit" form="contactForm" class="submit-btn" [disabled]="contactForm.invalid">
-              {{ 'contact-section.form.send' | i18n }}
-            </button>
-          </div>
         </div>
+      </div>
 
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" id="contactForm" class="contact-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="lastname">{{ 'contact-section.form.lastname' | i18n }}</label>
-              <input type="text" id="lastname" formControlName="lastname" placeholder="..." />
-              <span class="error" *ngIf="contactForm.get('lastname')?.touched && contactForm.get('lastname')?.invalid">Requerido</span>
+      <div class="contact-card" appReveal [style.background-image]="'url(/assets/images/tarjeta-1.svg)'">
+        <div class="contact-content">
+          <div class="left-column">
+            <div class="contact-header">
+              <h2>{{ 'contact-section.title' | i18n }}</h2>
             </div>
-            <div class="form-group">
-              <label for="firstname">{{ 'contact-section.form.firstname' | i18n }}</label>
-              <input type="text" id="firstname" formControlName="firstname" placeholder="..." />
-              <span class="error" *ngIf="contactForm.get('firstname')?.touched && contactForm.get('firstname')?.invalid">Requerido</span>
+
+            <div class="area-selection">
+              <button
+                type="button"
+                [class.active]="selectedArea === 'hr'"
+                (click)="selectArea('hr')"
+              >
+                {{ 'contact-section.areas.hr' | i18n }}
+              </button>
+              <button
+                type="button"
+                [class.active]="selectedArea === 'commercial'"
+                (click)="selectArea('commercial')"
+              >
+                {{ 'contact-section.areas.commercial' | i18n }}
+              </button>
+              <button
+                type="button"
+                [class.active]="selectedArea === 'suppliers'"
+                (click)="selectArea('suppliers')"
+              >
+                {{ 'contact-section.areas.suppliers' | i18n }}
+              </button>
+            </div>
+
+            <div class="form-actions desktop-only">
+              <button type="submit" form="contactForm" class="submit-btn" [disabled]="contactForm.invalid">
+                {{ 'contact-section.form.send' | i18n }}
+              </button>
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">{{ 'contact-section.form.email' | i18n }}</label>
-              <input type="email" id="email" formControlName="email" placeholder="example@mail.com" />
-              <span class="error" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">Email inválido</span>
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" id="contactForm" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="lastname" formControlName="lastname" placeholder=" " />
+                <label for="lastname">{{ 'contact-section.form.lastname' | i18n }}</label>
+                <span class="error" *ngIf="contactForm.get('lastname')?.touched && contactForm.get('lastname')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
+              </div>
+              <div class="form-group">
+                <input type="text" id="firstname" formControlName="firstname" placeholder=" " />
+                <label for="firstname">{{ 'contact-section.form.firstname' | i18n }}</label>
+                <span class="error" *ngIf="contactForm.get('firstname')?.touched && contactForm.get('firstname')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="phone">{{ 'contact-section.form.phone' | i18n }}</label>
-              <input type="text" id="phone" formControlName="phone" placeholder="+54..." />
-              <span class="error" *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid">Requerido</span>
+
+            <div class="form-row">
+              <div class="form-group">
+                <input type="email" id="email" formControlName="email" placeholder=" " />
+                <label for="email">{{ 'contact-section.form.email' | i18n }}</label>
+                <span class="error" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">{{ 'contact-section.form.invalid_email' | i18n }}</span>
+              </div>
+              <div class="form-group">
+                <input type="text" id="phone" formControlName="phone" placeholder=" " />
+                <label for="phone">{{ 'contact-section.form.phone' | i18n }}</label>
+                <span class="error" *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group full-width">
-            <label for="message">{{ 'contact-section.form.message' | i18n }}</label>
-            <textarea id="message" formControlName="message" rows="6" placeholder="..."></textarea>
-            <span class="error" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">Requerido</span>
-          </div>
+            <div class="form-group full-width">
+              <textarea id="message" formControlName="message" rows="6" placeholder=" "></textarea>
+              <label for="message">{{ 'contact-section.form.message' | i18n }}</label>
+              <span class="error" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
+            </div>
 
-          <div class="form-actions mobile-only">
-            <button type="submit" class="submit-btn" [disabled]="contactForm.invalid" (click)="onSubmit()">
-              {{ 'contact-section.form.send' | i18n }}
-            </button>
-          </div>
-        </form>
+            <div class="form-actions mobile-only">
+              <button type="submit" class="submit-btn" [disabled]="contactForm.invalid" (click)="onSubmit()">
+                {{ 'contact-section.form.send' | i18n }}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>

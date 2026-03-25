@@ -86,7 +86,7 @@ export class HeaderComponent implements OnDestroy {
     }, options);
 
     // List of sections to monitor
-    const sections = ['home', 'services', 'projects', 'mining'];
+    const sections = ['home', 'services', 'projects', 'mining', 'contact'];
     sections.forEach(id => {
       const el = this.document.getElementById(id);
       if (el) {

@@ -1,17 +1,12 @@
+@use 'sass:math';
 @use 'variables' as *;
 @use 'mixins' as *;
 
 .services-section {
     margin-top: -50px;
     position: relative;
-    padding: 0 0 $spacing-xl 0;
+    padding: math.div($spacing-lg, 2) 0;
     background-color: $color-background;
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 $spacing-xl;
-    }
 
     .header {
         margin-bottom: $spacing-xl;
@@ -36,17 +31,11 @@
 }
 
 // Responsive
-@include respond-to(tablet) {
-    .services-section {
-        .container {
-            padding: 0 $spacing-lg;
-        }
-    }
-}
+@include respond-to(tablet) {}
 
 @include respond-to(mobile) {
     .services-section {
-        padding: $spacing-lg 0;
+        padding: math.div($spacing-lg, 2) 0;
 
         .header {
             .title {

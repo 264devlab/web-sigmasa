@@ -114,6 +114,9 @@
             height: 75%;
             object-fit: contain;
             filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.3));
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
         }
     }
 
@@ -139,6 +142,19 @@
         padding: 18px 24px;
         cursor: pointer;
         transition: all 0.3s ease;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-user-drag: none;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+
+        * {
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-user-drag: none;
+        }
 
         .project-name {
             display: block;
@@ -232,7 +248,7 @@
     .projects-map-section {
         height: auto;
         min-height: 100vh;
-        padding: 40px 0;
+        padding: $spacing-lg 0;
 
         .content-wrapper {
             flex-direction: column;
