@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 })
 export class ActionButtonComponent {
     @Input() text: string = '';
-    @Input() link: string = '/';
+    @Input() link: string = '';
     @Output() onClick = new EventEmitter<void>();
 
     onButtonClick(event: Event) {

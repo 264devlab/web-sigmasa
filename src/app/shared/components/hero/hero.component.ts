@@ -18,7 +18,7 @@ export class HeroComponent {
     @Input() description: string = '';
     @Input() backgroundImage: string = '';
     @Input() priority: boolean = false;
-    @Input() buttonLink: string = '/';
+
     @Input() buttonText: string = 'Ver más';
     @Input() project?: any;
 

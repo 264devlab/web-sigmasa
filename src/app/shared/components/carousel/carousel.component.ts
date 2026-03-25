@@ -8,7 +8,7 @@ export interface HeroSlide {
     description: string;
     backgroundImage: string;
     buttonText: string;
-    buttonLink: string;
+
     project?: any;
 }
 

@@ -21,7 +21,7 @@ export class HomeDataService {
         description: project?.description || '',
         backgroundImage: project?.image || '',
         buttonText: project?.button || '',
-        buttonLink: project?.link || '/proyectos',
+
         project: project
       };
     });
