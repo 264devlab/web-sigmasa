@@ -350,7 +350,8 @@
         "home": "Home",
         "services": "Services",
         "projects": "Projects",
-        "mining": "Mining"
+        "mining": "Mining",
+        "contact": "Contact"
     },
     "hero": {
         "slides": [
@@ -417,7 +418,9 @@
             "email": "Email",
             "phone": "Phone",
             "message": "Message",
-            "send": "Send"
+            "send": "Send",
+            "required": "Required",
+            "invalid_email": "Invalid email"
         }
     },
     "about": {
@@ -442,6 +445,30 @@
         "title": "Quality, Safety, and Environment Policy.",
         "description": "At \"SIGMA S.A.\" we assume the commitment to satisfy the requirements and expectations of our clients and stakeholders, providing services efficiently and responsibly aligned with ISO 9001:2015, ISO 14001:2015, and ISO 45001:2018 standards.",
         "button_policy": "Quality Policy",
-        "button_certifications": "Certifications"
+        "button_certifications": "Certificaciones"
+    },
+    "projects-map": {
+        "items": {
+            "veladero": {
+                "name": "Veladero Mining Project",
+                "description": "Gold and silver extraction in the Andes mountain range."
+            },
+            "solar": {
+                "name": "Ullum Solar Park",
+                "description": "Large-scale renewable energy generation."
+            },
+            "dique": {
+                "name": "Caracoles Dam",
+                "description": "Hydroelectric exploitation and irrigation on the San Juan River."
+            },
+            "ruta": {
+                "name": "National Route 150",
+                "description": "Strategic road connection of the bioceanic corridor."
+            },
+            "civic": {
+                "name": "San Juan Civic Center",
+                "description": "Central administrative building of the province."
+            }
+        }
     }
 }

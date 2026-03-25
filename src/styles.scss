@@ -8,11 +8,18 @@ body {
     min-width: 360px;
 }
 
-#projects,
-#mining {
+#projects {
     scroll-margin-top: 20px;
 }
 
+#mining {
+    scroll-margin-top: 10px;
+}
+
+#contact {
+    scroll-margin-top: 50px;
+}
+
 #services {
-    scroll-margin-top: 90px;
+    scroll-margin-top: 70px;
 }

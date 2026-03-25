@@ -1,5 +1,6 @@
 import { Component, ViewChildren, ViewChild, ElementRef, QueryList, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { I18nPipe } from '../../i18n/i18n.pipe';
 
 interface Project {
   id: number;
@@ -12,49 +13,49 @@ interface Project {
 @Component({
   selector: 'app-projects-map',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, I18nPipe],
   templateUrl: './projects-map.html',
   styleUrl: './projects-map.scss',
 })
 export class ProjectsMap {
-  @ViewChildren('projectButton') projectButtons!: QueryList<ElementRef>;
-  @ViewChild('linesContainer') linesContainer!: ElementRef;
-  @ViewChild('mapImage') mapImage!: ElementRef;
-  @ViewChild('infoCard') infoCard!: ElementRef;
+  @ViewChildren('projectButton') projectButtons!: QueryList<ElementRef<any>>;
+  @ViewChild('linesContainer') linesContainer!: ElementRef<any>;
+  @ViewChild('mapImage') mapImage!: ElementRef<any>;
+  @ViewChild('infoCard') infoCard!: ElementRef<any>;
 
   projects: Project[] = [
     {
       id: 1,
-      name: 'Proyecto Minero Veladero',
-      description: 'Extracción de oro y plata en la cordillera de los Andes.',
+      name: 'projects-map.items.veladero.name',
+      description: 'projects-map.items.veladero.description',
       x: 35,
       y: 25
     },
     {
       id: 2,
-      name: 'Parque Solar Ullum',
-      description: 'Generación de energía renovable a gran escala.',
+      name: 'projects-map.items.solar.name',
+      description: 'projects-map.items.solar.description',
       x: 42,
       y: 65
     },
     {
       id: 3,
-      name: 'Dique Caracoles',
-      description: 'Aprovechamiento hidroeléctrico y riego sobre el río San Juan.',
+      name: 'projects-map.items.dique.name',
+      description: 'projects-map.items.dique.description',
       x: 45,
       y: 58
     },
     {
       id: 4,
-      name: 'Ruta Nacional 150',
-      description: 'Conexión vial estratégica del corredor bioceánico.',
+      name: 'projects-map.items.ruta.name',
+      description: 'projects-map.items.ruta.description',
       x: 38,
       y: 35
     },
     {
       id: 5,
-      name: 'Centro Cívico San Juan',
-      description: 'Edificio administrativo central de la provincia.',
+      name: 'projects-map.items.civic.name',
+      description: 'projects-map.items.civic.description',
       x: 48,
       y: 68
     }

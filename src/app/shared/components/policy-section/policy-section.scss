@@ -2,7 +2,7 @@
 
 .policy-section {
     background-color: #000000;
-    padding: $spacing-2xl 0;
+    padding: $spacing-xl 0;
     color: $color-white;
 
     @include respond-to(tablet) {
@@ -19,7 +19,7 @@
 
     @include respond-to(tablet) {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
         gap: $spacing-lg;
     }
 }
@@ -48,8 +48,8 @@
         max-width: 600px;
 
         @include respond-to(tablet) {
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 0;
+            margin-right: 0;
         }
     }
 }
@@ -64,12 +64,12 @@
     }
 
     @include respond-to(tablet) {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     @include respond-to(mobile) {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: $spacing-md;
         
         app-action-button {
