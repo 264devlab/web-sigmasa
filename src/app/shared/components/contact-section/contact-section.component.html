@@ -48,8 +48,8 @@
             </div>
 
             <div class="form-actions desktop-only">
-              <button type="submit" form="contactForm" class="submit-btn" [disabled]="contactForm.invalid">
-                {{ 'contact-section.form.send' | i18n }}
+              <button type="submit" form="contactForm" class="submit-btn" [disabled]="contactForm.invalid || isSubmitting">
+                {{ isSubmitting ? 'Enviando...' : ('contact-section.form.send' | i18n) }}
               </button>
             </div>
           </div>
@@ -88,8 +88,8 @@
             </div>
 
             <div class="form-actions mobile-only">
-              <button type="submit" class="submit-btn" [disabled]="contactForm.invalid" (click)="onSubmit()">
-                {{ 'contact-section.form.send' | i18n }}
+              <button type="submit" class="submit-btn" [disabled]="contactForm.invalid || isSubmitting" (click)="onSubmit()">
+                {{ isSubmitting ? 'Enviando...' : ('contact-section.form.send' | i18n) }}
               </button>
             </div>
           </form>
