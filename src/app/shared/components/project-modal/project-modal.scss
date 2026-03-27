@@ -327,10 +327,12 @@
 
     &.prev {
       left: 20px;
+      bottom: 8px;
     }
 
     &.next {
       right: 20px;
+      bottom: 8px;
     }
   }
 }
@@ -354,5 +356,17 @@
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@include respond-to(tablet) {
+  .modal-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: $color-white;
+    z-index: 2;
+    height: 54px;
   }
 }
