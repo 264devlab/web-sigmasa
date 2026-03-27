@@ -4,19 +4,20 @@
       <span class="material-symbols-outlined">close</span>
     </button>
 
-    <div class="modal-content" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
-      
+    <div class="modal-content">
+
       <!-- Static Image Section -->
       <div class="image-section">
         <img [src]="modalService.selectedProject()?.image" [alt]="modalService.selectedProject()?.name">
-        <div class="carousel-indicators-mini">
+        <!-- <div class="carousel-indicators-mini">
           <span class="indicator active"></span>
-        </div>
+        </div> -->
       </div>
 
       <!-- Sliding Info Track (Mobile Only) / Single column (Desktop Only) -->
-      <div class="modal-info-track" [style.--slide-index]="currentSlide()">
-        
+      <div class="modal-info-track" [style.--slide-index]="currentSlide()" (touchstart)="onTouchStart($event)"
+        (touchend)="onTouchEnd($event)">
+
         <!-- Slide 1: Primary Info Section -->
         <div class="info-slide info-section primary-info">
           <div class="header-category">
@@ -32,15 +33,18 @@
           <div class="info-table">
             <div class="info-row">
               <span class="label">{{ 'projects.modal.date' | i18n }}</span>
-              <span class="value">{{ modalService.selectedProject()?.fecha || modalService.selectedProject()?.date || '2024' }}</span>
+              <span class="value">{{ modalService.selectedProject()?.fecha || modalService.selectedProject()?.date ||
+                '2024' }}</span>
             </div>
             <div class="info-row">
               <span class="label">{{ 'projects.modal.client' | i18n }}</span>
-              <span class="value">{{ modalService.selectedProject()?.comitente || modalService.selectedProject()?.client }}</span>
+              <span class="value">{{ modalService.selectedProject()?.comitente || modalService.selectedProject()?.client
+                }}</span>
             </div>
             <div class="info-row">
               <span class="label">{{ 'projects.modal.status' | i18n }}</span>
-              <span class="value">{{ modalService.selectedProject()?.estado || modalService.selectedProject()?.status }}</span>
+              <span class="value">{{ modalService.selectedProject()?.estado || modalService.selectedProject()?.status
+                }}</span>
             </div>
           </div>
 
@@ -48,7 +52,8 @@
           <div class="extended-description desktop-only">
             <h3 class="section-title">{{ 'projects.modal.extended_description' | i18n }}</h3>
             <p class="description-text">
-              {{ modalService.selectedProject()?.descripcion_ampliada || modalService.selectedProject()?.extra_description || modalService.selectedProject()?.description }}
+              {{ modalService.selectedProject()?.descripcion_ampliada ||
+              modalService.selectedProject()?.extra_description || modalService.selectedProject()?.description }}
             </p>
           </div>
         </div>
@@ -58,7 +63,8 @@
           <div class="extended-description">
             <h3 class="section-title">{{ 'projects.modal.extended_description' | i18n }}</h3>
             <p class="description-text">
-              {{ modalService.selectedProject()?.descripcion_ampliada || modalService.selectedProject()?.extra_description || modalService.selectedProject()?.description }}
+              {{ modalService.selectedProject()?.descripcion_ampliada ||
+              modalService.selectedProject()?.extra_description || modalService.selectedProject()?.description }}
             </p>
           </div>
         </div>
@@ -66,10 +72,8 @@
 
       <!-- General Indicators (Dots) - Visible only on Mobile/Tablet -->
       <div class="modal-pagination">
-        <button *ngFor="let dot of [0, 1]; let i = index" 
-                class="indicator-dot" 
-                [class.active]="i === currentSlide()"
-                (click)="goToSlide(i)">
+        <button *ngFor="let dot of [0, 1]; let i = index" class="indicator-dot" [class.active]="i === currentSlide()"
+          (click)="goToSlide(i)">
         </button>
       </div>
 
@@ -83,5 +87,9 @@
         </button>
       </div>
     </div>
+
+    <!--footer-->
+    <div class="modal-footer"></div>
+
   </div>
 </div>

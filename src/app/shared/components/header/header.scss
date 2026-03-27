@@ -60,10 +60,18 @@
             border-radius: 12px;
             display: flex;
             align-items: center;
+            -webkit-tap-highlight-color: transparent;
             @include transition-standard;
 
-            &:hover {
-                background: rgba(255, 255, 255, 0.1);
+            @media (hover: hover) {
+                &:hover {
+                    background: rgba(255, 255, 255, 0.1);
+                }
+            }
+
+            &:focus, &:active {
+                outline: none;
+                background: transparent;
             }
 
             .material-symbols-outlined {

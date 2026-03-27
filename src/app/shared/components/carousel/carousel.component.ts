@@ -22,6 +22,7 @@ export interface HeroSlide {
 export class CarouselComponent implements OnInit, OnDestroy {
     @Input() slides: HeroSlide[] = [];
     @Input() interval: number = 5000;
+    @Input() icon: boolean = false;
 
     // Track the actual index including clones for infinite scroll
     // For a truly smooth "circular" effect without jump back, 
