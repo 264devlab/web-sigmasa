@@ -79,10 +79,10 @@
 
       <!-- Navigation Arrows - Visible only on Mobile/Tablet -->
       <div class="modal-nav">
-        <button class="nav-btn prev border" (click)="prevSlide()" *ngIf="currentSlide() > 0">
+        <button class="nav-btn prev" (click)="prevSlide()" *ngIf="currentSlide() > 0">
           <span class="material-symbols-outlined">keyboard_arrow_left</span>
         </button>
-        <button class="nav-btn next border" (click)="nextSlide()" *ngIf="currentSlide() < 1">
+        <button class="nav-btn next" (click)="nextSlide()" *ngIf="currentSlide() < 1">
           <span class="material-symbols-outlined">keyboard_arrow_right</span>
         </button>
       </div>
