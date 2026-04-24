@@ -10,7 +10,7 @@
 
 <app-policy-section></app-policy-section>
 
-<app-carousel [slides]="homeData.projects1Slides()" [interval]="5000"></app-carousel>
+<app-carousel *ngIf="homeData.projects1Slides().length > 0" [slides]="homeData.projects1Slides()" [interval]="5000"></app-carousel>
 
 <app-projects-map></app-projects-map>
 

@@ -13,13 +13,33 @@ import { I18nPipe } from '../../i18n/i18n.pipe';
 export class ProjectModalComponent {
   modalService = inject(ProjectModalService);
 
-  currentSlide = signal(0);
+  currentSlide = signal(0); // For info carousel (mobile)
+  currentImageIndex = signal(0); // For image carousel
   private touchStartX: number = 0;
   private touchEndX: number = 0;
 
   close() {
     this.modalService.close();
-    this.currentSlide.set(0); // Reset slide on close
+    this.currentSlide.set(0);
+    this.currentImageIndex.set(0);
+  }
+
+  nextImage() {
+    const images = this.modalService.selectedProject()?.images || [];
+    if (images.length > 0) {
+      this.currentImageIndex.update(i => (i + 1) % images.length);
+    }
+  }
+
+  prevImage() {
+    const images = this.modalService.selectedProject()?.images || [];
+    if (images.length > 0) {
+      this.currentImageIndex.update(i => (i - 1 + images.length) % images.length);
+    }
+  }
+
+  goToImage(index: number) {
+    this.currentImageIndex.set(index);
   }
 
   nextSlide() {

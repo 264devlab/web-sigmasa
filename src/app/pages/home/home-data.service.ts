@@ -20,7 +20,7 @@ export class HomeDataService {
         title: project?.name || '',
         description: project?.description || '',
         backgroundImage: project?.image || '',
-        buttonText: project?.button || '',
+        buttonText: project?.button || this.i18n.translate('projects.read-more')(),
 
         project: project
       };

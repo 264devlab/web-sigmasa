@@ -6,12 +6,34 @@
 
     <div class="modal-content">
 
-      <!-- Static Image Section -->
+      <!-- Image Carousel Section -->
       <div class="image-section">
-        <img [src]="modalService.selectedProject()?.image" [alt]="modalService.selectedProject()?.name">
-        <!-- <div class="carousel-indicators-mini">
-          <span class="indicator active"></span>
-        </div> -->
+        <div class="image-carousel-container">
+          <div class="image-carousel-track" [style.transform]="'translateX(-' + (currentImageIndex() * 100) + '%)'">
+            <div class="image-carousel-slide" *ngFor="let img of (modalService.selectedProject()?.images || [modalService.selectedProject()?.image])">
+              <img [src]="img" [alt]="modalService.selectedProject()?.name">
+            </div>
+          </div>
+
+          <!-- Image Navigation Controls -->
+          <div class="image-carousel-controls" *ngIf="(modalService.selectedProject()?.images?.length || 0) > 1">
+            <button class="image-carousel-btn prev" (click)="prevImage()">
+              <span class="material-symbols-outlined">keyboard_arrow_left</span>
+            </button>
+            <button class="image-carousel-btn next" (click)="nextImage()">
+              <span class="material-symbols-outlined">keyboard_arrow_right</span>
+            </button>
+          </div>
+
+          <!-- Image Indicators -->
+          <div class="image-carousel-indicators" *ngIf="(modalService.selectedProject()?.images?.length || 0) > 1">
+            <button *ngFor="let dot of modalService.selectedProject()?.images; let i = index" 
+                    class="image-carousel-dot" 
+                    [class.active]="i === currentImageIndex()"
+                    (click)="goToImage(i)">
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- Sliding Info Track (Mobile Only) / Single column (Desktop Only) -->
@@ -24,47 +46,50 @@
             {{ (modalService.selectedProject()?.localidad || modalService.selectedProject()?.location) | uppercase }}
           </div>
           <h2 class="project-title">{{ modalService.selectedProject()?.name }}</h2>
-          <p class="short-description">
-            {{ modalService.selectedProject()?.description }}
-          </p>
 
           <hr class="divider">
 
           <div class="info-table">
-            <div class="info-row">
-              <span class="label">{{ 'projects.modal.date' | i18n }}</span>
-              <span class="value">{{ modalService.selectedProject()?.fecha || modalService.selectedProject()?.date ||
-                '2024' }}</span>
+            <!-- Surface Area -->
+            <div class="info-row" *ngIf="modalService.selectedProject()?.surface_area || modalService.selectedProject()?.superficie">
+              <span class="label">{{ 'projects.modal.surface' | i18n }}</span>
+              <span class="value">{{ modalService.selectedProject()?.surface_area || modalService.selectedProject()?.superficie }}</span>
             </div>
+            
+            <!-- Company (Mining) -->
+            <div class="info-row" *ngIf="modalService.selectedProject()?.company || modalService.selectedProject()?.empresa">
+              <span class="label">{{ 'projects.modal.company' | i18n }}</span>
+              <span class="value">{{ modalService.selectedProject()?.company || modalService.selectedProject()?.empresa }}</span>
+            </div>
+
+            <!-- Client -->
             <div class="info-row">
               <span class="label">{{ 'projects.modal.client' | i18n }}</span>
-              <span class="value">{{ modalService.selectedProject()?.comitente || modalService.selectedProject()?.client
-                }}</span>
+              <span class="value">{{ modalService.selectedProject()?.client || modalService.selectedProject()?.comitente }}</span>
             </div>
+
+            <!-- Status -->
             <div class="info-row">
               <span class="label">{{ 'projects.modal.status' | i18n }}</span>
-              <span class="value">{{ modalService.selectedProject()?.estado || modalService.selectedProject()?.status
-                }}</span>
+              <span class="value">{{ modalService.selectedProject()?.status || modalService.selectedProject()?.estado }}</span>
             </div>
           </div>
 
-          <!-- Extended Description (Visible only on Desktop here) -->
+          <!-- Description Section (Visible only on Desktop) -->
           <div class="extended-description desktop-only">
-            <h3 class="section-title">{{ 'projects.modal.extended_description' | i18n }}</h3>
+            <h3 class="section-title">{{ 'projects.modal.description' | i18n }}</h3>
             <p class="description-text">
-              {{ modalService.selectedProject()?.descripcion_ampliada ||
-              modalService.selectedProject()?.extra_description || modalService.selectedProject()?.description }}
+              {{ modalService.selectedProject()?.description }}
             </p>
           </div>
         </div>
 
-        <!-- Slide 2: Extended Description Section (Visible only on Mobile as separate slide) -->
+        <!-- Slide 2: Extended Info Section (Mobile Only) -->
         <div class="info-slide info-section extended-info mobile-only">
           <div class="extended-description">
-            <h3 class="section-title">{{ 'projects.modal.extended_description' | i18n }}</h3>
+            <h3 class="section-title">{{ 'projects.modal.description' | i18n }}</h3>
             <p class="description-text">
-              {{ modalService.selectedProject()?.descripcion_ampliada ||
-              modalService.selectedProject()?.extra_description || modalService.selectedProject()?.description }}
+              {{ modalService.selectedProject()?.description }}
             </p>
           </div>
         </div>

@@ -5,14 +5,17 @@ export interface Project {
   name: string;
   description: string;
   image: string;
+  images?: string[];
   estado?: string;
   localidad?: string;
   superficie?: string;
   comitente?: string;
+  empresa?: string;
   status?: string;
   location?: string;
   surface_area?: string;
   client?: string;
+  company?: string;
   // Additional fields for the modal
   fecha?: string;
   date?: string;

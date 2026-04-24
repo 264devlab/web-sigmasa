@@ -28,13 +28,15 @@
 
     .image-wrapper {
         width: 100%;
+        aspect-ratio: 16 / 9;
         line-height: 0;
         position: relative;
         overflow: hidden;
 
         img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -74,14 +76,18 @@
             }
 
             .project-desc {
-                flex: 3;
                 line-height: 1.4;
-                min-height: 50px;
                 overflow: hidden;
                 text-align: center;
-                padding: 6% 0 0 0;
+                margin: auto 0;
                 opacity: 0.9;
                 transition: transform 0.5s 0.2s;
+                
+                // Multi-line ellipsis
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                max-height: 5.6em; // 4 lines * 1.4 line-height
             }
 
             .read-more {
@@ -196,9 +202,6 @@
     .project-desc {
         font-size: 18px;
         padding: 0 20px !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .read-more {
