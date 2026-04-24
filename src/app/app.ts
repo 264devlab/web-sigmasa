@@ -1,12 +1,13 @@
 import { Component, AfterViewInit, signal, inject } from '@angular/core';
 import { RouterOutlet, ActivatedRoute } from '@angular/router';
 import { ProjectModalComponent } from './shared/components/project-modal/project-modal.component';
+import { PolicyModalComponent } from './shared/components/policy-modal/policy-modal.component';
 import { ProjectModalService } from './core/services/project-modal.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ProjectModalComponent, CommonModule],
+  imports: [RouterOutlet, ProjectModalComponent, PolicyModalComponent, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

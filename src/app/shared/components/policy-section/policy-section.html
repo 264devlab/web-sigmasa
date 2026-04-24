@@ -7,7 +7,7 @@
                     {{ 'policy.description' | i18n }}
                 </p>
                 <div class="policy-actions">
-                    <app-action-button [text]="'policy.button_policy' | i18n"></app-action-button>
+                    <app-action-button [text]="'policy.button_policy' | i18n" (onClick)="openPolicyModal()"></app-action-button>
                     <app-action-button [text]="'policy.button_certifications' | i18n"></app-action-button>
                 </div>
             </div>

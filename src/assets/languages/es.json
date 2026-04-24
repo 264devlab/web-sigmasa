@@ -360,7 +360,13 @@
         "contact": "Contacto"
     },
     "hero": {
-        "slides": ["legislature_annex", "ayres_village_gallery", "ayres_village_neighborhood", "los_molinos", "skate_park"]
+        "slides": [
+            "legislature_annex",
+            "ayres_village_gallery",
+            "ayres_village_neighborhood",
+            "los_molinos",
+            "skate_park"
+        ]
     },
     "services": {
         "title": "Servicios",
@@ -391,27 +397,59 @@
         }
     },
     "projects_1": {
-        "slides": ["centauri_adium", "los_molinos_2", "punta_negra", "linea_132"]
+        "slides": [
+            "centauri_adium",
+            "los_molinos_2",
+            "punta_negra",
+            "linea_132"
+        ]
     },
     "projects_2": {
-        "slides": ["los_azules", "veladero", "hualilan"]
+        "slides": [
+            "los_azules",
+            "veladero",
+            "hualilan"
+        ]
     },
     "contact-section": {
         "title": "Contacto",
         "areas": {
-            "hr": "Recursos humanos",
-            "commercial": "Comercial",
-            "suppliers": "Proveedores"
+            "hr": "Recursos Humanos",
+            "technical": "Área Técnica",
+            "commercial": "Comercial / Compras",
+            "consulting": "Área de consultas"
         },
         "form": {
             "lastname": "Apellido",
             "firstname": "Nombre",
             "email": "Email",
             "phone": "Teléfono",
+            "province": "Provincia",
+            "city": "Localidad",
+            "select_province": "Seleccione provincia",
+            "select_city": "Seleccione localidad",
+            "loading": "Cargando...",
+            "study_level": "Nivel de estudio",
+            "worked_projects": "¿Trabajó en alguno de nuestros proyectos?",
+            "which_projects": "Indique cuál",
+            "company": "Empresa",
             "message": "Mensaje",
             "send": "Enviar",
             "required": "Requerido",
-            "invalid_email": "Email inválido"
+            "invalid_email": "Email inválido",
+            "cv_note": "*Recordá adjuntarnos tu CV en el mail",
+            "study_levels": {
+                "none": "Seleccione nivel de estudio",
+                "primary": "Primario",
+                "secondary": "Secundario",
+                "tertiary": "Terciario",
+                "university": "Universitario"
+            },
+            "yes_no": {
+                "none": "Indique su respuesta",
+                "yes": "Sí",
+                "no": "No"
+            }
         }
     },
     "about": {
@@ -421,11 +459,11 @@
         },
         "mission": {
             "title": "Misión",
-            "description": "Brindar servicios de ingeniería y arquitectura con altos estándares de calidad, optimizando tiempos y recursos, garantizando la seguridad en obra y maximizando la rentabilidad de nuestros clientes. Buscamos ejecutar proyectos de manera sustentable, innovadora y eficiente, consolidándonos como un actor de referencia en el sector de la construcción en San Juan y Argentina."
+            "description": "Nuestra misión consiste en prestar servicios de ingeniería y construcciones de grandes obras civiles, industriales, saneamiento y viales en forma responsable y sustentable en el ámbito de la Provincia de San Juan."
         },
         "vision": {
             "title": "Visión",
-            "description": "Posicionarnos como la mejor y más innovadora empresa en el ramo de la construcción e ingeniería y mantenernos a la vanguardia en cuanto a las nuevas tecnologías, basándonos en la especialización y capacitación de nuestro personal, respetando las normas para la conservación del medio ambiente."
+            "description": "En SIGMA, nuestra visión es posicionarnos como la mejor y más innovadora empresa en el ramo de la construcción e ingeniería y mantenernos a la vanguardia en cuanto a las nuevas tecnologías, basándonos en la especialización y capacitación de nuestro personal, respetando las normas para la conservación del medio ambiente."
         },
         "values": {
             "title": "Valores",
@@ -433,10 +471,27 @@
         }
     },
     "policy": {
-        "title": "Política De Calidad, Seguridad Y Medio Ambiente.",
-        "description": "En \"SIGMA S.A.\" Asumimos El Compromiso De Satisfacer Los Requisitos Y Expectativas De Nuestros Clientes Y Demás Partes Interesadas, Brindando Servicios De Manera Eficiente, Responsable Y Sostenible. Para Ello, Implementamos Y Mantenemos Un Sistema De Gestión Integrado, Alineado Con Las Normas \"ISO 9001:2015\", \"ISO 14001:2015\" E \"ISO 45001:2018\", Orientado A La Calidad, La Seguridad Y Salud Ocupacional, Y La Protección Del Medio Ambiente A De Gestión Integrado.",
+        "title": "Política De Calidad, Seguridad Y Salud Ocupacional Y Medio Ambiente.",
+        "description": "En SIGMA nos comprometemos a satisfacer los requerimientos y expectativas de nuestros clientes y otras partes interesadas de manera eficiente, sostenible y con los más altos estándares de calidad, seguridad y cuidado ambiental, manteniendo un Sistema de Gestión Integrado basado en las Normas ISO 9001:2015, ISO 14001:2015 e ISO 45001:2018.",
         "button_policy": "Política De Calidad",
-        "button_certifications": "Certificaciones"
+        "button_certifications": "Certificaciones",
+        "modal": {
+            "title": "POLÍTICA DE LA CALIDAD, SEGURIDAD y SALUD OCUPACIONAL y MEDIO AMBIENTE",
+            "intro": "Cumpliendo con nuestra visión nos proponemos a:",
+            "points": [
+                "Innovar y mejorar continuamente nuestros procesos, productos y servicios, garantizando altos estándares de calidad, eficiencia y sustentabilidad para consolidarnos como referentes en la región.",
+                "Valorar el esfuerzo de nuestros trabajadores, promoviendo su desarrollo profesional a través de capacitación constante, trabajo en equipo, consulta y participación de los trabajadores, y cuando existan, de los representantes de los trabajadores.",
+                "Desarrollar soluciones innovadoras que generen beneficios mutuos para clientes, trabajadores, la comunidad y el medio ambiente.",
+                "Prevenir y mitigar los riesgos laborales, eliminando peligros y reduciendo riesgos para la seguridad y salud de nuestros colaboradores.",
+                "Proteger el medio ambiente, previniendo la contaminación y promoviendo el uso sostenible de los recursos naturales.",
+                "Actuar con ética, transparencia y responsabilidad, cumpliendo con los requisitos legales y otros requisitos aplicables.",
+                "Mejorar continuamente la eficacia y desempeño de nuestro Sistema de Gestión Integrado."
+            ],
+            "footer": "La Dirección de SIGMA asume estos compromisos bajo la responsabilidad de rendir cuentas sobre el desempeño de ellos; mediante el seguimiento, la medición y la revisión de su sistema de gestión.",
+            "approved": "Aprobó: La Dirección",
+            "validity": "Vigencia: Abril 2026",
+            "version": "Versión: 3"
+        }
     },
     "projects-map": {
         "items": {

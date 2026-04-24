@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <div class="contact-card" appReveal [style.background-image]="'url(/assets/images/tarjeta-1.svg)'">
+      <div id="contact" class="contact-card" appReveal [style.background-image]="'url(/assets/images/tarjeta-1.svg)'">
         <div class="contact-content">
           <div class="left-column">
             <div class="contact-header">
@@ -33,6 +33,13 @@
               </button>
               <button
                 type="button"
+                [class.active]="selectedArea === 'technical'"
+                (click)="selectArea('technical')"
+              >
+                {{ 'contact-section.areas.technical' | i18n }}
+              </button>
+              <button
+                type="button"
                 [class.active]="selectedArea === 'commercial'"
                 (click)="selectArea('commercial')"
               >
@@ -40,10 +47,10 @@
               </button>
               <button
                 type="button"
-                [class.active]="selectedArea === 'suppliers'"
-                (click)="selectArea('suppliers')"
+                [class.active]="selectedArea === 'consulting'"
+                (click)="selectArea('consulting')"
               >
-                {{ 'contact-section.areas.suppliers' | i18n }}
+                {{ 'contact-section.areas.consulting' | i18n }}
               </button>
             </div>
 
@@ -81,14 +88,83 @@
               </div>
             </div>
 
-            <div class="form-group full-width">
-              <textarea id="message" formControlName="message" rows="6" placeholder=" "></textarea>
-              <label for="message">{{ 'contact-section.form.message' | i18n }}</label>
-              <span class="error" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
+            <div class="form-row">
+              <div class="form-group">
+                <select id="province" formControlName="province" [class.has-value]="contactForm.get('province')?.value">
+                  <option value="" disabled selected>{{ 'contact-section.form.select_province' | i18n }}</option>
+                  <option *ngFor="let prov of provinces()" [value]="prov.id">{{ prov.nombre }}</option>
+                </select>
+                <label for="province">{{ 'contact-section.form.province' | i18n }}</label>
+                <span class="material-symbols-outlined select-icon" translate="no">keyboard_arrow_down</span>
+                <span class="error" *ngIf="contactForm.get('province')?.touched && contactForm.get('province')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
+              </div>
+              <div class="form-group">
+                <select id="city" formControlName="city" [class.has-value]="contactForm.get('city')?.value">
+                  <option value="" disabled selected>
+                    {{ (isLoadingLocalities() ? 'contact-section.form.loading' : 'contact-section.form.select_city') | i18n }}
+                  </option>
+                  <option *ngFor="let loc of localities()" [value]="loc.nombre">{{ loc.nombre }}</option>
+                </select>
+                <label for="city">{{ 'contact-section.form.city' | i18n }}</label>
+                <span class="material-symbols-outlined select-icon" translate="no">keyboard_arrow_down</span>
+                <span class="error" *ngIf="contactForm.get('city')?.touched && contactForm.get('city')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
+              </div>
             </div>
 
+            <!-- Fields for HR ONLY -->
+            <ng-container *ngIf="selectedArea === 'hr'">
+              <div class="form-group full-width">
+                <select id="study_level" formControlName="study_level" [class.has-value]="contactForm.get('study_level')?.value">
+                  <option value="" disabled selected>{{ 'contact-section.form.study_levels.none' | i18n }}</option>
+                  <option value="primary">{{ 'contact-section.form.study_levels.primary' | i18n }}</option>
+                  <option value="secondary">{{ 'contact-section.form.study_levels.secondary' | i18n }}</option>
+                  <option value="tertiary">{{ 'contact-section.form.study_levels.tertiary' | i18n }}</option>
+                  <option value="university">{{ 'contact-section.form.study_levels.university' | i18n }}</option>
+                </select>
+                <label for="study_level">{{ 'contact-section.form.study_level' | i18n }}</label>
+                <span class="material-symbols-outlined select-icon" translate="no">keyboard_arrow_down</span>
+                <span class="error" *ngIf="contactForm.get('study_level')?.touched && contactForm.get('study_level')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <select id="worked_projects" formControlName="worked_projects" [class.has-value]="contactForm.get('worked_projects')?.value">
+                    <option value="" disabled selected>{{ 'contact-section.form.yes_no.none' | i18n }}</option>
+                    <option value="yes">{{ 'contact-section.form.yes_no.yes' | i18n }}</option>
+                    <option value="no">{{ 'contact-section.form.yes_no.no' | i18n }}</option>
+                  </select>
+                  <label for="worked_projects">{{ 'contact-section.form.worked_projects' | i18n }}</label>
+                  <span class="material-symbols-outlined select-icon" translate="no">keyboard_arrow_down</span>
+                  <span class="error" *ngIf="contactForm.get('worked_projects')?.touched && contactForm.get('worked_projects')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="which_projects" formControlName="which_projects" placeholder=" " />
+                  <label for="which_projects">{{ 'contact-section.form.which_projects' | i18n }}</label>
+                </div>
+              </div>
+            </ng-container>
+
+            <!-- Fields for Technical Area ONLY (Mandatory Company) -->
+            <ng-container *ngIf="selectedArea === 'technical'">
+              <div class="form-group full-width">
+                <input type="text" id="company" formControlName="company" placeholder=" " />
+                <label for="company">{{ 'contact-section.form.company' | i18n }}</label>
+                <span class="error" *ngIf="contactForm.get('company')?.touched && contactForm.get('company')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
+              </div>
+            </ng-container>
+
+            <div class="form-group full-width">
+              <textarea id="message" formControlName="message" rows="4" placeholder=" "></textarea>
+              <label for="message">{{ 'contact-section.form.message' | i18n }}</label>
+            </div>
+
+            <!-- CV Note for HR ONLY -->
+            <p *ngIf="selectedArea === 'hr'" class="cv-note">
+              {{ 'contact-section.form.cv_note' | i18n }}
+            </p>
+
             <div class="form-actions mobile-only">
-              <button type="submit" class="submit-btn" [disabled]="contactForm.invalid" (click)="onSubmit()">
+              <button type="submit" class="submit-btn" [disabled]="contactForm.invalid">
                 {{ 'contact-section.form.send' | i18n }}
               </button>
             </div>

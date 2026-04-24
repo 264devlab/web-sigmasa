@@ -1,0 +1,27 @@
+<div class="modal-overlay" *ngIf="modalService.isOpen()" (click)="close()">
+    <div class="modal-container" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="close()">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+
+        <div class="modal-content">
+            <h2 class="policy-title">{{ 'policy.modal.title' | i18n }}</h2>
+            
+            <p class="policy-intro">{{ 'policy.modal.intro' | i18n }}</p>
+
+            <ul class="policy-points">
+                <li *ngFor="let point of points">
+                    {{ point }}
+                </li>
+            </ul>
+
+            <p class="policy-footer">{{ 'policy.modal.footer' | i18n }}</p>
+
+            <div class="policy-meta">
+                <p><strong>{{ 'policy.modal.approved' | i18n }}</strong></p>
+                <p><strong>{{ 'policy.modal.validity' | i18n }}</strong></p>
+                <p><strong>{{ 'policy.modal.version' | i18n }}</strong></p>
+            </div>
+        </div>
+    </div>
+</div>

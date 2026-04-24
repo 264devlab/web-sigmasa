@@ -150,6 +150,7 @@
           }
 
           input,
+          select,
           textarea {
             background-color: white;
             border: 2px solid transparent;
@@ -174,13 +175,38 @@
 
             // Floating Label logic
             &:focus~label,
-            &:not(:placeholder-shown)~label {
+            &:not(:placeholder-shown)~label,
+            &.has-value~label {
               top: -25px;
               left: 0;
               font-size: 11px;
               font-weight: $font-weight-bold;
               color: white;
             }
+          }
+
+          select {
+            appearance: none;
+            cursor: pointer;
+            background-color: white;
+
+            option {
+              color: #1a1a1a;
+              background-color: white;
+            }
+          }
+
+          .select-icon {
+            position: absolute;
+            right: 15px;
+            top: 12px;
+            color: #777;
+            pointer-events: none;
+            transition: all 0.3s ease;
+          }
+
+          &:focus-within .select-icon {
+            color: white;
           }
 
           textarea {
@@ -195,6 +221,15 @@
             color: #ffcccc;
             font-weight: 600;
           }
+        }
+
+        .cv-note {
+          font-family: $font-family-raleway;
+          font-size: 13px;
+          font-style: italic;
+          color: rgba(255, 255, 255, 0.8);
+          margin: 10px 0 10px; // Changed from -10px to 10px for better alignment
+          text-align: center;
         }
       }
     }
@@ -371,17 +406,19 @@
           .form-group {
             width: 100%;
 
-            input,
-            textarea {
-              padding: 10px 12px;
-              width: 100%;
-              box-sizing: border-box;
-
-              &:focus~label,
-              &:not(:placeholder-shown)~label {
-                top: -18px;
+              input,
+              select,
+              textarea {
+                padding: 10px 12px;
+                width: 100%;
+                box-sizing: border-box;
+  
+                &:focus~label,
+                &:not(:placeholder-shown)~label,
+                &.has-value~label {
+                  top: -18px;
+                }
               }
-            }
           }
 
           .submit-btn {

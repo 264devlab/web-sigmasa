@@ -6,10 +6,14 @@ html {
 
 body {
     min-width: 360px;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
 }
 
 #projects {
@@ -21,7 +25,7 @@ body {
 }
 
 #contact {
-    scroll-margin-top: 50px;
+    scroll-margin-top: 120px;
 }
 
 #services {

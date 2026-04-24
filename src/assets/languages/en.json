@@ -409,18 +409,41 @@
         "title": "Contact",
         "areas": {
             "hr": "Human Resources",
-            "commercial": "Commercial",
-            "suppliers": "Suppliers"
+            "technical": "Technical Area",
+            "commercial": "Commercial / Purchasing",
+            "consulting": "Inquiries Area"
         },
         "form": {
             "lastname": "Last Name",
             "firstname": "First Name",
             "email": "Email",
             "phone": "Phone",
+            "province": "Province",
+            "city": "City",
+            "select_province": "Select province",
+            "select_city": "Select city",
+            "loading": "Loading...",
+            "study_level": "Level of Studies",
+            "worked_projects": "Did you work on any of our projects?",
+            "which_projects": "Indicate which ones",
+            "company": "Company",
             "message": "Message",
             "send": "Send",
             "required": "Required",
-            "invalid_email": "Invalid email"
+            "invalid_email": "Invalid Email",
+            "cv_note": "*Remember to attach your CV in the email",
+            "study_levels": {
+                "none": "Select study level",
+                "primary": "Primary",
+                "secondary": "Secondary",
+                "tertiary": "Tertiary",
+                "university": "University"
+            },
+            "yes_no": {
+                "none": "Indicate your response",
+                "yes": "Yes",
+                "no": "No"
+            }
         }
     },
     "about": {
@@ -430,11 +453,11 @@
         },
         "mission": {
             "title": "Mission",
-            "description": "To provide engineering and architecture services with high quality standards, optimizing time and resources, ensuring safety on site, and maximizing our clients' profitability. We strive to execute projects sustainably and efficiently."
+            "description": "Our mission consists of providing engineering and construction services for major civil, industrial, sanitation, and road works in a responsible and sustainable manner within the Province of San Juan."
         },
         "vision": {
             "title": "Vision",
-            "description": "To position ourselves as the best and most innovative company in construction and engineering, staying at the forefront of new technologies while respecting environmental conservation standards."
+            "description": "At SIGMA, our vision is to position ourselves as the best and most innovative company in the construction and engineering field and to remain at the forefront of new technologies, based on the specialization and training of our team, while respecting environmental conservation standards."
         },
         "values": {
             "title": "Values",
@@ -442,10 +465,27 @@
         }
     },
     "policy": {
-        "title": "Quality, Safety, and Environment Policy.",
-        "description": "At \"SIGMA S.A.\" we assume the commitment to satisfy the requirements and expectations of our clients and stakeholders, providing services efficiently and responsibly aligned with ISO 9001:2015, ISO 14001:2015, and ISO 45001:2018 standards.",
+        "title": "Quality, Safety, Occupational Health and Environment Policy.",
+        "description": "At SIGMA we are committed to satisfying the requirements and expectations of our clients and other stakeholders in an efficient, sustainable manner and with the highest standards of quality, safety and environmental care, maintaining an Integrated Management System based on ISO 9001:2015, ISO 14001:2015 and ISO 45001:2018 standards.",
         "button_policy": "Quality Policy",
-        "button_certifications": "Certificaciones"
+        "button_certifications": "Certifications",
+        "modal": {
+            "title": "QUALITY, SAFETY, OCCUPATIONAL HEALTH AND ENVIRONMENT POLICY",
+            "intro": "Fulfilling our vision, we aim to:",
+            "points": [
+                "Innovate and continuously improve our processes, products, and services, guaranteeing high standards of quality, efficiency, and sustainability to establish ourselves as benchmarks in the region.",
+                "Value the efforts of our workers, promoting their professional development through constant training, teamwork, consultation, and participation of workers and their representatives.",
+                "Develop innovative solutions that generate mutual benefits for clients, workers, the community, and the environment.",
+                "Prevent and mitigate occupational risks, eliminating hazards and reducing risks to the safety and health of our collaborators.",
+                "Protect the environment by preventing pollution and promoting the sustainable use of natural resources.",
+                "Act with ethics, transparency, and responsibility, complying with legal and other applicable requirements.",
+                "Continuously improve the effectiveness and performance of our Integrated Management System."
+            ],
+            "footer": "SIGMA Management assumes these commitments under the responsibility of being accountable for their performance, through monitoring, measurement, and review of their management system.",
+            "approved": "Approved by: Management",
+            "validity": "Validity: April 2026",
+            "version": "Version: 3"
+        }
     },
     "projects-map": {
         "items": {

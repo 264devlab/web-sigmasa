@@ -9,15 +9,21 @@ import { RevealDirective } from '../../directives/reveal.directive';
   templateUrl: './clients.component.html',
   styleUrl: './clients.component.scss'
 })
+
 export class ClientsComponent {
   logos: string[] = [
     'assets/logos/clientes/adium.svg',
+    'assets/logos/clientes/Legislatura San Juan.svg',
+    'assets/logos/clientes/IPV.svg',
+    'assets/logos/clientes/VialidadProvincial.svg',
+    'assets/logos/clientes/OSSE.svg',
+    'assets/logos/clientes/veladero.svg',
+    'assets/logos/clientes/LosAzules-1.svg',
+    'assets/logos/clientes/epse.svg',
     'assets/logos/clientes/barrick.svg',
-    'assets/logos/clientes/impregilo.svg',
-    'assets/logos/clientes/isolux-corsan.svg',
-    'assets/logos/clientes/libertad.svg',
-    'assets/logos/clientes/salentein.svg',
-    'assets/logos/clientes/yamana_gold.svg',
+    'assets/logos/clientes/MinasArgentinas.svg',
+    'assets/logos/clientes/ngex-minerals-.svg',
+    'assets/logos/clientes/GobiernoSanJuan.svg',
   ];
 
   // Doubling the logos to create the infinite scroll effect
