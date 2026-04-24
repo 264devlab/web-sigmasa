@@ -480,25 +480,45 @@
     },
     "projects-map": {
         "items": {
+            "centauri": {
+                "name": "PROYECTO CENTAURI",
+                "description": "Ampliación de la planta industrial de producción de fármacos. Edificio 2, Usina 5 y la playa de servicios. La planta está ubicada en el Departamento Pocito, San Juan, República Argentina. El área total de construcción es de aproximadamente de 4,727.00 m2."
+            },
+            "legislatura": {
+                "name": "EDIFICIO ANEXO DE LA LEGISLATURA PROVINCIAL",
+                "description": "Construcción de edificio de 5960.00 m², en un volumen apaisado formado por tres subsuelos, planta baja, y cuatro niveles superiores, mas un quinto de servicios que se proyectó por encima de la casa existente como un cuerpo único de lineas rectas y puras. Las áreas de servicio se conectan en el sector oeste conformado por un volumen cerrado, con circulaciones verticales (escalera y ascensores), las cuales comunican todo el edificio, en el sector este se dispone un patio longitudinal en dirección norte-sur, como regulados bioclimático. En la planta baja y primer piso cuenta con locales auditorio y biblioteca - sala interactiva."
+            },
+            "ayres-village": {
+                "name": "GALERÍA COMERCIAL - AYRES VILLAGE",
+                "description": "Construcción de un edificio con destino comercial desarrollado en 2 plantas. La tipología es Strip Mall con galería semicubierta en todo su frente que sirve de espacio de transcisión y de ingreso a los locales comerciales. El complejo cuenta con 20 locales comerciales que varían en su superficie entre los 45.00 m² y los 160.00 m². El edificio está constituido por sistemas mixtos incluyendo mampostería de encadenado, pórticos, cerchas metálicas, panelería liviana, losas de hormigón armado y sistema steel frame."
+            },
+            "los-molinos": {
+                "name": "BARRIO LOS MOLINOS",
+                "description": "Barrio de 260 unidades funcionales en torres de dos y tres plantas, cinco prototipos con sistema constructivo tradicional, platea de fundacion, mampostería de ladrillón, losas de HºAº, carpinterías de aluminio y de madera, pisos cerámicos en baños y revestimientos cerámicos baños y cocina, pintadas al látex en muros exteriores e interiores y esmalte sintético en carpinterías de maderas."
+            },
+            "acueducto": {
+                "name": "ACUEDUCTO GRAN TULUM",
+                "description": "Instalación de cañería de acero inoxidable, planta de tratamiento de agua y cañería PEAD. El proyecto asegura el abastecimiento de agua potable a la población de San Juan."
+            },
+            "linea-132k": {
+                "name": "LÍNEA 132k",
+                "description": "Linea de alta tension de 132kv que interconecta la E.T. Albardón con la E.T. Solar Ullúm, con un recorrido total de 18km. La obra permite incorporar 180MW de energía solar al sistema eléctrico generada por los parques Ullum Alfa y El Chaguar."
+            },
+            "ayres-del-este": {
+                "name": "BARRIO PRIVADO AYRES DEL ESTE",
+                "description": "Construción de 120 viviendas de 2 y 3 dormitorios Sup.: 9320 m² y 10 duplex Sup.: 700 m² de 1º calidad, carpinterías de Aluminio, pisos porcelanato, terminaciones de categoría, red de agua, Red de cloacas, red de gas, riego presurizado de espacios verdes y arbolado, red electrica subterranea, portal de acceso, calles asfaltadas, veredas de Hormigón, espacios veredes, sistema de comunicación IT, etc."
+            },
+            "los-azules": {
+                "name": "PROYECTO LOS AZULES",
+                "description": "Servicios de apertura, mantenimiento y reparación del Camino de Acceso al proyecto minero Azules, a fin de asegurar el tránsito seguro y la ejecución normal de actividades inherentes al proyecto de exploración. Despeje de nieve y/o hielo, estabilización y reparación de los taludes laterales del camino, etc."
+            },
             "veladero": {
-                "name": "Proyecto Minero Veladero",
-                "description": "Extracción de oro y plata en la cordillera de los Andes."
+                "name": "PROYECTO VELADERO",
+                "description": "Servicios de apertura, mantenimiento y reparación del Camino de Acceso a la mina Veladero, proyecto Lama y aledaños, a fin de posibilitar el tránsito seguro y la ejecución normal de actividades inherentes a la mina."
             },
-            "solar": {
-                "name": "Parque Solar Ullum",
-                "description": "Generación de energía renovable a gran escala."
-            },
-            "dique": {
-                "name": "Dique Caracoles",
-                "description": "Aprovechamiento hidroeléctrico y riego sobre el río San Juan."
-            },
-            "ruta": {
-                "name": "Ruta Nacional 150",
-                "description": "Conexión vial estratégica del corredor bioceánico."
-            },
-            "civic": {
-                "name": "Centro Cívico San Juan",
-                "description": "Edificio administrativo central de la provincia."
+            "hualilan": {
+                "name": "PROYECTO HUALILÁN",
+                "description": "Operación de minería a cielo abierto en los pits Sánchez, Norte y Magnata. El servicio incluye: movilización, desmovilización, actividades previas a la producción minera de los yacimientos de Hualilán, carga y gestión de la plataforma de acopio de mineral, etc."
             }
         }
     }
