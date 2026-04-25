@@ -11,7 +11,7 @@
         <!-- Shared Info Card (Fixed position on left for desktop/tablet) -->
         <div #infoCard class="project-info-card" [class.visible]="activeProject()">
             <div class="info-content" *ngIf="activeProject()">
-                <h3 class="info-title">{{ activeProject()!.name | i18n }}</h3>
+                <h3 class="info-title">{{ activeProject()!.name | i18n | titlecase }}</h3>
                 <p class="info-description">{{ activeProject()!.description | i18n }}</p>
             </div>
         </div>
@@ -35,7 +35,7 @@
                 [class.active]="activeProject()?.id === project.id" (mouseenter)="setActiveProject(project)"
                 (mouseleave)="setActiveProject(null)" (contextmenu)="$event.preventDefault()">
                 <div class="button-content">
-                    <span class="project-name">{{ project.name | i18n }}</span>
+                    <span class="project-name">{{ project.name | i18n | titlecase }}</span>
                     <!-- Mobile-only description expansion -->
                     <div class="project-description-container mobile-only">
                         <p class="description">{{ project.description | i18n }}</p>

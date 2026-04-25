@@ -6,7 +6,7 @@
                 <img [src]="project.image" [alt]="project.name">
                 <div class="overlay">
                     <div class="overlay-content">
-                        <h4 class="project-name text-raleway-medium-32">{{ project.name }}</h4>
+                        <h4 class="project-name text-raleway-medium-32">{{ project.name | titlecase }}</h4>
                         <p class="project-desc text-raleway-light-16">{{ project.description }}</p>
                         <button class="read-more text-raleway-medium-20" (click)="openProject(project)">{{
                             'projects.read-more' | i18n }}</button>
