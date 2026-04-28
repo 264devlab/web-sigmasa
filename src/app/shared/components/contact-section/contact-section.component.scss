@@ -406,19 +406,19 @@
           .form-group {
             width: 100%;
 
-              input,
-              select,
-              textarea {
-                padding: 10px 12px;
-                width: 100%;
-                box-sizing: border-box;
-  
-                &:focus~label,
-                &:not(:placeholder-shown)~label,
-                &.has-value~label {
-                  top: -18px;
-                }
+            input,
+            select,
+            textarea {
+              padding: 10px 12px;
+              width: 100%;
+              box-sizing: border-box;
+
+              &:focus~label,
+              &:not(:placeholder-shown)~label,
+              &.has-value~label {
+                top: -18px;
               }
+            }
           }
 
           .submit-btn {
