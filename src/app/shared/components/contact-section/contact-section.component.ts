@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { I18nPipe } from '../../i18n/i18n.pipe';
 import { RevealDirective } from '../../directives/reveal.directive';
 import { GeorefService, GeorefItem } from '../../../core/services/georef.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact-section',
@@ -22,12 +23,20 @@ export class ContactSectionComponent implements OnInit {
 
   private georefService = inject(GeorefService);
   private fb = inject(FormBuilder);
+  private http = inject(HttpClient);
 
-  private emailDestinations: Record<string, string> = {
+  /* private emailDestinations: Record<string, string> = {
     hr: 'psanchez@sigmasa.com',
     technical: 'tecnica@sigmasa.com',
     commercial: 'compras@sigmasa.com',
     consulting: 'sigma@sigmasa.com'
+  }; */
+
+  private emailDestinations: Record<string, string> = {
+    hr: 'hr',
+    technical: 'technical',
+    commercial: 'commercial',
+    consulting: 'consulting'
   };
 
   ngOnInit(): void {
@@ -63,7 +72,7 @@ export class ContactSectionComponent implements OnInit {
     this.contactForm.get('province')?.valueChanges.subscribe(provId => {
       this.contactForm.patchValue({ city: '' });
       this.localities.set([]);
-      
+
       if (provId) {
         this.isLoadingLocalities.set(true);
         this.georefService.getLocalidades(provId).subscribe(data => {
@@ -77,7 +86,7 @@ export class ContactSectionComponent implements OnInit {
   selectArea(area: string): void {
     this.selectedArea = area;
     this.contactForm.patchValue({ area });
-    
+
     // Reset specialized fields
     this.contactForm.patchValue({
       study_level: '',
@@ -98,7 +107,7 @@ export class ContactSectionComponent implements OnInit {
     } else if (area === 'technical') {
       this.contactForm.get('company')?.setValidators([Validators.required]);
     }
-    
+
     this.contactForm.get('study_level')?.updateValueAndValidity();
     this.contactForm.get('worked_projects')?.updateValueAndValidity();
     this.contactForm.get('company')?.updateValueAndValidity();
@@ -107,10 +116,21 @@ export class ContactSectionComponent implements OnInit {
   onSubmit(): void {
     if (this.contactForm.valid) {
       const destination = this.emailDestinations[this.selectedArea];
-      console.log(`Sending email to: ${destination}`, this.contactForm.value);
-      
-      alert(`Mensaje enviado a: ${destination}`);
-      this.contactForm.reset({ area: this.selectedArea });
+
+      const formData = this.contactForm.value;
+      //console.log(formData);
+
+      this.http.post('/api/send-email', formData).subscribe({
+        next: (response) => {
+          alert(`Mensaje enviado a: ${formData.destination}`);
+          this.contactForm.reset({ area: this.selectedArea });
+        },
+        error: (error) => {
+          console.error('Error sending email', error);
+          alert('Error al enviar el mensaje');
+        }
+      });
+
     } else {
       this.contactForm.markAllAsTouched();
     }
