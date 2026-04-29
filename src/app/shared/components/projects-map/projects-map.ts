@@ -50,57 +50,57 @@ export class ProjectsMap {
       x: 54,
       y: 73
     },
-    {
+    /* {
       id: 3,
       name: 'projects-map.items.ayres-village.name',
       description: 'projects-map.items.ayres-village.description',
       x: 51,
       y: 73
-    },
+    } */
     {
-      id: 4,
+      id: 3,
       name: 'projects-map.items.los-molinos.name',
       description: 'projects-map.items.los-molinos.description',
       x: 53,
       y: 72.5
     },
     {
-      id: 5,
+      id: 4,
       name: 'projects-map.items.acueducto.name',
       description: 'projects-map.items.acueducto.description',
       x: 45,
       y: 67
     },
     {
-      id: 6,
+      id: 5,
       name: 'projects-map.items.linea-132k.name',
       description: 'projects-map.items.linea-132k.description',
       x: 47,
       y: 65
     },
-    {
-      id: 7,
+    /* {
+      id: 6,
       name: 'projects-map.items.ayres-del-este.name',
       description: 'projects-map.items.ayres-del-este.description',
       x: 55,
       y: 73
-    },
+    } */
     {
-      id: 8,
+      id: 6,
       name: 'projects-map.items.los-azules.name',
       description: 'projects-map.items.los-azules.description',
       x: 18,
       y: 62
     },
     {
-      id: 9,
+      id: 7,
       name: 'projects-map.items.veladero.name',
       description: 'projects-map.items.veladero.description',
       x: 23,
       y: 27
     },
     {
-      id: 10,
+      id: 8,
       name: 'projects-map.items.hualilan.name',
       description: 'projects-map.items.hualilan.description',
       x: 27,
