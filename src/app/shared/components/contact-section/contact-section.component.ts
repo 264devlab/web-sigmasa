@@ -25,13 +25,6 @@ export class ContactSectionComponent implements OnInit {
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
 
-  /* private emailDestinations: Record<string, string> = {
-    hr: 'psanchez@sigmasa.com',
-    technical: 'tecnica@sigmasa.com',
-    commercial: 'compras@sigmasa.com',
-    consulting: 'sigma@sigmasa.com'
-  }; */
-
   private emailDestinations: Record<string, string> = {
     hr: 'hr',
     technical: 'technical',
@@ -122,7 +115,11 @@ export class ContactSectionComponent implements OnInit {
       setTimeout(() => {
         this.submitState.set('loading');
 
-        const formData = this.contactForm.value;
+        const formData = { ...this.contactForm.value };
+        const selectedProv = this.provinces().find(p => p.id === formData.province);
+        if (selectedProv) {
+          formData.provinceName = selectedProv.nombre;
+        }
 
         this.http.post('/api/send-email', formData).subscribe({
           next: () => {
