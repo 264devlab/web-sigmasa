@@ -3,35 +3,35 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req: any, res: any) {
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  try {
+    const { firstname, lastname, email, message, area } = req.body;
+
+    // 1. Validar que vengan los datos obligatorios
+    if (!firstname || !email || !message || !area) {
+      return res.status(400).json({ error: 'Faltan campos obligatorios' });
     }
 
-    try {
-        const { firstname, lastname, email, message, area } = req.body;
+    // 🔁 Mapeo de áreas → emails (MEJOR ACÁ, no en Angular)
+    const destinations: Record<string, string> = {
+      hr: 'ismaterluk98@gmail.com',
+      technical: 'ismaterluk98@gmail.com',
+      commercial: 'ismaterluk98@gmail.com',
+      consulting: 'ismaterluk98@gmail.com'
+    };
 
-        // 1. Validar que vengan los datos obligatorios
-        if (!firstname || !email || !message || !area) {
-            return res.status(400).json({ error: 'Faltan campos obligatorios' });
-        }
+    const targetEmail = destinations[area];
 
-        // 🔁 Mapeo de áreas → emails (MEJOR ACÁ, no en Angular)
-        const destinations: Record<string, string> = {
-            hr: 'ismaterluk98@gmail.com',
-            technical: 'ismaterluk98@gmail.com',
-            commercial: 'ismaterluk98@gmail.com',
-            consulting: 'ismaterluk98@gmail.com'
-        };
+    // 2. Validar que el área seleccionada sea válida
+    if (!targetEmail) {
+      return res.status(400).json({ error: 'Área seleccionada inválida' });
+    }
 
-        const targetEmail = destinations[area];
-
-        // 2. Validar que el área seleccionada sea válida
-        if (!targetEmail) {
-            return res.status(400).json({ error: 'Área seleccionada inválida' });
-        }
-
-        //templateHTML
-        let templateHTML = `
+    //templateHTML
+    let templateHTML = `
         <!DOCTYPE html>
         <html lang="es">
         <head>
@@ -55,7 +55,7 @@ export default async function handler(req: any, res: any) {
                   <tr>
                     <td style="padding: 40px;">
                       <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.5; color: #333333;">
-                        Hola equipo de <strong> Resources Humanos </strong>,
+                        Hola equipo de <strong> Recursos Humanos </strong>,
                       </p>
                       <p style="margin: 0 0 30px 0; font-size: 16px; line-height: 1.5; color: #333333;">
                         Han recibido un nuevo mensaje a través del formulario de contacto del sitio web. A continuación se detallan los datos del remitente:
@@ -96,24 +96,24 @@ export default async function handler(req: any, res: any) {
         </html>
         `;
 
-        // 3. Desestructurar { data, error } (Resend no lanza excepciones en errores de API)
-        const { data, error } = await resend.emails.send({
-            from: 'onboarding@resend.dev',
-            to: targetEmail,
-            subject: `Nuevo mensaje de ${firstname} ${lastname}`,
-            html: templateHTML
-        });
+    // 3. Desestructurar { data, error } (Resend no lanza excepciones en errores de API)
+    const { data, error } = await resend.emails.send({
+      from: 'onboarding@resend.dev',
+      to: targetEmail,
+      subject: `Nuevo mensaje de ${firstname} ${lastname}`,
+      html: templateHTML
+    });
 
-        // Si la API de Resend falla (ej. dominio no verificado, cuota excedida)
-        if (error) {
-            console.error('Error en API de Resend:', error);
-            return res.status(400).json({ error });
-        }
-
-        return res.status(200).json({ success: true, data });
-
-    } catch (error) {
-        console.error('Error del servidor:', error);
-        return res.status(500).json({ error: 'Error interno del servidor enviando el email' });
+    // Si la API de Resend falla (ej. dominio no verificado, cuota excedida)
+    if (error) {
+      console.error('Error en API de Resend:', error);
+      return res.status(400).json({ error });
     }
+
+    return res.status(200).json({ success: true, data });
+
+  } catch (error) {
+    console.error('Error del servidor:', error);
+    return res.status(500).json({ error: 'Error interno del servidor enviando el email' });
+  }
 }
