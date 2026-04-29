@@ -11,7 +11,7 @@
         <!-- Shared Info Card (Fixed position on left for desktop/tablet) -->
         <div #infoCard class="project-info-card" [class.visible]="activeProject()">
             <div class="info-content" *ngIf="activeProject()">
-                <h3 class="info-title">{{ activeProject()!.name | i18n }}</h3>
+                <h3 class="info-title">{{ activeProject()!.name | i18n | titlecase }}</h3>
                 <p class="info-description">{{ activeProject()!.description | i18n }}</p>
             </div>
         </div>
