@@ -63,37 +63,30 @@
         .overlay-content {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             height: 100%;
             width: 100%;
 
             .project-name {
-                flex: 1;
                 display: flex;
-                align-items: center;
                 justify-content: center;
                 line-height: 1.2;
+                margin-top: 5px;
+                margin-bottom: 50px;
             }
 
             .project-desc {
                 line-height: 1.4;
                 overflow: hidden;
                 text-align: center;
-                margin: auto 0;
+                margin-bottom: 20px;
                 opacity: 0.9;
                 transition: transform 0.5s 0.2s;
-
-                // Multi-line ellipsis
-                display: -webkit-box;
-                -webkit-line-clamp: 4;
-                -webkit-box-orient: vertical;
-                max-height: 5.6em; // 4 lines * 1.4 line-height
             }
 
             .read-more {
                 display: inline-block;
                 width: fit-content;
-                margin: 5px auto 0;
+                margin: auto auto 0;
                 padding-bottom: 20px;
                 transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s, opacity 0.5s 0.3s;
                 transform: translateY(20px);
