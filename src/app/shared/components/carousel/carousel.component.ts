@@ -20,15 +20,30 @@ export interface HeroSlide {
     styleUrl: './carousel.scss',
 })
 export class CarouselComponent implements OnInit, OnDestroy {
-    @Input() slides: HeroSlide[] = [];
-    @Input() interval: number = 5000;
     @Input() icon: boolean = false;
+    @Input() interval: number = 5000;
+    @Input() set slides(value: HeroSlide[]) {
+        this.allSlides.set(value);
+    }
 
-    // Track the actual index including clones for infinite scroll
-    // For a truly smooth "circular" effect without jump back, 
-    // we would need clones. But with current structure, modulo is simpler.
-    // To satisfy "same direction", we keep modulo.
-    currentIndex = signal(0);
+    allSlides = signal<HeroSlide[]>([]);
+    
+    // Computed array with clones for infinite effect
+    extendedSlides = computed(() => {
+        const s = this.allSlides();
+        if (s.length === 0) return [];
+        return [s[s.length - 1], ...s, s[0]];
+    });
+
+    currentIndex = signal(1); // Start at the first real slide
+    isTransitioning = signal(true);
+    
+    // Helper to get real index for dots
+    realIndex = computed(() => {
+        const s = this.allSlides();
+        if (s.length === 0) return 0;
+        return (this.currentIndex() - 1 + s.length) % s.length;
+    });
     private autoPlayInterval: any;
     private touchStartX: number = 0;
     private touchEndX: number = 0;
@@ -53,17 +68,37 @@ export class CarouselComponent implements OnInit, OnDestroy {
     }
 
     nextSlide() {
-        this.currentIndex.update((index) => (index + 1) % this.slides.length);
+        if (!this.isTransitioning()) return;
+        this.currentIndex.update((index) => index + 1);
         this.resetAutoPlay();
     }
 
     prevSlide() {
-        this.currentIndex.update((index) => (index - 1 + this.slides.length) % this.slides.length);
+        if (!this.isTransitioning()) return;
+        this.currentIndex.update((index) => index - 1);
         this.resetAutoPlay();
     }
 
+    onTransitionEnd() {
+        const slidesCount = this.allSlides().length;
+        
+        if (this.currentIndex() === slidesCount + 1) {
+            // Jump from last-clone to first-real
+            this.isTransitioning.set(false);
+            this.currentIndex.set(1);
+            // Re-enable transition after the jump
+            setTimeout(() => this.isTransitioning.set(true), 20);
+        } else if (this.currentIndex() === 0) {
+            // Jump from first-clone to last-real
+            this.isTransitioning.set(false);
+            this.currentIndex.set(slidesCount);
+            // Re-enable transition after the jump
+            setTimeout(() => this.isTransitioning.set(true), 20);
+        }
+    }
+
     goToSlide(index: number) {
-        this.currentIndex.set(index);
+        this.currentIndex.set(index + 1);
         this.resetAutoPlay();
     }
 

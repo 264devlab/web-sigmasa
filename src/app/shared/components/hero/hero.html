@@ -1,6 +1,7 @@
 <section class="hero-section">
     <div class="hero-image-container">
-        <img [ngSrc]="backgroundImage" [priority]="priority" fill alt="" class="hero-img" (load)="onImageLoad()">
+        <img [ngSrc]="backgroundImage" [priority]="priority" fill alt="" class="hero-img" 
+             [class.loaded]="isLoaded()" (load)="onImageLoad()">
     </div>
     <div class="hero-overlay"></div>
 
