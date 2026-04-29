@@ -332,50 +332,33 @@
       }
 
       // ANIMATION STATES
-      &.state-morphing {
-        height: 10px;
-        background-color: #e0e0e0;
-        box-shadow: none;
-        pointer-events: none;
-        
-        .text { opacity: 0; }
-      }
-
-      &.state-loading {
-        height: 10px;
-        background-color: #e0e0e0;
-        box-shadow: none;
-        pointer-events: none;
-
-        .text { opacity: 0; }
-
-        .progress-bar {
-          opacity: 1;
-          width: 80%;
-          transition: width 3s cubic-bezier(0.1, 0.7, 0.1, 1);
-        }
-      }
-
+      &.state-morphing,
+      &.state-loading,
       &.state-finishing {
         height: 10px;
         background-color: #e0e0e0;
-        pointer-events: none;
         box-shadow: none;
-
+        pointer-events: none;
         .text { opacity: 0; }
-        
-        .progress-bar {
-          opacity: 1;
-          width: 100%;
-          transition: width 0.3s ease;
-        }
       }
 
-      &.state-success, &.state-error {
+      &.state-loading .progress-bar {
+        opacity: 1;
+        width: 80%;
+        transition: width 3s cubic-bezier(0.1, 0.7, 0.1, 1);
+      }
+
+      &.state-finishing .progress-bar {
+        opacity: 1;
+        width: 100%;
+        transition: width 0.3s ease;
+      }
+
+      &.state-success, 
+      &.state-error {
         height: 54px;
         pointer-events: none;
         padding: 0 20px;
-
         .text { opacity: 0; }
         .progress-bar { opacity: 0; }
       }
@@ -383,7 +366,6 @@
       &.state-success {
         background-color: #28a745;
         box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
-
         .success-feedback { opacity: 1; }
         .check {
           stroke-dashoffset: 0;
@@ -394,7 +376,6 @@
       &.state-error {
         background-color: #dc3545;
         box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
-
         .error-feedback { opacity: 1; }
         .cross {
           stroke-dashoffset: 0;
