@@ -1,0 +1,130 @@
+// Colores del DESIGN.md
+$primary: #2c3e50;
+$accent: #3498db;
+
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $primary;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), visibility 0.8s;
+
+  &.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.background-effects {
+  position: absolute;
+  inset: 0;
+  
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    mix-blend-mode: screen;
+  }
+
+  .blob-1 {
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba($accent, 0.12) 0%, transparent 70%);
+    top: -10%;
+    left: -10%;
+    animation: moveBlob1 15s infinite alternate ease-in-out;
+  }
+
+  .blob-2 {
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba($accent, 0.08) 0%, transparent 70%);
+    bottom: -15%;
+    right: -10%;
+    animation: moveBlob2 18s infinite alternate ease-in-out;
+  }
+
+  .blob-3 {
+    width: 40vw;
+    height: 40vw;
+    background: radial-gradient(circle, rgba($accent, 0.06) 0%, transparent 70%);
+    top: 20%;
+    right: 10%;
+    animation: moveBlob3 20s infinite alternate ease-in-out;
+  }
+
+  .blob-4 {
+    width: 70vw;
+    height: 70vw;
+    background: radial-gradient(circle, rgba($accent, 0.05) 0%, transparent 70%);
+    bottom: 10%;
+    left: 20%;
+    animation: moveBlob4 25s infinite alternate ease-in-out;
+  }
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo-wrapper {
+  transform: scale(0.9);
+  animation: logoEntrance 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+             breathing 3s infinite ease-in-out 1.2s;
+
+  .main-logo {
+    width: 300px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba($accent, 0.3));
+  }
+}
+
+@keyframes moveBlob1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(20vw, 15vh) scale(1.1); }
+}
+
+@keyframes moveBlob2 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-15vw, -20vh) scale(1.2); }
+}
+
+@keyframes moveBlob3 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-20vw, 25vh) scale(0.9); }
+}
+
+@keyframes moveBlob4 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(15vw, -15vh) scale(1.1); }
+}
+
+@keyframes logoEntrance {
+  from { 
+    opacity: 0;
+    transform: scale(0.7) translateY(20px);
+    filter: blur(10px);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes breathing {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
