@@ -28,10 +28,30 @@ export default async function handler(req: any, res: any) {
       return res.status(400).json({ error: 'Faltan campos obligatorios generales' });
     }
 
+    // Nuevas validaciones de formato y longitud
+    if (firstname.length > 25 || !/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(firstname)) {
+      return res.status(400).json({ error: 'El nombre debe contener solo letras y máximo 25 caracteres' });
+    }
+
+    if (lastname.length > 25 || !/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(lastname)) {
+      return res.status(400).json({ error: 'El apellido debe contener solo letras y máximo 25 caracteres' });
+    }
+
+    if (phone.length > 15 || !/^[0-9]+$/.test(phone)) {
+      return res.status(400).json({ error: 'El teléfono debe contener solo números y máximo 15 caracteres' });
+    }
+
+    if (message.length > 250) {
+      return res.status(400).json({ error: 'El mensaje no puede superar los 250 caracteres' });
+    }
+
     // 2. Validar campos obligatorios según el área
     if (area === 'hr') {
       if (!study_level || !worked_projects) {
         return res.status(400).json({ error: 'Faltan campos obligatorios para el área de Recursos Humanos' });
+      }
+      if (worked_projects === 'yes' && !which_projects) {
+        return res.status(400).json({ error: 'Debe indicar cuáles proyectos' });
       }
     } else if (area === 'technical') {
       if (!company) {

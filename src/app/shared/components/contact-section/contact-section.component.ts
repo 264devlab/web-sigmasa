@@ -34,22 +34,23 @@ export class ContactSectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
-      lastname: ['', [Validators.required]],
-      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required, Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/), Validators.maxLength(25)]],
+      firstname: ['', [Validators.required, Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/), Validators.maxLength(25)]],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required]],
+      phone: ['', [Validators.required, Validators.pattern(/^[0-9]+$/), Validators.maxLength(15)]],
       province: ['', [Validators.required]],
       city: ['', [Validators.required]],
       study_level: [''],
       worked_projects: [''],
       which_projects: [''],
       company: [''],
-      message: [''],
+      message: ['', [Validators.required, Validators.maxLength(250)]],
       area: ['hr']
     });
 
     this.loadProvinces();
     this.setupProvinceSubscription();
+    this.setupWorkedProjectsSubscription();
 
     // Default validators for 'hr'
     this.selectArea('hr');
@@ -76,6 +77,18 @@ export class ContactSectionComponent implements OnInit {
     });
   }
 
+  private setupWorkedProjectsSubscription() {
+    this.contactForm.get('worked_projects')?.valueChanges.subscribe(val => {
+      const whichProjectsCtrl = this.contactForm.get('which_projects');
+      if (this.selectedArea === 'hr' && val === 'yes') {
+        whichProjectsCtrl?.setValidators([Validators.required]);
+      } else {
+        whichProjectsCtrl?.clearValidators();
+      }
+      whichProjectsCtrl?.updateValueAndValidity();
+    });
+  }
+
   selectArea(area: string): void {
     this.selectedArea = area;
     this.contactForm.patchValue({ area });
@@ -91,6 +104,7 @@ export class ContactSectionComponent implements OnInit {
     // Clear all specialized validators first
     this.contactForm.get('study_level')?.clearValidators();
     this.contactForm.get('worked_projects')?.clearValidators();
+    this.contactForm.get('which_projects')?.clearValidators();
     this.contactForm.get('company')?.clearValidators();
 
     // Update validators based on area
@@ -103,6 +117,7 @@ export class ContactSectionComponent implements OnInit {
 
     this.contactForm.get('study_level')?.updateValueAndValidity();
     this.contactForm.get('worked_projects')?.updateValueAndValidity();
+    this.contactForm.get('which_projects')?.updateValueAndValidity();
     this.contactForm.get('company')?.updateValueAndValidity();
   }
 

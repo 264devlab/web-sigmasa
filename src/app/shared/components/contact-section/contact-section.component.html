@@ -80,12 +80,12 @@
           <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" id="contactForm" class="contact-form">
             <div class="form-row">
               <div class="form-group">
-                <input type="text" id="lastname" formControlName="lastname" placeholder=" " />
+                <input type="text" id="lastname" formControlName="lastname" placeholder=" " maxlength="25" />
                 <label for="lastname">{{ 'contact-section.form.lastname' | i18n }}</label>
                 <span class="error" *ngIf="contactForm.get('lastname')?.touched && contactForm.get('lastname')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
               </div>
               <div class="form-group">
-                <input type="text" id="firstname" formControlName="firstname" placeholder=" " />
+                <input type="text" id="firstname" formControlName="firstname" placeholder=" " maxlength="25" />
                 <label for="firstname">{{ 'contact-section.form.firstname' | i18n }}</label>
                 <span class="error" *ngIf="contactForm.get('firstname')?.touched && contactForm.get('firstname')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
               </div>
@@ -98,7 +98,7 @@
                 <span class="error" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">{{ 'contact-section.form.invalid_email' | i18n }}</span>
               </div>
               <div class="form-group">
-                <input type="text" id="phone" formControlName="phone" placeholder=" " />
+                <input type="text" id="phone" formControlName="phone" placeholder=" " maxlength="15" />
                 <label for="phone">{{ 'contact-section.form.phone' | i18n }}</label>
                 <span class="error" *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
               </div>
@@ -156,6 +156,7 @@
                 <div class="form-group">
                   <input type="text" id="which_projects" formControlName="which_projects" placeholder=" " />
                   <label for="which_projects">{{ 'contact-section.form.which_projects' | i18n }}</label>
+                  <span class="error" *ngIf="contactForm.get('which_projects')?.touched && contactForm.get('which_projects')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
                 </div>
               </div>
             </ng-container>
@@ -170,8 +171,9 @@
             </ng-container>
 
             <div class="form-group full-width">
-              <textarea id="message" formControlName="message" rows="4" placeholder=" "></textarea>
+              <textarea id="message" formControlName="message" rows="4" placeholder=" " maxlength="250"></textarea>
               <label for="message">{{ 'contact-section.form.message' | i18n }}</label>
+              <span class="error" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">{{ 'contact-section.form.required' | i18n }}</span>
             </div>
 
             <!-- CV Note for HR ONLY -->
