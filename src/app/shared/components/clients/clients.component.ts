@@ -15,7 +15,6 @@ export class ClientsComponent {
     'assets/logos/clientes/adium.svg',
     'assets/logos/clientes/Legislatura San Juan.svg',
     'assets/logos/clientes/IPV.svg',
-    'assets/logos/clientes/VialidadProvincial.svg',
     'assets/logos/clientes/OSSE.svg',
     'assets/logos/clientes/veladero.svg',
     'assets/logos/clientes/LosAzules-1.svg',

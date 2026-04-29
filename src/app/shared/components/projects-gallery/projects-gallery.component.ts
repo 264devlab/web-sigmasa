@@ -35,18 +35,9 @@ export class ProjectsGalleryComponent implements OnInit {
         if (!Array.isArray(items)) return [];
 
         return items.map((item, i) => ({
+            ...item,
             id: item.id || i + 1,
-            name: item.name,
-            description: item.description,
             image: item.image || `assets/images/projects/project-${i + 1}.webp`,
-            estado: item.estado,
-            localidad: item.localidad,
-            superficie: item.superficie,
-            comitente: item.comitente,
-            status: item.status,
-            location: item.location,
-            surface_area: item.surface_area,
-            client: item.client
         }));
     });
 
