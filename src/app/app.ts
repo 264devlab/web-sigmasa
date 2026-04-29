@@ -5,9 +5,11 @@ import { PolicyModalComponent } from './shared/components/policy-modal/policy-mo
 import { ProjectModalService } from './core/services/project-modal.service';
 import { CommonModule } from '@angular/common';
 
+import { PreloaderComponent } from './shared/components/preloader/preloader.component';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ProjectModalComponent, PolicyModalComponent, CommonModule],
+  imports: [RouterOutlet, ProjectModalComponent, PolicyModalComponent, CommonModule, PreloaderComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
