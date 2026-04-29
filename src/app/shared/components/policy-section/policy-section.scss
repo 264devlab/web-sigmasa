@@ -33,7 +33,6 @@
         font-size: $font-size-h2;
         margin-bottom: $spacing-md;
         line-height: 1.1;
-        text-transform: capitalize;
 
         @include respond-to(mobile) {
             font-size: 32px;
