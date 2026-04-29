@@ -11,7 +11,7 @@
         <!-- Shared Info Card (Fixed position on left for desktop/tablet) -->
         <div #infoCard class="project-info-card" [class.visible]="activeProject()">
             <div class="info-content" *ngIf="activeProject()">
-                <h3 class="info-title">{{ activeProject()!.name | i18n | titlecase }}</h3>
+                <h3 class="info-title">{{ activeProject()!.name | i18n }}</h3>
                 <p class="info-description">{{ activeProject()!.description | i18n }}</p>
             </div>
         </div>
@@ -19,8 +19,9 @@
         <!-- Connection Lines Container (Moved here for full reach) -->
         <svg #linesContainer class="lines-svg" preserveAspectRatio="none">
             <ng-container *ngFor="let project of projects">
-                <line *ngIf="activeProject()?.id === project.id" [attr.x1]="lineStartX() + '%'" [attr.y1]="lineStartY() + '%'"
-                    [attr.x2]="lineTargetX() + '%'" [attr.y2]="lineTargetY() + '%'" class="connection-line" />
+                <line *ngIf="activeProject()?.id === project.id" [attr.x1]="lineStartX() + '%'"
+                    [attr.y1]="lineStartY() + '%'" [attr.x2]="lineTargetX() + '%'" [attr.y2]="lineTargetY() + '%'"
+                    class="connection-line" />
                 <circle *ngIf="activeProject()?.id === project.id" [attr.cx]="lineStartX() + '%'"
                     [attr.cy]="lineStartY() + '%'" r="4" class="map-dot" />
             </ng-container>
