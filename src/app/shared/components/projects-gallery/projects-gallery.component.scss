@@ -82,7 +82,7 @@
                 margin: auto 0;
                 opacity: 0.9;
                 transition: transform 0.5s 0.2s;
-                
+
                 // Multi-line ellipsis
                 display: -webkit-box;
                 -webkit-line-clamp: 4;
@@ -220,8 +220,7 @@
         }
 
         .project-desc {
-            font-size: 14px !important;
-            margin: 5px 0;
+            display: none !important;
         }
 
         .read-more {

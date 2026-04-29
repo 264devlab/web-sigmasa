@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { I18nPipe } from '../../i18n/i18n.pipe';
 import { RevealDirective } from '../../directives/reveal.directive';
 import { GeorefService, GeorefItem } from '../../../core/services/georef.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact-section',
@@ -22,12 +23,20 @@ export class ContactSectionComponent implements OnInit {
 
   private georefService = inject(GeorefService);
   private fb = inject(FormBuilder);
+  private http = inject(HttpClient);
 
-  private emailDestinations: Record<string, string> = {
+  /* private emailDestinations: Record<string, string> = {
     hr: 'psanchez@sigmasa.com',
     technical: 'tecnica@sigmasa.com',
     commercial: 'compras@sigmasa.com',
     consulting: 'sigma@sigmasa.com'
+  }; */
+
+  private emailDestinations: Record<string, string> = {
+    hr: 'hr',
+    technical: 'technical',
+    commercial: 'commercial',
+    consulting: 'consulting'
   };
 
   ngOnInit(): void {
@@ -63,7 +72,7 @@ export class ContactSectionComponent implements OnInit {
     this.contactForm.get('province')?.valueChanges.subscribe(provId => {
       this.contactForm.patchValue({ city: '' });
       this.localities.set([]);
-      
+
       if (provId) {
         this.isLoadingLocalities.set(true);
         this.georefService.getLocalidades(provId).subscribe(data => {
@@ -77,7 +86,7 @@ export class ContactSectionComponent implements OnInit {
   selectArea(area: string): void {
     this.selectedArea = area;
     this.contactForm.patchValue({ area });
-    
+
     // Reset specialized fields
     this.contactForm.patchValue({
       study_level: '',
@@ -98,19 +107,47 @@ export class ContactSectionComponent implements OnInit {
     } else if (area === 'technical') {
       this.contactForm.get('company')?.setValidators([Validators.required]);
     }
-    
+
     this.contactForm.get('study_level')?.updateValueAndValidity();
     this.contactForm.get('worked_projects')?.updateValueAndValidity();
     this.contactForm.get('company')?.updateValueAndValidity();
   }
 
+  submitState = signal<'idle' | 'morphing' | 'loading' | 'finishing' | 'success' | 'error'>('idle');
+
   onSubmit(): void {
-    if (this.contactForm.valid) {
-      const destination = this.emailDestinations[this.selectedArea];
-      console.log(`Sending email to: ${destination}`, this.contactForm.value);
-      
-      alert(`Mensaje enviado a: ${destination}`);
-      this.contactForm.reset({ area: this.selectedArea });
+    if (this.contactForm.valid && this.submitState() === 'idle') {
+      this.submitState.set('morphing');
+
+      setTimeout(() => {
+        this.submitState.set('loading');
+
+        const formData = this.contactForm.value;
+
+        this.http.post('/api/send-email', formData).subscribe({
+          next: () => {
+            this.submitState.set('finishing');
+            setTimeout(() => {
+              this.submitState.set('success');
+              setTimeout(() => {
+                this.submitState.set('idle');
+                this.contactForm.reset({ area: this.selectedArea });
+              }, 2500);
+            }, 300);
+          },
+          error: (error) => {
+            console.error('Error sending email', error);
+            this.submitState.set('finishing');
+            setTimeout(() => {
+              this.submitState.set('error');
+              setTimeout(() => {
+                this.submitState.set('idle');
+              }, 2500);
+            }, 300);
+          }
+        });
+      }, 400); // Wait for morphing animation
+
     } else {
       this.contactForm.markAllAsTouched();
     }

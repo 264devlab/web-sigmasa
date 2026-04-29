@@ -10,7 +10,8 @@
       <div class="image-section">
         <div class="image-carousel-container">
           <div class="image-carousel-track" [style.transform]="'translateX(-' + (currentImageIndex() * 100) + '%)'">
-            <div class="image-carousel-slide" *ngFor="let img of (modalService.selectedProject()?.images || [modalService.selectedProject()?.image])">
+            <div class="image-carousel-slide"
+              *ngFor="let img of (modalService.selectedProject()?.images || [modalService.selectedProject()?.image])">
               <img [src]="img" [alt]="modalService.selectedProject()?.name">
             </div>
           </div>
@@ -27,10 +28,8 @@
 
           <!-- Image Indicators -->
           <div class="image-carousel-indicators" *ngIf="(modalService.selectedProject()?.images?.length || 0) > 1">
-            <button *ngFor="let dot of modalService.selectedProject()?.images; let i = index" 
-                    class="image-carousel-dot" 
-                    [class.active]="i === currentImageIndex()"
-                    (click)="goToImage(i)">
+            <button *ngFor="let dot of modalService.selectedProject()?.images; let i = index" class="image-carousel-dot"
+              [class.active]="i === currentImageIndex()" (click)="goToImage(i)">
             </button>
           </div>
         </div>
@@ -45,33 +44,39 @@
           <div class="header-category">
             {{ (modalService.selectedProject()?.localidad || modalService.selectedProject()?.location) | uppercase }}
           </div>
-          <h2 class="project-title">{{ modalService.selectedProject()?.name | titlecase }}</h2>
+          <h2 class="project-title">{{ modalService.selectedProject()?.name }}</h2>
 
           <hr class="divider">
 
           <div class="info-table">
             <!-- Surface Area -->
-            <div class="info-row" *ngIf="modalService.selectedProject()?.surface_area || modalService.selectedProject()?.superficie">
+            <div class="info-row"
+              *ngIf="modalService.selectedProject()?.surface_area || modalService.selectedProject()?.superficie">
               <span class="label">{{ 'projects.modal.surface' | i18n }}</span>
-              <span class="value">{{ modalService.selectedProject()?.surface_area || modalService.selectedProject()?.superficie }}</span>
+              <span class="value">{{ modalService.selectedProject()?.surface_area ||
+                modalService.selectedProject()?.superficie }}</span>
             </div>
-            
+
             <!-- Company (Mining) -->
-            <div class="info-row" *ngIf="modalService.selectedProject()?.company || modalService.selectedProject()?.empresa">
+            <div class="info-row"
+              *ngIf="modalService.selectedProject()?.company || modalService.selectedProject()?.empresa">
               <span class="label">{{ 'projects.modal.company' | i18n }}</span>
-              <span class="value">{{ modalService.selectedProject()?.company || modalService.selectedProject()?.empresa }}</span>
+              <span class="value">{{ modalService.selectedProject()?.company || modalService.selectedProject()?.empresa
+                }}</span>
             </div>
 
             <!-- Client -->
             <div class="info-row">
               <span class="label">{{ 'projects.modal.client' | i18n }}</span>
-              <span class="value">{{ modalService.selectedProject()?.client || modalService.selectedProject()?.comitente }}</span>
+              <span class="value">{{ modalService.selectedProject()?.client || modalService.selectedProject()?.comitente
+                }}</span>
             </div>
 
             <!-- Status -->
             <div class="info-row">
               <span class="label">{{ 'projects.modal.status' | i18n }}</span>
-              <span class="value">{{ modalService.selectedProject()?.status || modalService.selectedProject()?.estado }}</span>
+              <span class="value">{{ modalService.selectedProject()?.status || modalService.selectedProject()?.estado
+                }}</span>
             </div>
           </div>
 
