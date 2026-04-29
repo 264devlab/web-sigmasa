@@ -16,6 +16,7 @@
                 "id": "p1",
                 "name": "Proyecto Centauri",
                 "description": "Ampliación de la planta industrial de producción de fármacos. Edificio 2, Usina 5 y la playa de servicios. La planta está ubicada en el Departamento Pocito, San Juan, República Argentina. El área total de construcción es de aproximadamente de 4,727.00 m2.",
+                "brief-description": "Ampliación planta farmacéutica — Ampliación de planta industrial en Pocito, San Juan. 4.727 m².",
                 "image": "assets/images/projects/01-proyecto-centauri/01. PORTADA.webp",
                 "images": [
                     "assets/images/projects/01-proyecto-centauri/01. PORTADA.webp",
@@ -43,6 +44,7 @@
                 "id": "p2",
                 "name": "Edificio anexo de la Legislatura Provincial",
                 "description": "Construcción de edificio de 5960.00 m², en un volumen apaisado formado por tres subsuelos, planta baja, y cuatro niveles superiores, mas un quinto de servicios que se proyectó por encima de la casa existente como un cuerpo único de lineas rectas y puras. Las áreas de servicio se conectan en el sector oeste conformado por un volumen cerrado, con circulaciones verticales (escalera y ascensores), las cuales comunican todo el edificio, en el sector este se dispone un patio longitudinal en dirección norte-sur, como regulados bioclimático. En la planta baja y primer piso cuenta con locales auditorio y biblioteca - sala interactiva.",
+                "brief-description": "Edificio multifuncional de 5.960 m² con subsuelos, planta baja, cinco pisos, auditorio y biblioteca.",
                 "image": "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/01 PORTADA.webp",
                 "images": [
                     "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/01 PORTADA.webp",
@@ -95,6 +97,7 @@
                 "id": "p3",
                 "name": "Barrio Los Molinos",
                 "description": "Barrio de 260 unidades funcionales en torres de dos y tres plantas, cinco prototipos con sistema constructivo tradicional, platea de fundacion, mampostería de ladrillón, losas de HºAº, carpinterías de aluminio y de madera, pisos cerámicos en baños y revestimientos cerámicos baños y cocina, pintadas al látex en muros exteriores e interiores y esmalte sintético en carpinterías de maderas.",
+                "brief-description": "Barrio residencial de 260 viviendas en torres de 2 y 3 plantas.",
                 "image": "assets/images/projects/03-barrio-los-molinos/01. PORTADA.webp",
                 "images": [
                     "assets/images/projects/03-barrio-los-molinos/01. PORTADA.webp",
@@ -120,7 +123,8 @@
             {
                 "id": "p4",
                 "name": "Acueducto Gran Tulum",
-                "description": "Instalación de cañería de acero inoxidable, planta de tratamiento de agua y cañería PEAD. Realizado por UTE: Sigma, Mapal y ",
+                "description": "Instalación de cañería de acero inoxidable, planta de tratamiento de agua y cañería PEAD. Realizado por UTE: Sigma, Mapal y Benito Roggio",
+                "brief-description": "Instalación de cañería de acero inoxidable, planta de tratamiento de agua y cañería PEAD",
                 "image": "assets/images/projects/04-acueducto-gran-tulum/01. PORTADA.webp",
                 "images": [
                     "assets/images/projects/04-acueducto-gran-tulum/01. PORTADA.webp",
@@ -142,6 +146,7 @@
                 "id": "p5",
                 "name": "Estación transformadora solar Ullum 132/33 kV",
                 "description": "Linea de alta tension de 132kv que interconecta la E.T. Albardón con la E.T. Solar Ullúm, con un recorrido total de 18km. La obra permite incorporar 180MW de energía solar al sistema eléctrico generada por los parques Ullum Alfa y El Chaguar. Obra ejecutada junto a la empresa Conectar S.R.L.",
+                "brief-description": "Tendido eléctrico de 18 km que incorpora 180 MW de energía solar a la red.",
                 "image": "assets/images/projects/05-linea-132-kv/01. PORTADA.webp",
                 "images": [
                     "assets/images/projects/05-linea-132-kv/01. PORTADA.webp",
@@ -162,6 +167,7 @@
                 "id": "p6",
                 "name": "Galería comercial - Ayres Village",
                 "description": "Construcción de un edificio con destino comercial desarrollado en 2 plantas. La tipología es Strip Mall con galería semicubierta en todo su frente que sirve de espacio de transcisión y de ingreso a los locales comerciales. El complejo cuenta con 20 locales comerciales que varían en su superficie entre los 45.00 m² y los 160.00 m². El edificio está constituido por sistemas mixtos incluyendo mampostería de encadenado, pórticos, cerchas metálicas, panelería liviana, losas de hormigón armado y sistema steel frame.",
+                "brief-description": "Strip Mall — Edificio comercial de 2 plantas con 20 locales y galería semicubierta.",
                 "image": "assets/images/projects/06-galeria-comercial-ayres-village/01. PORTADA.webp",
                 "images": [
                     "assets/images/projects/06-galeria-comercial-ayres-village/01. PORTADA.webp",
@@ -180,6 +186,7 @@
                 "id": "p7",
                 "name": "Barrio Ayres Village",
                 "description": "Urbanizacion de 77 lotes y Construción de 12 viviendas de 3 dormitorios, las viviendas son de 150,96 m², cada una, con una Sup.Total=1811,52 m², Red Cloacal, Redes de Agua Potable, Calles Pavimentadas, Veredas Hº, Acondicionamiento de espacios verdes, Alumbrado, Tendido electrico subterraneo, Red de Gas Natural. Superficie total de Terreno 49934.88 m²",
+                "brief-description": "Urbanización de 77 lotes con 12 viviendas de 3 dormitorios e infraestructura completa.",
                 "image": "assets/images/projects/07-barrio-ayres-village/01. PORTADA.webp",
                 "images": [
                     "assets/images/projects/07-barrio-ayres-village/01. PORTADA.webp",
@@ -194,6 +201,7 @@
                 "id": "p8",
                 "name": "Barrio Ayres Libertador",
                 "description": "Urbanizacion de 106 lotes y Construcción de 42 viviendas de 155 m² con una Sup.Total=6510 m², Red Cloacal, Redes de Agua Potable, Calles Pavimentadas, Veredas Hº, Acondicionamiento de espacios verdes, Alumbrado, Tendido electrico subterraneo, Red de Gas Natural. Superfice total terreno 10103.80 m²",
+                "brief-description": "106 lotes y 42 viviendas de 155 m² con infraestructura completa: cloacas, agua, gas, pavimento, alumbrado y tendido subterráneo.",
                 "image": "assets/images/projects/08-barrio-ayres-libertador/01. PORTADA.webp",
                 "images": [
                     "assets/images/projects/08-barrio-ayres-libertador/01. PORTADA.webp",
@@ -209,6 +217,7 @@
                 "id": "p9",
                 "name": "Barrio privado Ayres del Este",
                 "description": "Construción de 120 viviendas de 2 y 3 dormitorios Sup.: 9320 m² y 10 duplex Sup.: 700 m² de 1º calidad, carpinterías de Aluminio, pisos porcelanato, terminaciones de categoría, red de agua, Red de cloacas, red de gas, riego presurizado de espacios verdes y arbolado, red electrica subterranea, portal de acceso, calles asfaltadas, veredas de Hormigón, espacios veredes, sistema de comunicación IT, etc.",
+                "brief-description": "120 viviendas de 2 y 3 dormitorios y 10 dúplex de primera calidad, con infraestructura completa, acceso vehicular, espacios verdes y sistema IT.",
                 "image": "assets/images/projects/09-barrio-privado-ayres-del-este/01. PORTADA.webp",
                 "images": [
                     "assets/images/projects/09-barrio-privado-ayres-del-este/01. PORTADA.webp"
@@ -221,6 +230,7 @@
                 "id": "p10",
                 "name": "Mantenimiento de caminos de acceso a proyecto",
                 "description": "Servicios de apertura, mantenimiento y reparación del Camino de Acceso al proyecto minero Azules, a fin de asegurar el tránsito seguro y la ejecución normal de actividades inherentes al proyecto de exploración. Despeje de nieve y/o hielo, estabilización y reparación de los taludes laterales del camino, construcción y/o reemplazo de bermas de seguridad, construcción y/o mantenimiento de rampas de escape para salidas de emergencia, limpieza y remoción de material producto de grandes deslizamientos, derrumbes, avalanchas y/o crecientes, reparación, mantenimiento y/o construcción de zonas de descanso o detención obligatorias, etc.",
+                "brief-description": "Mantenimiento y reparación del camino de acceso al proyecto minero Azules: despeje de nieve, estabilización de taludes, bermas de seguridad, rampas de emergencia y limpieza de derrumbes.",
                 "image": "assets/images/projects/10-mantenimiento-de-caminos-de-acceso-a-proyecto/01. PORTADA.webp",
                 "images": [
                     "assets/images/projects/10-mantenimiento-de-caminos-de-acceso-a-proyecto/01. PORTADA.webp",
@@ -245,6 +255,7 @@
                 "id": "p11",
                 "name": "Servicio de minado",
                 "description": "Operación de minería a cielo abierto en los pits Sánchez, Norte y Magnata, en un plazo de 24 meses (2025–2027). Se prevé mover 3.40 millones de toneladas. \nEl servicio incluye: movilización, desmovilización, actividades previas a la producción minera de los yacimientos de Hualilán, carga y gestión de la plataforma de acopio de mineral, limpieza y desbroce de capa vegetal, carga, acarreo y transporte a a plataformas de acopio, manejo de estériles en botaderos, desarrollo y mantenimiento de caminos internos y de acceso, control de polvo, drenaje y gestión de aguas, entre otras.",
+                "brief-description": "Minería a cielo abierto en los pits Sánchez, Norte y Magnata durante 24 meses (2025–2027), con movimiento de 3,4 millones de toneladas, incluyendo extracción, transporte, manejo de estériles y gestión de caminos y aguas.",
                 "image": "assets/images/projects/11-servicio-de-minado/01. PORTADA.webp",
                 "images": [
                     "assets/images/projects/11-servicio-de-minado/01. PORTADA.webp",
@@ -265,6 +276,7 @@
                 "id": "p12",
                 "name": "Preparación de escombrera",
                 "description": "Construcción de escombrera en el proyecto minero Lunahuasi localizado en la provincia de San Juan",
+                "brief-description": "Construcción de escombrera en el proyecto minero Lunahuasi",
                 "image": "assets/images/projects/12-preparacion-de-escombrera/01. PORTADA.webp",
                 "images": [
                     "assets/images/projects/12-preparacion-de-escombrera/01. PORTADA.webp"
@@ -276,7 +288,8 @@
             {
                 "id": "p13",
                 "name": "Modificación del diseño de captación de agua en el río Las Taguas – Proyecto Bocatoma",
-                "description": "Diseñar una nueva obra de toma a partir del sistema actual de galerías filtrantes, sedimentador y cuenco de disipación. Se busca proyectar una estructura de captación que optimice los recursos disponibles y resulte eficiente en épocas de estiaje, aprovechando lo más posible la obra civil existente",
+                "description": "Diseño de una nueva obra de toma a partir del sistema actual de galerías filtrantes, sedimentador y cuenco de disipación. Se busca proyectar una estructura de captación que optimice los recursos disponibles y resulte eficiente en épocas de estiaje, aprovechando lo más posible la obra civil existente",
+                "brief-description": "Diseño de nueva obra de toma a partir de galerías filtrantes existentes, optimizando la captación de agua especialmente en épocas de estiaje.",
                 "image": "assets/images/projects/13-proyecto-bocatoma/01. PORTADA.webp",
                 "images": [
                     "assets/images/projects/13-proyecto-bocatoma/01. PORTADA.webp",
@@ -293,6 +306,7 @@
                 "id": "p14",
                 "name": "Mantenimiento de caminos de acceso a proyecto minero Veladero",
                 "description": "Servicios de apertura, mantenimiento y reparación del Camino de Acceso a la mina Veladero, proyecto Lama y aledaños, a fin de posibilitar el tránsito seguro y la ejecución normal de actividades inherentes a la mina. Despeje de nieve y/o hielo, estabilización y reparación de los taludes laterales del camino, construcción y/o reemplazo de bermas de seguridad, construcción y/o mantenimiento de rampas de escape para salidas de emergencia, limpieza y remoción de material producto de grandes deslizamientos, derrumbes, avalanchas y/o crecientes, reparación, mantenimiento y/o construcción de zonas de descanso o detención obligatorias, etc.",
+                "brief-description": "Mantenimiento y reparación del camino de acceso a la mina Veladero y proyecto Lama: despeje de nieve, estabilización de taludes, bermas de seguridad, rampas de emergencia y limpieza de derrumbes.",
                 "image": "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/01.PORTADA.webp",
                 "images": [
                     "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/01.PORTADA.webp",
@@ -317,6 +331,7 @@
                 "id": "p15",
                 "name": "Servicio de provisión y operación de equipos auxiliares para operación en mina Veladero",
                 "description": "Servicio de Provisión y Operación de Equipos Pesados en todos los sectores e instalaciones (Procesos, Mina, Operativo Invierno) comprendidas en el interior de la Operación de Veladero y sus dependencias de servicio tomando como punto de referencia el ingreso denominado Garita Veladero.En la epoca estival se cuenta con 36 equipos en obra, los cuales se incrementan en el operativo de Invierno",
+                "brief-description": "Provisión y operación de equipos pesados en todos los sectores de la mina Veladero, con 36 equipos en verano y mayor dotación en invierno.",
                 "image": "assets/images/projects/15-servicio-de-provision-y-operacion-de-equipos-auxiliares-para-ocupacion-en-mina-veladero/01. PORTADA.webp",
                 "images": [
                     "assets/images/projects/15-servicio-de-provision-y-operacion-de-equipos-auxiliares-para-ocupacion-en-mina-veladero/01. PORTADA.webp",
