@@ -425,6 +425,8 @@
             "required": "Requerido",
             "invalid_email": "Email inválido",
             "cv_note": "*Recordá adjuntarnos tu CV en el mail",
+            "success": "Envío correcto",
+            "error": "Error al enviar",
             "study_levels": {
                 "none": "Seleccione nivel de estudio",
                 "primary": "Primario",

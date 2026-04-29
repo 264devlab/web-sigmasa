@@ -55,8 +55,24 @@
             </div>
 
             <div class="form-actions desktop-only">
-              <button type="submit" form="contactForm" class="submit-btn" [disabled]="contactForm.invalid">
-                {{ 'contact-section.form.send' | i18n }}
+              <button type="submit" form="contactForm" class="submit-btn" 
+                      [ngClass]="'state-' + submitState()" 
+                      [class.is-animating]="submitState() !== 'idle'"
+                      [disabled]="contactForm.invalid || submitState() !== 'idle'">
+                <span class="text">{{ 'contact-section.form.send' | i18n }}</span>
+                <span class="progress-bar"></span>
+                <span class="feedback-container success-feedback">
+                  <svg class="check-svg" viewBox="0 0 25 30">
+                    <path class="check" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
+                  </svg>
+                  <span>{{ 'contact-section.form.success' | i18n }}</span>
+                </span>
+                <span class="feedback-container error-feedback">
+                  <svg class="cross-svg" viewBox="0 0 50 50">
+                    <path class="cross" d="M 15,15 L 35,35 M 35,15 L 15,35" />
+                  </svg>
+                  <span>{{ 'contact-section.form.error' | i18n }}</span>
+                </span>
               </button>
             </div>
           </div>
@@ -164,8 +180,24 @@
             </p>
 
             <div class="form-actions mobile-only">
-              <button type="submit" class="submit-btn" [disabled]="contactForm.invalid">
-                {{ 'contact-section.form.send' | i18n }}
+              <button type="submit" class="submit-btn" 
+                      [ngClass]="'state-' + submitState()" 
+                      [class.is-animating]="submitState() !== 'idle'"
+                      [disabled]="contactForm.invalid || submitState() !== 'idle'">
+                <span class="text">{{ 'contact-section.form.send' | i18n }}</span>
+                <span class="progress-bar"></span>
+                <span class="feedback-container success-feedback">
+                  <svg class="check-svg" viewBox="0 0 25 30">
+                    <path class="check" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
+                  </svg>
+                  <span>{{ 'contact-section.form.success' | i18n }}</span>
+                </span>
+                <span class="feedback-container error-feedback">
+                  <svg class="cross-svg" viewBox="0 0 50 50">
+                    <path class="cross" d="M 15,15 L 35,35 M 35,15 L 15,35" />
+                  </svg>
+                  <span>{{ 'contact-section.form.error' | i18n }}</span>
+                </span>
               </button>
             </div>
           </form>

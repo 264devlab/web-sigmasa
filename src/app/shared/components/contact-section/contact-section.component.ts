@@ -45,8 +45,8 @@ export class ContactSectionComponent implements OnInit {
       firstname: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required]],
-      province: ['', [Validators.required]],
-      city: ['', [Validators.required]],
+      province: ['ar'],
+      city: ['san-juan'],
       study_level: [''],
       worked_projects: [''],
       which_projects: [''],
@@ -113,23 +113,40 @@ export class ContactSectionComponent implements OnInit {
     this.contactForm.get('company')?.updateValueAndValidity();
   }
 
+  submitState = signal<'idle' | 'morphing' | 'loading' | 'finishing' | 'success' | 'error'>('idle');
+
   onSubmit(): void {
-    if (this.contactForm.valid) {
-      const destination = this.emailDestinations[this.selectedArea];
+    if (this.contactForm.valid && this.submitState() === 'idle') {
+      this.submitState.set('morphing');
 
-      const formData = this.contactForm.value;
-      //console.log(formData);
+      setTimeout(() => {
+        this.submitState.set('loading');
 
-      this.http.post('/api/send-email', formData).subscribe({
-        next: (response) => {
-          alert(`Mensaje enviado a: ${formData.destination}`);
-          this.contactForm.reset({ area: this.selectedArea });
-        },
-        error: (error) => {
-          console.error('Error sending email', error);
-          alert('Error al enviar el mensaje');
-        }
-      });
+        const formData = this.contactForm.value;
+
+        this.http.post('/api/send-email', formData).subscribe({
+          next: () => {
+            this.submitState.set('finishing');
+            setTimeout(() => {
+              this.submitState.set('success');
+              setTimeout(() => {
+                this.submitState.set('idle');
+                this.contactForm.reset({ area: this.selectedArea });
+              }, 2500);
+            }, 300);
+          },
+          error: (error) => {
+            console.error('Error sending email', error);
+            this.submitState.set('finishing');
+            setTimeout(() => {
+              this.submitState.set('error');
+              setTimeout(() => {
+                this.submitState.set('idle');
+              }, 2500);
+            }, 300);
+          }
+        });
+      }, 400); // Wait for morphing animation
 
     } else {
       this.contactForm.markAllAsTouched();
