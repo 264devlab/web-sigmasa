@@ -6,8 +6,10 @@
                 <img [ngSrc]="project.image" [alt]="project.name" fill>
                 <div class="overlay">
                     <div class="overlay-content">
-                        <h4 class="project-name text-raleway-medium-32">{{ project.name }}</h4>
-                        <p class="project-desc text-raleway-light-16">{{ project['brief-description'] || project.description }}</p>
+                        <h4 class="project-name text-raleway-medium-32" [class.small-text]="isLongText(project.name)">{{
+                            project.name }}</h4>
+                        <p class="project-desc text-raleway-light-16">{{ project['brief-description'] ||
+                            project.description }}</p>
                         <button class="read-more text-raleway-medium-20" (click)="openProject(project)">{{
                             'projects.read-more' | i18n }}</button>
                     </div>

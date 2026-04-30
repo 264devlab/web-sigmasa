@@ -197,10 +197,14 @@
             background: rgba(255, 255, 255, 0.25);
             border-color: rgba(255, 255, 255, 0.6);
             transform: scale(1.02);
+        }
 
+        // On mobile, only the .active class (not :hover) should control the accordion.
+        // Touch devices leave :hover stuck after a tap, preventing the accordion from closing.
+        &.active {
             @include respond-to(mobile) {
                 .project-description-container.mobile-only {
-                    max-height: 500px; // More than enough
+                    max-height: 500px;
                     opacity: 1;
                     visibility: visible;
                 }

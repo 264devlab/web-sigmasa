@@ -48,7 +48,7 @@ export class ProjectsGalleryComponent implements OnInit {
     private touchStartX: number = 0;
     private touchEndX: number = 0;
 
-    constructor() {}
+    constructor() { }
 
     ngOnInit(): void {
         this.updateItemsPerPage();
@@ -131,6 +131,10 @@ export class ProjectsGalleryComponent implements OnInit {
         } else if (this.touchEndX - this.touchStartX > swipeThreshold) {
             this.prevPage();
         }
+    }
+
+    isLongText(text: string): boolean {
+        return text.length >= 45;
     }
 
 
