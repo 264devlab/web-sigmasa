@@ -210,7 +210,7 @@
 
     .project-card .overlay .overlay-content {
         .project-name {
-            font-size: 24px !important;
+            font-size: 22px !important;
         }
 
         .project-desc {
@@ -253,6 +253,22 @@
 @media (max-width: 550px) {
     .project-desc {
         display: none;
+    }
+}
+
+@media (max-width: 440px) {
+    .project-card .overlay .overlay-content {
+        .small-text {
+            font-size: 16px !important;
+        }
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1290px) {
+    .project-card .overlay .overlay-content {
+        .small-text {
+            font-size: 20px !important;
+        }
     }
 }
 
