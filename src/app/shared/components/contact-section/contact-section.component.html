@@ -184,13 +184,12 @@
                 <label for="cv_file" class="custom-file-label">
                   <span class="custom-file-btn">
                     <span class="material-symbols-outlined" translate="no">upload_file</span>
-                    Subir PDF
+                    {{ 'contact-section.form.upload_btn' | i18n }}
                   </span>
-                  <span class="custom-file-text">{{ cvFileName() ? cvFileName() : 'Ningún archivo seleccionado'
-                    }}</span>
+                  <span class="custom-file-text">{{ cvFileName() ? cvFileName() : ('contact-section.form.no_file_selected' | i18n) }}</span>
                 </label>
 
-                <label class="floating-label-text">Adjunta tu CV</label>
+                <label class="floating-label-text">{{ 'contact-section.form.cv_label' | i18n }}</label>
 
                 <span class="error"
                   *ngIf="contactForm.get('cv_file')?.touched && contactForm.get('cv_file')?.invalid">{{

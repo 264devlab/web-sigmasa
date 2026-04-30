@@ -419,6 +419,9 @@
             "send": "Send",
             "required": "Required",
             "invalid_email": "Invalid email",
+            "cv_label": "Attach your CV",
+            "upload_btn": "Upload PDF",
+            "no_file_selected": "No file selected",
             "cv_note": "*Remember to attach your CV in the email",
             "study_levels": {
                 "none": "Select study level",
