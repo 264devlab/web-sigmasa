@@ -233,7 +233,8 @@
           }
 
           .custom-file-label {
-            display: flex !important;
+            display: grid !important;
+            grid-template-columns: auto minmax(0, 1fr);
             align-items: center;
             background-color: white !important;
             border: 2px solid transparent !important;
@@ -241,10 +242,11 @@
             padding: 6px 10px !important;
             cursor: pointer;
             width: 100% !important;
+            max-width: 100%;
             box-sizing: border-box;
             gap: 12px;
             transition: all 0.3s ease;
-            
+
             position: relative !important;
             top: auto !important;
             left: auto !important;
@@ -255,7 +257,7 @@
 
             &:hover {
               border-color: rgba(255, 255, 255, 0.5) !important;
-              
+
               .custom-file-btn {
                 filter: brightness(0.9);
               }
@@ -272,7 +274,8 @@
               font-weight: $font-weight-bold;
               font-size: 12px;
               transition: filter 0.3s ease;
-              
+              flex-shrink: 0;
+
               span.material-symbols-outlined {
                 font-size: 16px;
               }
@@ -285,6 +288,7 @@
               white-space: nowrap;
               overflow: hidden;
               text-overflow: ellipsis;
+              min-width: 0;
             }
           }
 
@@ -475,6 +479,7 @@
         opacity: 0;
         transform: translateY(-5px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
