@@ -178,9 +178,20 @@
 
             <ng-container *ngIf="selectedArea === 'hr'">
               <div class="form-group full-width">
-                <input type="file" id="cv_file" class="has-value" formControlName="cv_file"
+                <input type="file" id="cv_file" class="hidden-file-input has-value" formControlName="cv_file"
                   (change)="onFileSelected($event)" accept=".pdf" />
-                <label for="cv_file">Adjunta tu CV</label>
+
+                <label for="cv_file" class="custom-file-label">
+                  <span class="custom-file-btn">
+                    <span class="material-symbols-outlined" translate="no">upload_file</span>
+                    Subir PDF
+                  </span>
+                  <span class="custom-file-text">{{ cvFileName() ? cvFileName() : 'Ningún archivo seleccionado'
+                    }}</span>
+                </label>
+
+                <label class="floating-label-text">Adjunta tu CV</label>
+
                 <span class="error"
                   *ngIf="contactForm.get('cv_file')?.touched && contactForm.get('cv_file')?.invalid">{{
                   'contact-section.form.required' | i18n }}</span>
