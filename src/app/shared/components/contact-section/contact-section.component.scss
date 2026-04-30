@@ -9,6 +9,11 @@
   background-color: #ffffff;
   padding: $spacing-xl 0;
 
+  &.is-submitting,
+  &.is-submitting * {
+    cursor: wait !important;
+  }
+
   .contact-card-container {
     width: 100%;
     position: relative;
@@ -395,6 +400,7 @@
         background-color: #e0e0e0;
         box-shadow: none;
         pointer-events: none;
+        cursor: wait;
 
         .text {
           opacity: 0;

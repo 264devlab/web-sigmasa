@@ -69,8 +69,8 @@ export default async function handler(req: any, res: any) {
 
     // 3. Mapeo de áreas → emails y nombres
     const areaDetails: Record<string, { email: string, name: string }> = {
-      hr: { email: 'ismaterluk98@gmail.com', name: 'Recursos Humanos' },
-      technical: { email: 'ismaterluk98@gmail.com', name: 'Técnica' },
+      hr: { email: 'gonzalo.balderrama@264devlab.com.ar', name: 'Recursos Humanos' },
+      technical: { email: 'gonzalo.balderrama@264devlab.com.ar', name: 'Técnica' },
       commercial: { email: 'ismaterluk98@gmail.com', name: 'Comercial' },
       consulting: { email: 'ismaterluk98@gmail.com', name: 'Consultoría' }
     };
@@ -214,9 +214,8 @@ export default async function handler(req: any, res: any) {
         `;
 
     const resendOptions: any = {
-      from: 'onboarding@resend.dev',
+      from: 'no-reply@264devlab.com.ar',
       to: targetArea.email,
-      reply_to: email,
       subject: `Nuevo mensaje de ${firstname} ${lastname} - ${targetArea.name}`,
       html: templateHTML
     };
