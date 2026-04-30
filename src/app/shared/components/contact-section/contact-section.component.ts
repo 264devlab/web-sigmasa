@@ -21,6 +21,10 @@ export class ContactSectionComponent implements OnInit {
   localities = signal<GeorefItem[]>([]);
   isLoadingLocalities = signal(false);
 
+  cvFileBase64 = signal<string | null>(null);
+  cvFileName = signal<string | null>(null);
+  cvFileError = signal<string | null>(null);
+
   private georefService = inject(GeorefService);
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
@@ -45,6 +49,7 @@ export class ContactSectionComponent implements OnInit {
       which_projects: [''],
       company: [''],
       message: ['', [Validators.required, Validators.maxLength(250)]],
+      cv_file: [null],
       area: ['hr']
     });
 
@@ -106,11 +111,13 @@ export class ContactSectionComponent implements OnInit {
     this.contactForm.get('worked_projects')?.clearValidators();
     this.contactForm.get('which_projects')?.clearValidators();
     this.contactForm.get('company')?.clearValidators();
+    this.contactForm.get('cv_file')?.clearValidators();
 
     // Update validators based on area
     if (area === 'hr') {
       this.contactForm.get('study_level')?.setValidators([Validators.required]);
       this.contactForm.get('worked_projects')?.setValidators([Validators.required]);
+      this.contactForm.get('cv_file')?.setValidators([Validators.required]);
     } else if (area === 'technical') {
       this.contactForm.get('company')?.setValidators([Validators.required]);
     }
@@ -119,6 +126,43 @@ export class ContactSectionComponent implements OnInit {
     this.contactForm.get('worked_projects')?.updateValueAndValidity();
     this.contactForm.get('which_projects')?.updateValueAndValidity();
     this.contactForm.get('company')?.updateValueAndValidity();
+    this.contactForm.get('cv_file')?.updateValueAndValidity();
+  }
+
+  onFileSelected(event: Event): void {
+    const element = event.currentTarget as HTMLInputElement;
+    let file: File | null = element.files ? element.files[0] : null;
+
+    this.cvFileError.set(null);
+    this.cvFileBase64.set(null);
+    this.cvFileName.set(null);
+
+    if (file) {
+      if (file.type !== 'application/pdf') {
+        this.cvFileError.set('Solo se permiten archivos PDF');
+        this.contactForm.patchValue({ cv_file: null });
+        return;
+      }
+      if (file.size > 2 * 1024 * 1024) {
+        this.cvFileError.set('El archivo no puede superar los 2MB');
+        this.contactForm.patchValue({ cv_file: null });
+        return;
+      }
+
+      this.cvFileName.set(file.name);
+      
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        const base64String = reader.result as string;
+        const base64Content = base64String.split(',')[1];
+        this.cvFileBase64.set(base64Content);
+      };
+      reader.onerror = (error) => {
+        this.cvFileError.set('Error al leer el archivo');
+        this.contactForm.patchValue({ cv_file: null });
+      };
+    }
   }
 
   submitState = signal<'idle' | 'morphing' | 'loading' | 'finishing' | 'success' | 'error'>('idle');
@@ -130,10 +174,15 @@ export class ContactSectionComponent implements OnInit {
       setTimeout(() => {
         this.submitState.set('loading');
 
-        const formData = { ...this.contactForm.value };
+        const formData: any = { ...this.contactForm.value };
         const selectedProv = this.provinces().find(p => p.id === formData.province);
         if (selectedProv) {
           formData.provinceName = selectedProv.nombre;
+        }
+
+        if (this.cvFileBase64()) {
+          formData.cv_file_content = this.cvFileBase64();
+          formData.cv_file_name = this.cvFileName();
         }
 
         this.http.post('/api/send-email', formData).subscribe({

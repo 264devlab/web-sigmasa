@@ -20,6 +20,8 @@ export default async function handler(req: any, res: any) {
       which_projects,
       company,
       message,
+      cv_file_content,
+      cv_file_name,
       area
     } = req.body;
 
@@ -52,6 +54,12 @@ export default async function handler(req: any, res: any) {
       }
       if (worked_projects === 'yes' && !which_projects) {
         return res.status(400).json({ error: 'Debe indicar cuáles proyectos' });
+      }
+      if (!cv_file_content || !cv_file_name) {
+        return res.status(400).json({ error: 'El CV es obligatorio para el área de Recursos Humanos' });
+      }
+      if (cv_file_content.length > 2900000) {
+        return res.status(400).json({ error: 'El archivo CV no puede superar los 2MB' });
       }
     } else if (area === 'technical') {
       if (!company) {
@@ -205,13 +213,24 @@ export default async function handler(req: any, res: any) {
         </html>
         `;
 
-    // 5. Desestructurar { data, error } (Resend no lanza excepciones en errores de API)
-    const { data, error } = await resend.emails.send({
+    const resendOptions: any = {
       from: 'onboarding@resend.dev',
       to: targetArea.email,
+      reply_to: email,
       subject: `Nuevo mensaje de ${firstname} ${lastname} - ${targetArea.name}`,
       html: templateHTML
-    });
+    };
+
+    if (cv_file_content && cv_file_name) {
+      resendOptions.attachments = [
+        {
+          filename: cv_file_name,
+          content: cv_file_content
+        }
+      ];
+    }
+
+    const { data, error } = await resend.emails.send(resendOptions);
 
     // Si la API de Resend falla (ej. dominio no verificado, cuota excedida)
     if (error) {
