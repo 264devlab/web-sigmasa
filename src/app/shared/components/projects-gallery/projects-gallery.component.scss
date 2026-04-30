@@ -19,6 +19,7 @@
     overflow: hidden;
     background-color: transparent;
     border-radius: 4px;
+    contain: layout paint; // Isolate rendering for performance
 
     // Default animation on load/render
     opacity: 0;
