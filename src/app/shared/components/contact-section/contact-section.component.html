@@ -188,11 +188,6 @@
               </div>
             </ng-container>
 
-            <!-- CV Note for HR ONLY -->
-            <p *ngIf="selectedArea === 'hr'" class="cv-note">
-              {{ 'contact-section.form.cv_note' | i18n }}
-            </p>
-
             <div class="form-actions mobile-only">
               <button type="submit" class="submit-btn" [ngClass]="'state-' + submitState()"
                 [class.is-animating]="submitState() !== 'idle'"
