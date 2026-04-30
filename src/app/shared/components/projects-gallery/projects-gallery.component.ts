@@ -1,5 +1,5 @@
-import { Component, HostListener, OnInit, signal, computed, inject, effect } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, HostListener, OnInit, signal, computed, inject } from '@angular/core';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { I18nService } from '../../i18n/i18n.service';
 import { I18nPipe } from '../../i18n/i18n.pipe';
 import { ProjectModalService } from '../../../core/services/project-modal.service';
@@ -22,7 +22,7 @@ interface Project {
 @Component({
     selector: 'app-projects-gallery',
     standalone: true,
-    imports: [CommonModule, I18nPipe],
+    imports: [CommonModule, I18nPipe, NgOptimizedImage],
     templateUrl: './projects-gallery.component.html',
     styleUrl: './projects-gallery.component.scss'
 })
@@ -47,17 +47,8 @@ export class ProjectsGalleryComponent implements OnInit {
 
     private touchStartX: number = 0;
     private touchEndX: number = 0;
-    private imageCache: HTMLImageElement[] = [];
 
-    constructor() {
-        // Preload all images whenever the projects list changes
-        effect(() => {
-            const currentProjects = this.projects();
-            if (currentProjects.length > 0) {
-                this.preloadImages(currentProjects);
-            }
-        });
-    }
+    constructor() {}
 
     ngOnInit(): void {
         this.updateItemsPerPage();
@@ -142,14 +133,5 @@ export class ProjectsGalleryComponent implements OnInit {
         }
     }
 
-    private preloadImages(projects: any[]): void {
-        projects.forEach(project => {
-            // Check if already preloaded
-            if (!this.imageCache.some(img => img.src.includes(project.image))) {
-                const img = new Image();
-                img.src = project.image;
-                this.imageCache.push(img);
-            }
-        });
-    }
+
 }

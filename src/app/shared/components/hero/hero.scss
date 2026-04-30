@@ -22,6 +22,7 @@
             object-fit: cover;
             opacity: 0;
             transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: opacity; // Hint to GPU
 
             &.loaded {
                 opacity: 1;
@@ -84,8 +85,9 @@
         max-width: 600px;
 
         @include respond-to(mobile) {
-            display: none;
-            font-size: 0.9rem;
+            display: block;
+            font-size: 0.95rem;
+            margin-bottom: $spacing-md;
         }
     }
 }

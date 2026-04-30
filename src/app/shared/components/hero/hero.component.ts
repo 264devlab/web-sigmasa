@@ -1,4 +1,4 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, Input, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ActionButtonComponent } from '../action-button/action-button.component';
@@ -22,6 +22,8 @@ export class HeroComponent {
     @Input() buttonText: string = 'Ver más';
     @Input() project?: any;
 
+    isLoaded = signal(false);
+
     private modalService = inject(ProjectModalService);
 
     openModal() {
@@ -31,9 +33,6 @@ export class HeroComponent {
     }
 
     onImageLoad() {
-        const img = document.querySelector('.hero-img[src*="' + this.backgroundImage + '"]');
-        if (img) {
-            img.classList.add('loaded');
-        }
+        this.isLoaded.set(true);
     }
 }
