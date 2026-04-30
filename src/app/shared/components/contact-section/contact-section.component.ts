@@ -192,7 +192,25 @@ export class ContactSectionComponent implements OnInit {
               this.submitState.set('success');
               setTimeout(() => {
                 this.submitState.set('idle');
-                this.contactForm.reset({ area: this.selectedArea });
+                this.contactForm.reset({
+                  lastname: '',
+                  firstname: '',
+                  email: '',
+                  phone: '',
+                  province: '',
+                  city: '',
+                  study_level: '',
+                  worked_projects: '',
+                  which_projects: '',
+                  company: '',
+                  message: '',
+                  cv_file: null,
+                  area: this.selectedArea
+                });
+                this.cvFileBase64.set(null);
+                this.cvFileName.set(null);
+                this.cvFileError.set(null);
+                this.localities.set([]);
               }, 2500);
             }, 300);
           },
