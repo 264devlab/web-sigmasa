@@ -3,7 +3,7 @@
         @for (project of paginatedProjects(); track project.id; let i = $index) {
         <div class="project-card" [style.--index]="i">
             <div class="image-wrapper">
-                <img [src]="project.image" [alt]="project.name">
+                <img [ngSrc]="project.image" [alt]="project.name" fill>
                 <div class="overlay">
                     <div class="overlay-content">
                         <h4 class="project-name text-raleway-medium-32">{{ project.name }}</h4>

@@ -130,6 +130,24 @@ export class ProjectsMap {
     }
   }
 
+  // Handle hover for desktop
+  onHoverProject(project: Project | null) {
+    if (window.innerWidth > 768) {
+      this.setActiveProject(project);
+    }
+  }
+
+  // Handle click for mobile toggle
+  onProjectClick(project: Project) {
+    if (window.innerWidth <= 768) {
+      if (this.activeProject()?.id === project.id) {
+        this.setActiveProject(null);
+      } else {
+        this.setActiveProject(project);
+      }
+    }
+  }
+
   @HostListener('window:resize')
   onResize() {
     const current = this.activeProject();

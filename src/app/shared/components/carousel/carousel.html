@@ -4,11 +4,12 @@
         <img src="assets/images/mapal-sigma.webp" alt="Mapal y Sigma">
     </a>
 
-    <div class="carousel-track" [style.transform]="'translateX(-' + (currentIndex() * 100) + '%)'">
-        <div class="carousel-slide" *ngFor="let slide of slides; let i = index"
+    <div class="carousel-track" [class.no-transition]="!isTransitioning()"
+        [style.transform]="'translateX(-' + (currentIndex() * 100) + '%)'" (transitionend)="onTransitionEnd()">
+        <div class="carousel-slide" *ngFor="let slide of extendedSlides(); let i = index"
             [class.is-active]="i === currentIndex()">
             <app-hero [title]="slide.title" [description]="slide.description" [backgroundImage]="slide.backgroundImage"
-                [buttonText]="slide.buttonText" [project]="slide.project" [priority]="i === 0"></app-hero>
+                [buttonText]="slide.buttonText" [project]="slide.project" [priority]="i === 1"></app-hero>
         </div>
     </div>
 
@@ -24,7 +25,7 @@
 
     <!-- Indicadores (Dots) -->
     <div class="carousel-indicators">
-        <button *ngFor="let dot of slides; let i = index" class="carousel-dot" [class.is-active]="i === currentIndex()"
+        <button *ngFor="let dot of allSlides(); let i = index" class="carousel-dot" [class.is-active]="i === realIndex()"
             (click)="goToSlide(i)">
         </button>
     </div>

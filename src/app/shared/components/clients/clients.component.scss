@@ -55,6 +55,7 @@
         animation: scroll 25s linear infinite;
         gap: $spacing-xl;
         padding-right: $spacing-xl;
+        will-change: transform;
     }
 
     .logo-item {
