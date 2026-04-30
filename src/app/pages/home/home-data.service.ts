@@ -18,7 +18,7 @@ export class HomeDataService {
       const project = projects.find(p => p.id === id);
       return {
         title: project?.name || '',
-        description: project?.description || '',
+        description: project?.['brief-description'] || project?.description || '',
         backgroundImage: project?.image || '',
         buttonText: project?.button || this.i18n.translate('projects.read-more')(),
 
