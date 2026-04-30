@@ -423,6 +423,8 @@
             "upload_btn": "Upload PDF",
             "no_file_selected": "No file selected",
             "cv_note": "*Remember to attach your CV in the email",
+            "success": "Message sent successfully",
+            "error": "We couldn't send the message. Please try again later.",
             "study_levels": {
                 "none": "Select study level",
                 "primary": "Primary",

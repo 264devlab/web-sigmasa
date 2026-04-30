@@ -41,18 +41,18 @@
                 <span class="text">{{ 'contact-section.form.send' | i18n }}</span>
                 <span class="progress-bar"></span>
                 <span class="feedback-container success-feedback">
-                  <svg class="check-svg" viewBox="0 0 25 30">
-                    <path class="check" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
-                  </svg>
-                  <span>{{ 'contact-section.form.success' | i18n }}</span>
+                  <span class="material-symbols-outlined feedback-icon" translate="no">check_circle</span>
                 </span>
                 <span class="feedback-container error-feedback">
-                  <svg class="cross-svg" viewBox="0 0 50 50">
-                    <path class="cross" d="M 15,15 L 35,35 M 35,15 L 15,35" />
-                  </svg>
-                  <span>{{ 'contact-section.form.error' | i18n }}</span>
+                  <span class="material-symbols-outlined feedback-icon" translate="no">cancel</span>
                 </span>
               </button>
+              <p class="submit-feedback-msg success-msg" *ngIf="submitState() === 'success'">
+                {{ 'contact-section.form.success' | i18n }}
+              </p>
+              <p class="submit-feedback-msg error-msg" *ngIf="submitState() === 'error'">
+                {{ 'contact-section.form.error' | i18n }}
+              </p>
             </div>
           </div>
 
@@ -205,18 +205,18 @@
                 <span class="text">{{ 'contact-section.form.send' | i18n }}</span>
                 <span class="progress-bar"></span>
                 <span class="feedback-container success-feedback">
-                  <svg class="check-svg" viewBox="0 0 25 30">
-                    <path class="check" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
-                  </svg>
-                  <span>{{ 'contact-section.form.success' | i18n }}</span>
+                  <span class="material-symbols-outlined feedback-icon" translate="no">check_circle</span>
                 </span>
                 <span class="feedback-container error-feedback">
-                  <svg class="cross-svg" viewBox="0 0 50 50">
-                    <path class="cross" d="M 15,15 L 35,35 M 35,15 L 15,35" />
-                  </svg>
-                  <span>{{ 'contact-section.form.error' | i18n }}</span>
+                  <span class="material-symbols-outlined feedback-icon" translate="no">cancel</span>
                 </span>
               </button>
+              <p class="submit-feedback-msg success-msg" *ngIf="submitState() === 'success'">
+                {{ 'contact-section.form.success' | i18n }}
+              </p>
+              <p class="submit-feedback-msg error-msg" *ngIf="submitState() === 'error'">
+                {{ 'contact-section.form.error' | i18n }}
+              </p>
             </div>
           </form>
         </div>

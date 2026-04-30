@@ -423,8 +423,8 @@
             "upload_btn": "Subir PDF",
             "no_file_selected": "Ningún archivo seleccionado",
             "cv_note": "*Recordá adjuntarnos tu CV en el mail",
-            "success": "Envío correcto",
-            "error": "Error al enviar",
+            "success": "Mensaje enviado correctamente",
+            "error": "No pudimos enviar el mensaje. Por favor, intenta más tarde.",
             "study_levels": {
                 "none": "Seleccione nivel de estudio",
                 "primary": "Primario",

@@ -362,28 +362,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 8px;
         opacity: 0;
         transition: opacity 0.3s ease;
         color: white;
-        font-weight: $font-weight-semibold;
-        font-size: $font-size-large;
 
-        svg {
-          width: 24px;
-          height: 24px;
-        }
-
-        .check,
-        .cross {
-          fill: none;
-          stroke: white;
-          stroke-width: 4;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-          stroke-dasharray: 100;
-          stroke-dashoffset: 100;
-          transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        .feedback-icon {
+          font-size: 28px;
         }
       }
 
@@ -433,7 +417,6 @@
       &.state-error {
         height: 54px;
         pointer-events: none;
-        padding: 0 20px;
 
         .text {
           opacity: 0;
@@ -451,11 +434,6 @@
         .success-feedback {
           opacity: 1;
         }
-
-        .check {
-          stroke-dashoffset: 0;
-          transition-delay: 0.3s;
-        }
       }
 
       &.state-error {
@@ -465,11 +443,35 @@
         .error-feedback {
           opacity: 1;
         }
+      }
+    }
 
-        .cross {
-          stroke-dashoffset: 0;
-          transition-delay: 0.3s;
-        }
+    .submit-feedback-msg {
+      font-family: $font-family-raleway;
+      font-size: 13px;
+      font-weight: $font-weight-semibold;
+      margin: 10px 0 0;
+      text-align: center;
+      animation: fadeInMsg 0.4s ease forwards;
+      width: 75%;
+
+      &.success-msg {
+        color: #a8f0b8;
+      }
+
+      &.error-msg {
+        color: #ffcccc;
+      }
+    }
+
+    @keyframes fadeInMsg {
+      from {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   }
@@ -521,6 +523,7 @@
           .form-actions.mobile-only {
             display: flex;
             justify-content: flex-end;
+            flex-wrap: wrap;
           }
 
           .submit-btn {
@@ -626,6 +629,10 @@
             &.state-error {
               height: 44px;
             }
+          }
+
+          .submit-feedback-msg {
+            width: 100%;
           }
         }
       }
