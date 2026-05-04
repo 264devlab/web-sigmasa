@@ -1,0 +1,37 @@
+<div class="gallery-container" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+    <div class="projects-grid" [class.is-animating]="isAnimating()">
+        @for (project of paginatedProjects(); track project.id; let i = $index) {
+        <div class="project-card" [style.--index]="i">
+            <div class="image-wrapper">
+                <img [ngSrc]="project.image" [alt]="project.name" fill>
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h4 class="project-name text-raleway-medium-32" [class.small-text]="isLongText(project.name)">{{
+                            project.name }}</h4>
+                        <p class="project-desc text-raleway-light-16">{{ project['brief-description'] ||
+                            project.description }}</p>
+                        <button class="read-more text-raleway-medium-20" (click)="openProject(project)">{{
+                            'projects.read-more' | i18n }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <div class="pagination" *ngIf="totalPages() > 1">
+        <button (click)="prevPage()" class="page-btn prev">
+            <span class="material-symbols-outlined" translate="no">keyboard_arrow_left</span>
+        </button>
+
+        <div class="page-indicators">
+            <button *ngFor="let p of [].constructor(totalPages()); let i = index" (click)="changePage(i + 1)"
+                [class.active]="currentPage() === i + 1" class="indicator">
+            </button>
+        </div>
+
+        <button (click)="nextPage()" class="page-btn next">
+            <span class="material-symbols-outlined" translate="no">keyboard_arrow_right</span>
+        </button>
+    </div>
+</div>

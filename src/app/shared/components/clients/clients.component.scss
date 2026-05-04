@@ -1,0 +1,115 @@
+@use 'sass:math';
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@include respond-to(tablet) {
+    .clients-section {
+        padding: calc($spacing-lg / 2) 0 $spacing-lg 0;
+    }
+}
+
+.clients-section {
+    padding: math.div($spacing-xl, 2) 0 $spacing-xl 0;
+    background-color: $color-background;
+    overflow: hidden;
+
+    .title {
+        margin-bottom: $spacing-xl;
+        text-align: left;
+        color: $color-text;
+    }
+
+    .logos-carousel {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        // Gradient masks for smooth entry/exit
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        &::before {
+            left: -1px; // Overshoot to prevent subpixel lines
+            background: linear-gradient(to right, $color-background, transparent);
+        }
+
+        &::after {
+            right: -1px; // Overshoot to prevent subpixel lines
+            background: linear-gradient(to left, $color-background, transparent);
+        }
+    }
+
+    .logos-track {
+        display: flex;
+        width: max-content;
+        animation: scroll 25s linear infinite;
+        gap: $spacing-xl;
+        padding-right: $spacing-xl;
+        will-change: transform;
+    }
+
+    .logo-item {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 250px;
+
+        img {
+            max-height: 70%;
+            max-width: 80%;
+            object-fit: contain;
+        }
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+// Responsive adjustments
+@include respond-to(mobile) {
+    .clients-section {
+        padding: math.div($spacing-lg, 2) 0 $spacing-lg 0;
+
+        .title {
+            font-size: 32px;
+            margin-bottom: $spacing-lg;
+        }
+
+        .logos-carousel {
+
+            &::before,
+            &::after {
+                width: 50px;
+            }
+        }
+
+        .logos-track {
+            gap: $spacing-md;
+            animation-duration: 20s;
+        }
+
+        .logo-item {
+            height: 50px;
+            width: 120px;
+        }
+    }
+}

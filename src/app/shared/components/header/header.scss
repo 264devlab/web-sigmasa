@@ -1,0 +1,282 @@
+@use 'index' as *;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: $spacing-sm-2 0;
+    @include transition-standard;
+
+    // Glassmorphism effect
+    background: rgba(30, 30, 30, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+    @include respond-to(tablet) {
+        padding: $spacing-xs;
+    }
+
+    &-desktop-container {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 clamp($spacing-sm, 3.5vw, $spacing-xl);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        @include respond-to(tablet) {
+            display: none;
+        }
+    }
+
+    &-mobile {
+        display: none;
+
+        @include respond-to(tablet) {
+            display: block;
+            width: 100%;
+        }
+
+        &-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 clamp($spacing-sm, 3.5vw, $spacing-xl);
+            width: 100%;
+
+        }
+
+        &-toggle {
+            background: transparent;
+            border: none;
+            color: $color-white;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 8px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            -webkit-tap-highlight-color: transparent;
+            @include transition-standard;
+
+            @media (hover: hover) {
+                &:hover {
+                    background: rgba(255, 255, 255, 0.1);
+                }
+            }
+
+            &:focus, &:active {
+                outline: none;
+                background: transparent;
+            }
+
+            .material-symbols-outlined {
+                font-size: 32px;
+            }
+        }
+
+        &-drawer {
+            max-height: 0px;
+            overflow: hidden;
+            @include transition-standard;
+            background: rgba(30, 30, 30, 0.050);
+            /* backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); */
+            display: flex;
+            flex-direction: column;
+            padding: 0 $spacing-md;
+
+            &.is-open {
+                max-height: 100vh;
+            }
+        }
+
+        &-nav {
+            padding: $spacing-md;
+        }
+
+        &-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $spacing-md;
+        }
+
+        &-link {
+            display: block;
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: $font-weight-medium;
+            padding: $spacing-sm $spacing-lg;
+            text-align: center;
+            border-radius: 12px;
+            @include transition-standard;
+            width: fit-content;
+
+            &:hover,
+            &.is-active {
+                color: $color-white;
+                background: rgba(255, 255, 255, 0.15);
+            }
+        }
+
+        &-footer {
+            margin-top: auto;
+            padding: $spacing-sm 0 $spacing-xs 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+            .header-mobile-socials {
+                display: flex;
+                gap: $spacing-md;
+            }
+
+            .header-mobile-languages {
+                display: flex;
+                gap: $spacing-md;
+            }
+        }
+    }
+
+    &-logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+
+        &-img {
+            height: 34px;
+            width: auto;
+            display: block;
+            flex-shrink: 0;
+        }
+    }
+
+    &-desktop-menu {
+        display: contents;
+
+        @include respond-to(tablet) {
+            display: flex;
+            align-items: center;
+            gap: clamp($spacing-xs, 1.8vw, $spacing-xl);
+        }
+    }
+
+    &-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &-list {
+        display: flex;
+        gap: $spacing-md;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @include respond-to(tablet) {
+            gap: $spacing-xs;
+        }
+    }
+
+    &-link {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        font-weight: $font-weight-medium;
+        font-family: $font-family-inter;
+        font-size: 0.85rem;
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+        padding: 10px 20px;
+        border-radius: 12px;
+        position: relative;
+        @include transition-standard;
+
+        &:hover {
+            color: $color-white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        &.is-active {
+            color: $color-white;
+            background: rgba(255, 255, 255, 0.15);
+        }
+    }
+
+    &-actions {
+        display: flex;
+        align-items: center;
+        gap: $spacing-lg;
+
+        @include respond-to(tablet) {
+            gap: $spacing-sm;
+        }
+    }
+
+    &-socials {
+        display: flex;
+        gap: $spacing-sm;
+        align-items: center;
+
+        @include respond-to(tablet) {
+            gap: $spacing-xs;
+        }
+    }
+
+    &-social-link {
+        color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        border-radius: 10px;
+        @include transition-standard;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover {
+            color: $color-white;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+    }
+
+    &-divider {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        height: 28px;
+    }
+
+    &-languages {
+        display: flex;
+        gap: 4px;
+    }
+
+    &-lang-btn {
+        background: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 0.75rem;
+        font-weight: $font-weight-semibold;
+        cursor: pointer;
+        padding: 8px 12px;
+        border-radius: 8px;
+        @include transition-standard;
+
+        &:hover,
+        &.is-active {
+            color: $color-white;
+            background: rgba(255, 255, 255, 0.15);
+        }
+    }
+}

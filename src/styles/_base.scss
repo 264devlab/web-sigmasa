@@ -1,0 +1,121 @@
+/* Un "reset" global para que la web se vea igual en todos los navegadores, 
+estableciendo la fuente 'Inter' y normalizando márgenes. */
+
+@use 'variables' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: $font-family-inter;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-base;
+    color: $color-text;
+    background-color: $color-background;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Clases de utilidad para las especificaciones de diseño
+.text-inter {
+    font-family: $font-family-inter;
+
+    &-medium-64 {
+        font-weight: $font-weight-medium;
+        font-size: $font-size-h1;
+    }
+
+    &-medium-40 {
+        font-weight: $font-weight-medium;
+        font-size: $font-size-h2;
+    }
+
+    &-medium-20 {
+        font-weight: $font-weight-medium;
+        font-size: $font-size-large;
+    }
+}
+
+.text-raleway {
+    font-family: $font-family-raleway;
+
+    &-medium-40 {
+        font-weight: $font-weight-medium;
+        font-size: $font-size-h2;
+    }
+
+    &-light-16 {
+        font-weight: $font-weight-light;
+        font-size: $font-size-base;
+    }
+
+    &-semibold-40 {
+        font-weight: $font-weight-semibold;
+        font-size: $font-size-h2;
+    }
+
+    &-light-20 {
+        font-weight: $font-weight-light;
+        font-size: $font-size-large;
+    }
+
+    &-medium-32 {
+        font-weight: $font-weight-medium;
+        font-size: $font-size-h3;
+    }
+
+    &-medium-20 {
+        font-weight: $font-weight-medium;
+        font-size: $font-size-large;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+// Global Scroll Reveal Animations
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+    visibility: hidden;
+    will-change: opacity, transform;
+
+    &.active {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    // Staggered Delays
+    &.delay-100 { transition-delay: 0.1s; }
+    &.delay-200 { transition-delay: 0.2s; }
+    &.delay-300 { transition-delay: 0.3s; }
+    &.delay-400 { transition-delay: 0.4s; }
+    &.delay-500 { transition-delay: 0.5s; }
+}

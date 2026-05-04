@@ -1,0 +1,226 @@
+<section class="contact-section" [class.is-submitting]="submitState() !== 'idle'">
+  <div class="container contact-container">
+    <div class="contact-card-container">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.123456789012!2d-68.5521886588281!3d-31.536294210049416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDMyJzEwLjEiUyA2OMKwMzMnMDcuOSJX!5e0!3m2!1sen!2sar!4v1710188400000!5m2!1sen!2sar"
+          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-overlay" onclick="window.open('https://maps.app.goo.gl/e8Mu7GVZhouj2yZ97', '_blank')">
+          <img src="https://www.gstatic.com/images/branding/product/2x/maps_96dp.png" alt="Google Maps Pin"
+            class="map-pin">
+        </div>
+      </div>
+
+      <div id="contact" class="contact-card" appReveal [style.background-image]="'url(/assets/images/tarjeta-1.svg)'">
+        <div class="contact-content">
+          <div class="left-column">
+            <div class="contact-header">
+              <h2>{{ 'contact-section.title' | i18n }}</h2>
+            </div>
+
+            <div class="area-selection">
+              <button type="button" [class.active]="selectedArea === 'hr'" (click)="selectArea('hr')">
+                {{ 'contact-section.areas.hr' | i18n }}
+              </button>
+              <button type="button" [class.active]="selectedArea === 'technical'" (click)="selectArea('technical')">
+                {{ 'contact-section.areas.technical' | i18n }}
+              </button>
+              <button type="button" [class.active]="selectedArea === 'commercial'" (click)="selectArea('commercial')">
+                {{ 'contact-section.areas.commercial' | i18n }}
+              </button>
+              <button type="button" [class.active]="selectedArea === 'consulting'" (click)="selectArea('consulting')">
+                {{ 'contact-section.areas.consulting' | i18n }}
+              </button>
+            </div>
+
+            <div class="form-actions desktop-only">
+              <button type="submit" form="contactForm" class="submit-btn" [ngClass]="'state-' + submitState()"
+                [class.is-animating]="submitState() !== 'idle'"
+                [disabled]="contactForm.invalid || submitState() !== 'idle'">
+                <span class="text">{{ 'contact-section.form.send' | i18n }}</span>
+                <span class="progress-bar"></span>
+                <span class="feedback-container success-feedback">
+                  <span class="material-symbols-outlined feedback-icon" translate="no">check_circle</span>
+                </span>
+                <span class="feedback-container error-feedback">
+                  <span class="material-symbols-outlined feedback-icon" translate="no">cancel</span>
+                </span>
+              </button>
+              <p class="submit-feedback-msg success-msg" *ngIf="submitState() === 'success'">
+                {{ 'contact-section.form.success' | i18n }}
+              </p>
+              <p class="submit-feedback-msg error-msg" *ngIf="submitState() === 'error'">
+                {{ 'contact-section.form.error' | i18n }}
+              </p>
+            </div>
+          </div>
+
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" id="contactForm" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="lastname" formControlName="lastname" placeholder=" " maxlength="25" />
+                <label for="lastname">{{ 'contact-section.form.lastname' | i18n }}</label>
+                <span class="error"
+                  *ngIf="contactForm.get('lastname')?.touched && contactForm.get('lastname')?.invalid">{{
+                  'contact-section.form.required' | i18n }}</span>
+              </div>
+              <div class="form-group">
+                <input type="text" id="firstname" formControlName="firstname" placeholder=" " maxlength="25" />
+                <label for="firstname">{{ 'contact-section.form.firstname' | i18n }}</label>
+                <span class="error"
+                  *ngIf="contactForm.get('firstname')?.touched && contactForm.get('firstname')?.invalid">{{
+                  'contact-section.form.required' | i18n }}</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <input type="email" id="email" formControlName="email" placeholder=" " />
+                <label for="email">{{ 'contact-section.form.email' | i18n }}</label>
+                <span class="error" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">{{
+                  'contact-section.form.invalid_email' | i18n }}</span>
+              </div>
+              <div class="form-group">
+                <input type="text" id="phone" formControlName="phone" placeholder=" " maxlength="15" />
+                <label for="phone">{{ 'contact-section.form.phone' | i18n }}</label>
+                <span class="error" *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid">{{
+                  'contact-section.form.required' | i18n }}</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <select id="province" formControlName="province" [class.has-value]="contactForm.get('province')?.value">
+                  <option value="" disabled selected>{{ 'contact-section.form.select_province' | i18n }}</option>
+                  <option *ngFor="let prov of provinces()" [value]="prov.id">{{ prov.nombre }}</option>
+                </select>
+                <label for="province">{{ 'contact-section.form.province' | i18n }}</label>
+                <span class="material-symbols-outlined select-icon" translate="no">keyboard_arrow_down</span>
+                <span class="error"
+                  *ngIf="contactForm.get('province')?.touched && contactForm.get('province')?.invalid">{{
+                  'contact-section.form.required' | i18n }}</span>
+              </div>
+              <div class="form-group">
+                <select id="city" formControlName="city" [class.has-value]="contactForm.get('city')?.value">
+                  <option value="" disabled selected>
+                    {{ (isLoadingLocalities() ? 'contact-section.form.loading' : 'contact-section.form.select_city') |
+                    i18n }}
+                  </option>
+                  <option *ngFor="let loc of localities()" [value]="loc.nombre">{{ loc.nombre }}</option>
+                </select>
+                <label for="city">{{ 'contact-section.form.city' | i18n }}</label>
+                <span class="material-symbols-outlined select-icon" translate="no">keyboard_arrow_down</span>
+                <span class="error" *ngIf="contactForm.get('city')?.touched && contactForm.get('city')?.invalid">{{
+                  'contact-section.form.required' | i18n }}</span>
+              </div>
+            </div>
+
+            <!-- Fields for HR ONLY -->
+            <ng-container *ngIf="selectedArea === 'hr'">
+              <div class="form-group full-width">
+                <select id="study_level" formControlName="study_level"
+                  [class.has-value]="contactForm.get('study_level')?.value">
+                  <option value="" disabled selected>{{ 'contact-section.form.study_levels.none' | i18n }}</option>
+                  <option value="primary">{{ 'contact-section.form.study_levels.primary' | i18n }}</option>
+                  <option value="secondary">{{ 'contact-section.form.study_levels.secondary' | i18n }}</option>
+                  <option value="tertiary">{{ 'contact-section.form.study_levels.tertiary' | i18n }}</option>
+                  <option value="university">{{ 'contact-section.form.study_levels.university' | i18n }}</option>
+                </select>
+                <label for="study_level">{{ 'contact-section.form.study_level' | i18n }}</label>
+                <span class="material-symbols-outlined select-icon" translate="no">keyboard_arrow_down</span>
+                <span class="error"
+                  *ngIf="contactForm.get('study_level')?.touched && contactForm.get('study_level')?.invalid">{{
+                  'contact-section.form.required' | i18n }}</span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <select id="worked_projects" formControlName="worked_projects"
+                    [class.has-value]="contactForm.get('worked_projects')?.value">
+                    <option value="" disabled selected>{{ 'contact-section.form.yes_no.none' | i18n }}</option>
+                    <option value="yes">{{ 'contact-section.form.yes_no.yes' | i18n }}</option>
+                    <option value="no">{{ 'contact-section.form.yes_no.no' | i18n }}</option>
+                  </select>
+                  <label for="worked_projects">{{ 'contact-section.form.worked_projects' | i18n }}</label>
+                  <span class="material-symbols-outlined select-icon" translate="no">keyboard_arrow_down</span>
+                  <span class="error"
+                    *ngIf="contactForm.get('worked_projects')?.touched && contactForm.get('worked_projects')?.invalid">{{
+                    'contact-section.form.required' | i18n }}</span>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="which_projects" formControlName="which_projects" placeholder=" " />
+                  <label for="which_projects">{{ 'contact-section.form.which_projects' | i18n }}</label>
+                  <span class="error"
+                    *ngIf="contactForm.get('which_projects')?.touched && contactForm.get('which_projects')?.invalid">{{
+                    'contact-section.form.required' | i18n }}</span>
+                </div>
+              </div>
+            </ng-container>
+
+            <!-- Fields for Technical Area ONLY (Mandatory Company) -->
+            <ng-container *ngIf="selectedArea === 'technical'">
+              <div class="form-group full-width">
+                <input type="text" id="company" formControlName="company" placeholder=" " />
+                <label for="company">{{ 'contact-section.form.company' | i18n }}</label>
+                <span class="error"
+                  *ngIf="contactForm.get('company')?.touched && contactForm.get('company')?.invalid">{{
+                  'contact-section.form.required' | i18n }}</span>
+              </div>
+            </ng-container>
+
+            <div class="form-group full-width">
+              <textarea id="message" formControlName="message" rows="4" placeholder=" " maxlength="250"></textarea>
+              <label for="message">{{ 'contact-section.form.message' | i18n }}</label>
+              <span class="error" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">{{
+                'contact-section.form.required' | i18n }}</span>
+            </div>
+
+            <ng-container *ngIf="selectedArea === 'hr'">
+              <div class="form-group full-width">
+                <input type="file" id="cv_file" class="hidden-file-input has-value" formControlName="cv_file"
+                  (change)="onFileSelected($event)" accept=".pdf" />
+
+                <label for="cv_file" class="custom-file-label">
+                  <span class="custom-file-btn">
+                    <span class="material-symbols-outlined" translate="no">upload_file</span>
+                    {{ 'contact-section.form.upload_btn' | i18n }}
+                  </span>
+                  <span class="custom-file-text">{{ cvFileName() ? cvFileName() : ('contact-section.form.no_file_selected' | i18n) }}</span>
+                </label>
+
+                <label class="floating-label-text">{{ 'contact-section.form.cv_label' | i18n }}</label>
+
+                <span class="error"
+                  *ngIf="contactForm.get('cv_file')?.touched && contactForm.get('cv_file')?.invalid">{{
+                  'contact-section.form.required' | i18n }}</span>
+                <span class="error error-left" *ngIf="cvFileError()">{{ cvFileError() }}</span>
+              </div>
+            </ng-container>
+
+            <div class="form-actions mobile-only">
+              <button type="submit" class="submit-btn" [ngClass]="'state-' + submitState()"
+                [class.is-animating]="submitState() !== 'idle'"
+                [disabled]="contactForm.invalid || submitState() !== 'idle'">
+                <span class="text">{{ 'contact-section.form.send' | i18n }}</span>
+                <span class="progress-bar"></span>
+                <span class="feedback-container success-feedback">
+                  <span class="material-symbols-outlined feedback-icon" translate="no">check_circle</span>
+                </span>
+                <span class="feedback-container error-feedback">
+                  <span class="material-symbols-outlined feedback-icon" translate="no">cancel</span>
+                </span>
+              </button>
+              <p class="submit-feedback-msg success-msg" *ngIf="submitState() === 'success'">
+                {{ 'contact-section.form.success' | i18n }}
+              </p>
+              <p class="submit-feedback-msg error-msg" *ngIf="submitState() === 'error'">
+                {{ 'contact-section.form.error' | i18n }}
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

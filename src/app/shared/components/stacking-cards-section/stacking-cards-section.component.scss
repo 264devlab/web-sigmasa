@@ -1,0 +1,14 @@
+@use 'sass:math';
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.stacking-section {
+  width: 100%;
+  position: relative;
+  background: $color-background;
+  padding: math.div($spacing-xl, 2) 0;
+
+  @include respond-to(mobile) {
+    padding: math.div($spacing-lg, 2) 0;
+  }
+}

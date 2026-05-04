@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'index' as *;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 360px;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+#projects {
+    scroll-margin-top: 20px;
+}
+
+#mining {
+    scroll-margin-top: 10px;
+}
+
+#contact {
+    scroll-margin-top: 120px;
+}
+
+#services {
+    scroll-margin-top: 70px;
+}

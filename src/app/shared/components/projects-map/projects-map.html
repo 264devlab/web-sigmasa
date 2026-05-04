@@ -1,0 +1,50 @@
+<!-- DEBUG: Map Component Rendered -->
+<section class="projects-map-section">
+
+    <div class="background-container" style="background-color: #001a33;">
+        <img src="assets/images/fondo-textura-azul.svg" alt="Texture Background" class="bg-texture"
+            style="opacity: 0.5;">
+    </div>
+
+
+    <div class="content-wrapper">
+        <!-- Shared Info Card (Fixed position on left for desktop/tablet) -->
+        <div #infoCard class="project-info-card" [class.visible]="activeProject()">
+            <div class="info-content" *ngIf="activeProject()">
+                <h3 class="info-title">{{ activeProject()!.name | i18n }}</h3>
+                <p class="info-description">{{ activeProject()!.description | i18n }}</p>
+            </div>
+        </div>
+
+        <!-- Connection Lines Container (Moved here for full reach) -->
+        <svg #linesContainer class="lines-svg" preserveAspectRatio="none">
+            <ng-container *ngFor="let project of projects">
+                <line *ngIf="activeProject()?.id === project.id" [attr.x1]="lineStartX() + '%'"
+                    [attr.y1]="lineStartY() + '%'" [attr.x2]="lineTargetX() + '%'" [attr.y2]="lineTargetY() + '%'"
+                    class="connection-line" />
+                <circle *ngIf="activeProject()?.id === project.id" [attr.cx]="lineStartX() + '%'"
+                    [attr.cy]="lineStartY() + '%'" r="4" class="map-dot" />
+            </ng-container>
+        </svg>
+
+        <div class="map-container">
+            <img #mapImage src="assets/images/mapa-sanjuan.svg" alt="Mapa San Juan" class="map-svg">
+        </div>
+
+        <div class="buttons-container">
+            <div #projectButton *ngFor="let project of projects" class="project-button-wrapper"
+                [class.active]="activeProject()?.id === project.id" (mouseenter)="onHoverProject(project)"
+                (mouseleave)="onHoverProject(null)" (click)="onProjectClick(project)"
+                (contextmenu)="$event.preventDefault()">
+                <div class="button-content">
+                    <span class="project-name">{{ project.name | i18n }}</span>
+                    <!-- Mobile-only description expansion -->
+                    <div class="project-description-container mobile-only">
+                        <p class="description">{{ project.description | i18n }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

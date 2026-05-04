@@ -1,0 +1,322 @@
+@use 'index' as *;
+
+.projects-map-section {
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .background-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        .bg-texture {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .content-wrapper {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 40px;
+        overflow: visible; // Allow info card to show outside if needed
+    }
+
+    .project-info-card {
+        display: none; // Hidden on mobile
+        position: absolute; // Use absolute to float on the left
+        left: 40px;
+        top: 50%;
+        transform: translateY(-50%) translateX(-20px);
+        z-index: 100;
+        background: rgba(30, 60, 90, 0.85); // Darker blue for contrast
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 16px;
+        padding: 40px;
+        color: #fff;
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        width: clamp(280px, 25vw, 400px);
+        pointer-events: none;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+        &.visible {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+            pointer-events: all;
+        }
+
+        .info-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .info-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+        }
+    }
+
+    .lines-svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 50;
+        display: none; // Hidden on mobile
+
+        .connection-line {
+            stroke: rgba(255, 255, 255, 0.8);
+            stroke-width: 2;
+            stroke-dasharray: 6;
+            animation: dash 1s linear infinite;
+        }
+
+        .map-dot {
+            fill: #fff;
+            filter: drop-shadow(0 0 8px #fff);
+        }
+    }
+
+    .map-container {
+        position: relative;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        z-index: 10;
+
+        .map-svg {
+            width: auto;
+            max-width: 90%;
+            height: 75%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.3));
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+        }
+    }
+
+    .buttons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 40;
+        position: absolute; // Anchor to the right
+        right: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: clamp(260px, 20vw, 350px);
+    }
+
+    .project-button-wrapper {
+        position: relative;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        padding: 18px 24px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-user-drag: none;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+
+        * {
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-user-drag: none;
+        }
+
+        .project-name {
+            display: block;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.15rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-description-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+
+            .description {
+                margin-top: 15px;
+                color: rgba(255, 255, 255, 0.95); // More opaque
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+
+            // Expanded only on mobile
+            &.mobile-only {
+                display: block; // Keep in flow
+                visibility: hidden; // Hide from screen readers when collapsed
+
+                @include respond-to(desktop) {
+                    display: none;
+                }
+
+                @include respond-to(tablet) {
+                    display: none;
+                }
+            }
+        }
+
+        &:hover,
+        &.active {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: scale(1.02);
+        }
+
+        // On mobile, only the .active class (not :hover) should control the accordion.
+        // Touch devices leave :hover stuck after a tap, preventing the accordion from closing.
+        &.active {
+            @include respond-to(mobile) {
+                .project-description-container.mobile-only {
+                    max-height: 500px;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+// Layout Transitions
+@include respond-to(desktop) {
+    .projects-map-section {
+        .project-info-card {
+            display: block;
+        }
+
+        .lines-svg {
+            display: block;
+        }
+    }
+}
+
+@include respond-to(tablet) {
+    .projects-map-section {
+        height: 700px; // Shorter for tablet
+
+        .project-info-card {
+            display: block;
+            left: 20px;
+            width: 250px;
+            padding: 20px;
+        }
+
+        .buttons-container {
+            right: 20px;
+            width: 250px;
+        }
+
+        .lines-svg {
+            display: block;
+        }
+    }
+}
+
+@include respond-to(mobile) {
+    .projects-map-section {
+        height: auto;
+        min-height: 100vh;
+        padding: $spacing-lg 0;
+
+        .content-wrapper {
+            flex-direction: column;
+            padding: 0 20px;
+            align-items: stretch; // Ensure buttons take full width
+        }
+
+        .project-info-card {
+            display: none !important; // Force hide to avoid overlap
+        }
+
+        .map-container {
+            width: 100%;
+            height: 350px;
+            margin-bottom: 20px;
+            z-index: 10;
+        }
+
+        .buttons-container {
+            position: relative;
+            top: auto;
+            right: auto;
+            transform: none;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 0 10px;
+            z-index: 20;
+        }
+
+        .project-button-wrapper {
+            width: 100%;
+
+            .project-description-container.mobile-only {
+                display: block;
+                visibility: visible; // Needs to be visible for height transition to show content
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            &.active {
+                .project-description-container.mobile-only {
+                    max-height: 500px;
+                    opacity: 1;
+                    margin-top: 15px;
+                }
+            }
+        }
+
+        .lines-svg {
+            display: none !important;
+        }
+    }
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 8;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}

@@ -1,0 +1,50 @@
+@use 'index' as *;
+
+.hero-action {
+    display: flex;
+    width: fit-content;
+}
+
+.hero-btn {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    @include transition-standard;
+
+    &:hover {
+        transform: translateX(6px);
+
+        .hero-btn-text {
+            background: rgba(255, 255, 255, 0.9);
+        }
+    }
+
+    &-text {
+        background: $color-white;
+        color: $color-primary;
+        padding: 12px 24px;
+        font-weight: $font-weight-semibold;
+        font-size: 0.9rem;
+        border-radius: 4px;
+        @include transition-standard;
+    }
+
+    &-icon {
+        background: $color-accent;
+        color: $color-white;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        margin-left: 4px;
+        @include transition-standard;
+
+        .material-symbols-outlined {
+            font-size: 20px;
+        }
+    }
+}

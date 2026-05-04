@@ -1,0 +1,50 @@
+@use 'sass:math';
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.services-section {
+    margin-top: -50px;
+    position: relative;
+    padding: math.div($spacing-lg, 2) 0;
+    background-color: $color-background;
+
+    .header {
+        margin-bottom: $spacing-xl;
+
+        .title {
+            color: $color-text;
+            margin-bottom: $spacing-md;
+        }
+
+        .description {
+            color: $color-text-light;
+            max-width: 800px;
+            line-height: 1.4;
+        }
+    }
+
+    .services-grid {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-lg;
+    }
+}
+
+// Responsive
+@include respond-to(tablet) {}
+
+@include respond-to(mobile) {
+    .services-section {
+        padding: math.div($spacing-lg, 2) 0;
+
+        .header {
+            .title {
+                font-size: 32px;
+            }
+
+            .description {
+                font-size: 18px;
+            }
+        }
+    }
+}

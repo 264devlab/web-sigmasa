@@ -1,0 +1,7 @@
+/* Centraliza las importaciones de los archivos SCSS. 
+De esta forma, solo tienes que importar este archivo en tu app. */
+
+@forward 'variables';
+@forward 'mixins';
+@forward 'layout';
+@forward 'base';

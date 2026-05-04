@@ -1,0 +1,125 @@
+<div class="modal-overlay" *ngIf="modalService.isOpen()" (click)="close()">
+  <div class="modal-container" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="close()">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+
+    <div class="modal-content">
+
+      <!-- Image Carousel Section -->
+      <div class="image-section">
+        <div class="image-carousel-container">
+          <div class="image-carousel-track" [style.transform]="'translateX(-' + (currentImageIndex() * 100) + '%)'">
+            <div class="image-carousel-slide"
+              *ngFor="let img of (modalService.selectedProject()?.images || [modalService.selectedProject()?.image])">
+              <img [src]="img" [alt]="modalService.selectedProject()?.name">
+            </div>
+          </div>
+
+          <!-- Image Navigation Controls -->
+          <div class="image-carousel-controls" *ngIf="(modalService.selectedProject()?.images?.length || 0) > 1">
+            <button class="image-carousel-btn prev" (click)="prevImage()">
+              <span class="material-symbols-outlined">keyboard_arrow_left</span>
+            </button>
+            <button class="image-carousel-btn next" (click)="nextImage()">
+              <span class="material-symbols-outlined">keyboard_arrow_right</span>
+            </button>
+          </div>
+
+          <!-- Image Indicators -->
+          <div class="image-carousel-indicators" *ngIf="(modalService.selectedProject()?.images?.length || 0) > 1">
+            <button *ngFor="let dot of modalService.selectedProject()?.images; let i = index" class="image-carousel-dot"
+              [class.active]="i === currentImageIndex()" (click)="goToImage(i)">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sliding Info Track (Mobile Only) / Single column (Desktop Only) -->
+      <div class="modal-info-track" [style.--slide-index]="currentSlide()" (touchstart)="onTouchStart($event)"
+        (touchend)="onTouchEnd($event)">
+
+        <!-- Slide 1: Primary Info Section -->
+        <div class="info-slide info-section primary-info">
+          <div class="header-category">
+            {{ (modalService.selectedProject()?.localidad || modalService.selectedProject()?.location) | uppercase }}
+          </div>
+          <h2 class="project-title">{{ modalService.selectedProject()?.name }}</h2>
+
+          <hr class="divider">
+
+          <div class="info-table">
+            <!-- Surface Area -->
+            <div class="info-row"
+              *ngIf="modalService.selectedProject()?.surface_area || modalService.selectedProject()?.superficie">
+              <span class="label">{{ 'projects.modal.surface' | i18n }}</span>
+              <span class="value">{{ modalService.selectedProject()?.surface_area ||
+                modalService.selectedProject()?.superficie }}</span>
+            </div>
+
+            <!-- Company (Mining) -->
+            <div class="info-row"
+              *ngIf="modalService.selectedProject()?.company || modalService.selectedProject()?.empresa">
+              <span class="label">{{ 'projects.modal.company' | i18n }}</span>
+              <span class="value">{{ modalService.selectedProject()?.company || modalService.selectedProject()?.empresa
+                }}</span>
+            </div>
+
+            <!-- Client -->
+            <div class="info-row">
+              <span class="label">{{ 'projects.modal.client' | i18n }}</span>
+              <span class="value">{{ modalService.selectedProject()?.client || modalService.selectedProject()?.comitente
+                }}</span>
+            </div>
+
+            <!-- Status -->
+            <div class="info-row">
+              <span class="label">{{ 'projects.modal.status' | i18n }}</span>
+              <span class="value">{{ modalService.selectedProject()?.status || modalService.selectedProject()?.estado
+                }}</span>
+            </div>
+          </div>
+
+          <!-- Description Section (Visible only on Desktop) -->
+          <div class="extended-description desktop-only">
+            <h3 class="section-title">{{ 'projects.modal.description' | i18n }}</h3>
+            <p class="description-text">
+              {{ modalService.selectedProject()?.description }}
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 2: Extended Info Section (Mobile Only) -->
+        <div class="info-slide info-section extended-info mobile-only">
+          <div class="extended-description">
+            <h3 class="section-title">{{ 'projects.modal.description' | i18n }}</h3>
+            <p class="description-text">
+              {{ modalService.selectedProject()?.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- General Indicators (Dots) - Visible only on Mobile/Tablet -->
+      <div class="modal-pagination">
+        <button *ngFor="let dot of [0, 1]; let i = index" class="indicator-dot" [class.active]="i === currentSlide()"
+          (click)="goToSlide(i)">
+        </button>
+      </div>
+
+      <!-- Navigation Arrows - Visible only on Mobile/Tablet -->
+      <div class="modal-nav">
+        <button class="nav-btn prev" (click)="prevSlide()" *ngIf="currentSlide() > 0">
+          <span class="material-symbols-outlined">keyboard_arrow_left</span>
+        </button>
+        <button class="nav-btn next" (click)="nextSlide()" *ngIf="currentSlide() < 1">
+          <span class="material-symbols-outlined">keyboard_arrow_right</span>
+        </button>
+      </div>
+    </div>
+
+    <!--footer-->
+    <div class="modal-footer"></div>
+
+  </div>
+</div>

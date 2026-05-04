@@ -1,0 +1,21 @@
+<!-- <app-carousel [slides]="heroSlides" [interval]="5000"></app-carousel> -->
+
+<app-carousel [slides]="homeData.heroSlides()" [interval]="5000" id="home"></app-carousel>
+
+<app-stacking-cards-section></app-stacking-cards-section>
+
+<app-services id="services"></app-services>
+
+<app-clients></app-clients>
+
+<app-policy-section></app-policy-section>
+
+<app-carousel *ngIf="homeData.projects1Slides().length > 0" [slides]="homeData.projects1Slides()" [interval]="5000"></app-carousel>
+
+<app-projects-map></app-projects-map>
+
+<app-projects-section id="projects"></app-projects-section>
+
+<app-carousel [slides]="homeData.projects2Slides()" [interval]="5000" id="mining" [icon]="true"></app-carousel>
+
+<app-contact-section></app-contact-section>

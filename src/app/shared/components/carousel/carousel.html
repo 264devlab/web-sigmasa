@@ -1,0 +1,32 @@
+<div class="carousel-container" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+    <!-- Floating Top-Left Logo -->
+    <a *ngIf="icon" href="https://www.mapal.com.ar/mapalsigma" class="carousel-floating-logo" target="_blank">
+        <img src="assets/images/mapal-sigma.webp" alt="Mapal y Sigma">
+    </a>
+
+    <div class="carousel-track" [class.no-transition]="!isTransitioning()"
+        [style.transform]="'translateX(-' + (currentIndex() * 100) + '%)'" (transitionend)="onTransitionEnd()">
+        <div class="carousel-slide" *ngFor="let slide of extendedSlides(); let i = index"
+            [class.is-active]="i === currentIndex()">
+            <app-hero [title]="slide.title" [description]="slide.description" [backgroundImage]="slide.backgroundImage"
+                [buttonText]="slide.buttonText" [project]="slide.project" [priority]="i === 1"></app-hero>
+        </div>
+    </div>
+
+    <!-- Controles de navegación -->
+    <div class="carousel-controls">
+        <button class="carousel-btn prev" (click)="prevSlide()">
+            <span class="material-symbols-outlined" translate="no">keyboard_arrow_left</span>
+        </button>
+        <button class="carousel-btn next" (click)="nextSlide()">
+            <span class="material-symbols-outlined" translate="no">keyboard_arrow_right</span>
+        </button>
+    </div>
+
+    <!-- Indicadores (Dots) -->
+    <div class="carousel-indicators">
+        <button *ngFor="let dot of allSlides(); let i = index" class="carousel-dot" [class.is-active]="i === realIndex()"
+            (click)="goToSlide(i)">
+        </button>
+    </div>
+</div>

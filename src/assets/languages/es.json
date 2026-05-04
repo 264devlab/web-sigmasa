@@ -1,0 +1,539 @@
+{
+    "contact-page": "Página de contacto!",
+    "projects": {
+        "title": "Proyectos",
+        "description": "Explora nuestra galería de proyectos donde la excelencia técnica se une con la innovación para entregar resultados excepcionales.",
+        "read-more": "Leer más",
+        "modal": {
+            "surface": "Superficie (m²)",
+            "client": "Comitente",
+            "status": "Estado de obra",
+            "company": "Empresa",
+            "description": "Memoria descriptiva"
+        },
+        "items": [
+            {
+                "id": "p1",
+                "name": "Proyecto Centauri",
+                "description": "Ampliación de la planta industrial de producción de fármacos. Edificio 2, Usina 5 y la playa de servicios. La planta está ubicada en el Departamento Pocito, San Juan, República Argentina. El área total de construcción es de aproximadamente de 4,727.00 m2.",
+                "brief-description": "Ampliación planta farmacéutica — Ampliación de planta industrial en Pocito, San Juan. 4.727 m².",
+                "image": "assets/images/projects/01-proyecto-centauri/proyecto-centauri-portada.webp",
+                "images": [
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-portada.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-1.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-2.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-3.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-4.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-5.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-6.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-7.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-8.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-9.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-10.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-11.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-12.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-13.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-14.webp",
+                    "assets/images/projects/01-proyecto-centauri/proyecto-centauri-15.webp"
+                ],
+                "superficie": "4727,10",
+                "comitente": "Monte Verde S. A. - ADIUM PHARMA",
+                "estado": "En desarrollo"
+            },
+            {
+                "id": "p2",
+                "name": "Edificio anexo de la Legislatura Provincial",
+                "description": "Construcción de edificio de 5960.00 m², en un volumen apaisado formado por tres subsuelos, planta baja, y cuatro niveles superiores, mas un quinto de servicios que se proyectó por encima de la casa existente como un cuerpo único de lineas rectas y puras. Las áreas de servicio se conectan en el sector oeste conformado por un volumen cerrado, con circulaciones verticales (escalera y ascensores), las cuales comunican todo el edificio, en el sector este se dispone un patio longitudinal en dirección norte-sur, como regulados bioclimático. En la planta baja y primer piso cuenta con locales auditorio y biblioteca - sala interactiva.",
+                "brief-description": "Edificio multifuncional de 5.960 m² con subsuelos, planta baja, cinco pisos, auditorio y biblioteca.",
+                "image": "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-portada.webp",
+                "images": [
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-portada.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-1.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-2.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-3.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-4.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-5.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-6.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-7.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-8.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-9.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-10.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-11.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-12.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-13.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-14.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-15.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-16.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-17.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-18.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-19.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-20.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-21.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-22.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-23.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-24.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-25.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-26.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-27.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-28.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-29.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-30.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-31.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-32.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-33.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-34.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-35.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-36.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-37.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-38.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-39.webp",
+                    "assets/images/projects/02-edificio-anexo-de-la-legislatura-provincial/edificio-anexo-de-la-legislatura-provincial-40.webp"
+                ],
+                "superficie": "5960,00",
+                "comitente": "Legislatura Provincial de San Juan",
+                "estado": "Finalizado"
+            },
+            {
+                "id": "p3",
+                "name": "Barrio Los Molinos",
+                "description": "Barrio de 260 unidades funcionales en torres de dos y tres plantas, cinco prototipos con sistema constructivo tradicional, platea de fundacion, mampostería de ladrillón, losas de HºAº, carpinterías de aluminio y de madera, pisos cerámicos en baños y revestimientos cerámicos baños y cocina, pintadas al látex en muros exteriores e interiores y esmalte sintético en carpinterías de maderas.",
+                "brief-description": "Barrio residencial de 260 viviendas en torres de 2 y 3 plantas.",
+                "image": "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-portada.webp",
+                "images": [
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-portada.webp",
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-1.webp",
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-2.webp",
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-3.webp",
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-4.webp",
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-5.webp",
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-6.webp",
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-7.webp",
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-8.webp",
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-9.webp",
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-10.webp",
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-11.webp",
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-12.webp",
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-13.webp",
+                    "assets/images/projects/03-barrio-los-molinos/barrio-los-molinos-14.webp"
+                ],
+                "superficie": "20381.12",
+                "comitente": "Instituto Provincial de la Vivienda (IPV)",
+                "estado": "Finalizado"
+            },
+            {
+                "id": "p4",
+                "name": "Acueducto Gran Tulum",
+                "description": "Instalación de cañería de acero inoxidable, planta de tratamiento de agua y cañería PEAD. Realizado por UTE: Sigma, Mapal y Benito Roggio",
+                "brief-description": "Instalación de cañería de acero inoxidable, planta de tratamiento de agua y cañería PEAD",
+                "image": "assets/images/projects/04-acueducto-gran-tulum/acueducto-gran-tulum-portada.webp",
+                "images": [
+                    "assets/images/projects/04-acueducto-gran-tulum/acueducto-gran-tulum-portada.webp",
+                    "assets/images/projects/04-acueducto-gran-tulum/acueducto-gran-tulum-1.webp",
+                    "assets/images/projects/04-acueducto-gran-tulum/acueducto-gran-tulum-2.webp",
+                    "assets/images/projects/04-acueducto-gran-tulum/acueducto-gran-tulum-3.webp",
+                    "assets/images/projects/04-acueducto-gran-tulum/acueducto-gran-tulum-4.webp",
+                    "assets/images/projects/04-acueducto-gran-tulum/acueducto-gran-tulum-5.webp",
+                    "assets/images/projects/04-acueducto-gran-tulum/acueducto-gran-tulum-6.webp",
+                    "assets/images/projects/04-acueducto-gran-tulum/acueducto-gran-tulum-7.webp",
+                    "assets/images/projects/04-acueducto-gran-tulum/acueducto-gran-tulum-8.webp",
+                    "assets/images/projects/04-acueducto-gran-tulum/acueducto-gran-tulum-9.webp"
+                ],
+                "superficie": "11000,00",
+                "comitente": "Gobierno de San Juan",
+                "estado": "En desarrollo"
+            },
+            {
+                "id": "p5",
+                "name": "Estación transformadora solar Ullum 132/33 kV",
+                "description": "Linea de alta tension de 132kv que interconecta la E.T. Albardón con la E.T. Solar Ullúm, con un recorrido total de 18km. La obra permite incorporar 180MW de energía solar al sistema eléctrico generada por los parques Ullum Alfa y El Chaguar. Obra ejecutada junto a la empresa Conectar S.R.L.",
+                "brief-description": "Tendido eléctrico de 18 km que incorpora 180 MW de energía solar a la red.",
+                "image": "assets/images/projects/05-linea-132-kv/linea-132-kv-portada.webp",
+                "images": [
+                    "assets/images/projects/05-linea-132-kv/linea-132-kv-portada.webp",
+                    "assets/images/projects/05-linea-132-kv/linea-132-kv-1.webp",
+                    "assets/images/projects/05-linea-132-kv/linea-132-kv-2.webp",
+                    "assets/images/projects/05-linea-132-kv/linea-132-kv-3.webp",
+                    "assets/images/projects/05-linea-132-kv/linea-132-kv-4.webp",
+                    "assets/images/projects/05-linea-132-kv/linea-132-kv-5.webp",
+                    "assets/images/projects/05-linea-132-kv/linea-132-kv-6.webp",
+                    "assets/images/projects/05-linea-132-kv/linea-132-kv-7.webp",
+                    "assets/images/projects/05-linea-132-kv/linea-132-kv-8.webp"
+                ],
+                "superficie": "-",
+                "comitente": "Gobierno de San Juan",
+                "estado": "En desarrollo"
+            },
+            {
+                "id": "p6",
+                "name": "Galería comercial - Ayres Village",
+                "description": "Construcción de un edificio con destino comercial desarrollado en 2 plantas. La tipología es Strip Mall con galería semicubierta en todo su frente que sirve de espacio de transcisión y de ingreso a los locales comerciales. El complejo cuenta con 20 locales comerciales que varían en su superficie entre los 45.00 m² y los 160.00 m². El edificio está constituido por sistemas mixtos incluyendo mampostería de encadenado, pórticos, cerchas metálicas, panelería liviana, losas de hormigón armado y sistema steel frame.",
+                "brief-description": "Strip Mall — Edificio comercial de 2 plantas con 20 locales y galería semicubierta.",
+                "image": "assets/images/projects/06-galeria-comercial-ayres-village/galeria-comercial-ayres-village-portada.webp",
+                "images": [
+                    "assets/images/projects/06-galeria-comercial-ayres-village/galeria-comercial-ayres-village-portada.webp",
+                    "assets/images/projects/06-galeria-comercial-ayres-village/galeria-comercial-ayres-village-1.webp",
+                    "assets/images/projects/06-galeria-comercial-ayres-village/galeria-comercial-ayres-village-2.webp",
+                    "assets/images/projects/06-galeria-comercial-ayres-village/galeria-comercial-ayres-village-3.webp",
+                    "assets/images/projects/06-galeria-comercial-ayres-village/galeria-comercial-ayres-village-4.webp",
+                    "assets/images/projects/06-galeria-comercial-ayres-village/galeria-comercial-ayres-village-5.webp",
+                    "assets/images/projects/06-galeria-comercial-ayres-village/galeria-comercial-ayres-village-6.webp"
+                ],
+                "superficie": "1911,81",
+                "comitente": "Desarrollo Inmobiliario",
+                "estado": "Finalizado"
+            },
+            {
+                "id": "p7",
+                "name": "Barrio Ayres Village",
+                "description": "Urbanizacion de 77 lotes y Construción de 12 viviendas de 3 dormitorios, las viviendas son de 150,96 m², cada una, con una Sup.Total=1811,52 m², Red Cloacal, Redes de Agua Potable, Calles Pavimentadas, Veredas Hº, Acondicionamiento de espacios verdes, Alumbrado, Tendido electrico subterraneo, Red de Gas Natural. Superficie total de Terreno 49934.88 m²",
+                "brief-description": "Urbanización de 77 lotes con 12 viviendas de 3 dormitorios e infraestructura completa.",
+                "image": "assets/images/projects/07-barrio-ayres-village/barrio-ayres-village-portada.webp",
+                "images": [
+                    "assets/images/projects/07-barrio-ayres-village/barrio-ayres-village-portada.webp",
+                    "assets/images/projects/07-barrio-ayres-village/barrio-ayres-village-1.webp",
+                    "assets/images/projects/07-barrio-ayres-village/barrio-ayres-village-2.webp"
+                ],
+                "superficie": "1811,52",
+                "comitente": "Desarrollo Inmobiliario",
+                "estado": "Finalizado"
+            },
+            {
+                "id": "p8",
+                "name": "Barrio Ayres Libertador",
+                "description": "Urbanizacion de 106 lotes y Construcción de 42 viviendas de 155 m² con una Sup.Total=6510 m², Red Cloacal, Redes de Agua Potable, Calles Pavimentadas, Veredas Hº, Acondicionamiento de espacios verdes, Alumbrado, Tendido electrico subterraneo, Red de Gas Natural. Superfice total terreno 10103.80 m²",
+                "brief-description": "106 lotes y 42 viviendas de 155 m² con infraestructura completa: cloacas, agua, gas, pavimento, alumbrado y tendido subterráneo.",
+                "image": "assets/images/projects/08-barrio-ayres-libertador/barrio-ayres-libertador-portada.webp",
+                "images": [
+                    "assets/images/projects/08-barrio-ayres-libertador/barrio-ayres-libertador-portada.webp",
+                    "assets/images/projects/08-barrio-ayres-libertador/barrio-ayres-libertador-1.webp",
+                    "assets/images/projects/08-barrio-ayres-libertador/barrio-ayres-libertador-2.webp",
+                    "assets/images/projects/08-barrio-ayres-libertador/barrio-ayres-libertador-3.webp"
+                ],
+                "superficie": "6510,00",
+                "comitente": "Desarrollo Inmobiliario",
+                "estado": "Finalizado"
+            },
+            {
+                "id": "p9",
+                "name": "Barrio privado Ayres del Este",
+                "description": "Construción de 120 viviendas de 2 y 3 dormitorios Sup.: 9320 m² y 10 duplex Sup.: 700 m² de 1º calidad, carpinterías de Aluminio, pisos porcelanato, terminaciones de categoría, red de agua, Red de cloacas, red de gas, riego presurizado de espacios verdes y arbolado, red electrica subterranea, portal de acceso, calles asfaltadas, veredas de Hormigón, espacios veredes, sistema de comunicación IT, etc.",
+                "brief-description": "120 viviendas de 2 y 3 dormitorios y 10 dúplex de primera calidad, con infraestructura completa, acceso vehicular, espacios verdes y sistema IT.",
+                "image": "assets/images/projects/09-barrio-privado-ayres-del-este/barrio-privado-ayres-del-este-portada.webp",
+                "images": [
+                    "assets/images/projects/09-barrio-privado-ayres-del-este/barrio-privado-ayres-del-este-portada.webp"
+                ],
+                "superficie": "9320,00",
+                "comitente": "Desarrollo Inmobiliario",
+                "estado": "Finalizado"
+            },
+            {
+                "id": "p10",
+                "name": "Mantenimiento de caminos de acceso a proyecto",
+                "description": "Servicios de apertura, mantenimiento y reparación del Camino de Acceso al proyecto minero Azules, a fin de asegurar el tránsito seguro y la ejecución normal de actividades inherentes al proyecto de exploración. Despeje de nieve y/o hielo, estabilización y reparación de los taludes laterales del camino, construcción y/o reemplazo de bermas de seguridad, construcción y/o mantenimiento de rampas de escape para salidas de emergencia, limpieza y remoción de material producto de grandes deslizamientos, derrumbes, avalanchas y/o crecientes, reparación, mantenimiento y/o construcción de zonas de descanso o detención obligatorias, etc.",
+                "brief-description": "Mantenimiento y reparación del camino de acceso al proyecto minero Azules: despeje de nieve, estabilización de taludes, bermas de seguridad, rampas de emergencia y limpieza de derrumbes.",
+                "image": "assets/images/projects/10-mantenimiento-de-caminos-de-acceso-a-proyecto/mantenimiento-de-caminos-de-acceso-a-proyecto-portada.webp",
+                "images": [
+                    "assets/images/projects/10-mantenimiento-de-caminos-de-acceso-a-proyecto/mantenimiento-de-caminos-de-acceso-a-proyecto-portada.webp",
+                    "assets/images/projects/10-mantenimiento-de-caminos-de-acceso-a-proyecto/mantenimiento-de-caminos-de-acceso-a-proyecto-1.webp",
+                    "assets/images/projects/10-mantenimiento-de-caminos-de-acceso-a-proyecto/mantenimiento-de-caminos-de-acceso-a-proyecto-2.webp",
+                    "assets/images/projects/10-mantenimiento-de-caminos-de-acceso-a-proyecto/mantenimiento-de-caminos-de-acceso-a-proyecto-3.webp",
+                    "assets/images/projects/10-mantenimiento-de-caminos-de-acceso-a-proyecto/mantenimiento-de-caminos-de-acceso-a-proyecto-4.webp",
+                    "assets/images/projects/10-mantenimiento-de-caminos-de-acceso-a-proyecto/mantenimiento-de-caminos-de-acceso-a-proyecto-5.webp",
+                    "assets/images/projects/10-mantenimiento-de-caminos-de-acceso-a-proyecto/mantenimiento-de-caminos-de-acceso-a-proyecto-6.webp",
+                    "assets/images/projects/10-mantenimiento-de-caminos-de-acceso-a-proyecto/mantenimiento-de-caminos-de-acceso-a-proyecto-7.webp",
+                    "assets/images/projects/10-mantenimiento-de-caminos-de-acceso-a-proyecto/mantenimiento-de-caminos-de-acceso-a-proyecto-8.webp",
+                    "assets/images/projects/10-mantenimiento-de-caminos-de-acceso-a-proyecto/mantenimiento-de-caminos-de-acceso-a-proyecto-9.webp",
+                    "assets/images/projects/10-mantenimiento-de-caminos-de-acceso-a-proyecto/mantenimiento-de-caminos-de-acceso-a-proyecto-10.webp"
+                ],
+                "empresa": "Consorcio Mapal - Sigma",
+                "comitente": "Proyecto Los Azules",
+                "estado": "En desarrollo"
+            },
+            {
+                "id": "p11",
+                "name": "Servicio de minado",
+                "description": "Operación de minería a cielo abierto en los pits Sánchez, Norte y Magnata, en un plazo de 24 meses (2025–2027). Se prevé mover 3.40 millones de toneladas. \nEl servicio incluye: movilización, desmovilización, actividades previas a la producción minera de los yacimientos de Hualilán, carga y gestión de la plataforma de acopio de mineral, limpieza y desbroce de capa vegetal, carga, acarreo y transporte a a plataformas de acopio, manejo de estériles en botaderos, desarrollo y mantenimiento de caminos internos y de acceso, control de polvo, drenaje y gestión de aguas, entre otras.",
+                "brief-description": "Minería a cielo abierto en los pits Sánchez, Norte y Magnata durante 24 meses (2025–2027), con movimiento de 3,4 millones de toneladas, incluyendo extracción, transporte, manejo de estériles y gestión de caminos y aguas.",
+                "image": "assets/images/projects/11-servicio-de-minado/servicio-de-minado-portada.webp",
+                "images": [
+                    "assets/images/projects/11-servicio-de-minado/servicio-de-minado-portada.webp",
+                    "assets/images/projects/11-servicio-de-minado/servicio-de-minado-1.webp",
+                    "assets/images/projects/11-servicio-de-minado/servicio-de-minado-2.webp",
+                    "assets/images/projects/11-servicio-de-minado/servicio-de-minado-3.webp",
+                    "assets/images/projects/11-servicio-de-minado/servicio-de-minado-4.webp",
+                    "assets/images/projects/11-servicio-de-minado/servicio-de-minado-5.webp",
+                    "assets/images/projects/11-servicio-de-minado/servicio-de-minado-6.webp",
+                    "assets/images/projects/11-servicio-de-minado/servicio-de-minado-7.webp",
+                    "assets/images/projects/11-servicio-de-minado/servicio-de-minado-8.webp"
+                ],
+                "empresa": "Consorcio Mapal - Sigma",
+                "comitente": "Proyecto Hualilán",
+                "estado": "En desarrollo"
+            },
+            {
+                "id": "p12",
+                "name": "Preparación de escombrera",
+                "description": "Construcción de escombrera en el proyecto minero Lunahuasi localizado en la provincia de San Juan",
+                "brief-description": "Construcción de escombrera en el proyecto minero Lunahuasi",
+                "image": "assets/images/projects/12-preparacion-de-escombrera/preparacion-de-escombrera-portada.webp",
+                "images": [
+                    "assets/images/projects/12-preparacion-de-escombrera/preparacion-de-escombrera-portada.webp"
+                ],
+                "empresa": "Consorcio Mapal - Sigma",
+                "comitente": "Proyecto Lunahuasi",
+                "estado": "En desarrollo"
+            },
+            {
+                "id": "p13",
+                "name": "Modificación del diseño de captación de agua en el río Las Taguas – Proyecto Bocatoma",
+                "description": "Diseño de una nueva obra de toma a partir del sistema actual de galerías filtrantes, sedimentador y cuenco de disipación. Se busca proyectar una estructura de captación que optimice los recursos disponibles y resulte eficiente en épocas de estiaje, aprovechando lo más posible la obra civil existente",
+                "brief-description": "Diseño de nueva obra de toma a partir de galerías filtrantes existentes, optimizando la captación de agua especialmente en épocas de estiaje.",
+                "image": "assets/images/projects/13-proyecto-bocatoma/proyecto-bocatoma-portada.webp",
+                "images": [
+                    "assets/images/projects/13-proyecto-bocatoma/proyecto-bocatoma-portada.webp",
+                    "assets/images/projects/13-proyecto-bocatoma/proyecto-bocatoma-1.webp",
+                    "assets/images/projects/13-proyecto-bocatoma/proyecto-bocatoma-2.webp",
+                    "assets/images/projects/13-proyecto-bocatoma/proyecto-bocatoma-3.webp",
+                    "assets/images/projects/13-proyecto-bocatoma/proyecto-bocatoma-4.webp"
+                ],
+                "empresa": "Mapal - Sigma - UT",
+                "comitente": "Proyecto Veladero",
+                "estado": "En desarrollo"
+            },
+            {
+                "id": "p14",
+                "name": "Mantenimiento de caminos de acceso a proyecto minero Veladero",
+                "description": "Servicios de apertura, mantenimiento y reparación del Camino de Acceso a la mina Veladero, proyecto Lama y aledaños, a fin de posibilitar el tránsito seguro y la ejecución normal de actividades inherentes a la mina. Despeje de nieve y/o hielo, estabilización y reparación de los taludes laterales del camino, construcción y/o reemplazo de bermas de seguridad, construcción y/o mantenimiento de rampas de escape para salidas de emergencia, limpieza y remoción de material producto de grandes deslizamientos, derrumbes, avalanchas y/o crecientes, reparación, mantenimiento y/o construcción de zonas de descanso o detención obligatorias, etc.",
+                "brief-description": "Mantenimiento y reparación del camino de acceso a la mina Veladero y proyecto Lama: despeje de nieve, estabilización de taludes, bermas de seguridad, rampas de emergencia y limpieza de derrumbes.",
+                "image": "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero-portada.webp",
+                "images": [
+                    "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero-portada.webp",
+                    "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero-1.webp",
+                    "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero-2.webp",
+                    "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero-3.webp",
+                    "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero-4.webp",
+                    "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero-5.webp",
+                    "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero-6.webp",
+                    "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero-7.webp",
+                    "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero-8.webp",
+                    "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero-9.webp",
+                    "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero-10.webp",
+                    "assets/images/projects/14-mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero/mantenimientos-de-caminos-de-accesos-a-proyecto-minero-veladero-11.webp"
+                ],
+                "empresa": "Mapal - Sigma - UT",
+                "comitente": "Proyecto Veladero",
+                "estado": "En desarrollo"
+            },
+            {
+                "id": "p15",
+                "name": "Servicio de provisión y operación de equipos auxiliares para operación en mina Veladero",
+                "description": "Servicio de Provisión y Operación de Equipos Pesados en todos los sectores e instalaciones (Procesos, Mina, Operativo Invierno) comprendidas en el interior de la Operación de Veladero y sus dependencias de servicio tomando como punto de referencia el ingreso denominado Garita Veladero.En la epoca estival se cuenta con 36 equipos en obra, los cuales se incrementan en el operativo de Invierno",
+                "brief-description": "Provisión y operación de equipos pesados en todos los sectores de la mina Veladero, con 36 equipos en verano y mayor dotación en invierno.",
+                "image": "assets/images/projects/15-servicio-de-provision-y-operacion-de-equipos-auxiliares-para-ocupacion-en-mina-veladero/servicio-de-provision-y-operacion-de-equipos-auxiliares-para-ocupacion-en-mina-veladero-portada.webp",
+                "images": [
+                    "assets/images/projects/15-servicio-de-provision-y-operacion-de-equipos-auxiliares-para-ocupacion-en-mina-veladero/servicio-de-provision-y-operacion-de-equipos-auxiliares-para-ocupacion-en-mina-veladero-portada.webp",
+                    "assets/images/projects/15-servicio-de-provision-y-operacion-de-equipos-auxiliares-para-ocupacion-en-mina-veladero/servicio-de-provision-y-operacion-de-equipos-auxiliares-para-ocupacion-en-mina-veladero-1.webp",
+                    "assets/images/projects/15-servicio-de-provision-y-operacion-de-equipos-auxiliares-para-ocupacion-en-mina-veladero/servicio-de-provision-y-operacion-de-equipos-auxiliares-para-ocupacion-en-mina-veladero-2.webp",
+                    "assets/images/projects/15-servicio-de-provision-y-operacion-de-equipos-auxiliares-para-ocupacion-en-mina-veladero/servicio-de-provision-y-operacion-de-equipos-auxiliares-para-ocupacion-en-mina-veladero-3.webp"
+                ],
+                "empresa": "Mapal - Sigma - UT",
+                "comitente": "Proyecto Veladero",
+                "estado": "Finalizado"
+            }
+        ]
+    },
+    "navbar": {
+        "home": "Inicio",
+        "services": "Servicios",
+        "projects": "Proyectos",
+        "mining": "Minería",
+        "contact": "Contacto"
+    },
+    "hero": {
+        "slides": [
+            "p1",
+            "p2",
+            "p3",
+            "p4"
+        ],
+        "hidden_slides": [
+            "p5",
+            "p6",
+            "p7",
+            "p8",
+            "p9"
+        ]
+    },
+    "services": {
+        "title": "Servicios",
+        "description": "Más de 35 años ofreciendo soluciones concretas a complejos requerimientos. A través de un \"asesoramiento técnico personalizado\" para el análisis, desarrollo, seguimiento y asistencia de proyectos y obras.",
+        "engineering": {
+            "title": "Ingeniería de proyecto",
+            "description": "Desarrollamos proyectos de ingeniería en sus distintas etapas, asegurando soluciones técnicas eficientes, seguras y acordes a los requerimientos de cada obra."
+        },
+        "construction": {
+            "title": "Construcción",
+            "description": "Desarrollamos proyectos de ingeniería en sus distintas etapas, asegurando soluciones técnicas eficientes, seguras y acordes a los requerimientos de cada obra."
+        },
+        "real-estate": {
+            "title": "Desarrollos inmobiliarios",
+            "description": "Hemos enfocado esta unidad de negocios en la \"proyección, ejecución y comercialización de barrios privados\" de alta calidad constructiva, destacándose por sus cualidades urbanísticas, su ubicación estratégica y su rápida consolidación."
+        },
+        "architecture": {
+            "title": "Arquitectura",
+            "description": "Ejecutamos \"obras civiles y arquitectónicas\" para el sector público y privado, abarcando desde la planificación y construcción hasta la coordinación integral de los trabajos, garantizando calidad constructiva, cumplimiento de plazos y seguridad en obra."
+        },
+        "mining": {
+            "title": "Minería",
+            "description": "Contamos con un \"equipo técnico especializado\" para desarrollar y ejecutar proyectos en localizaciones mineras, incorporando tecnología de vanguardia al servicio de la construcción. Brindamos servicios a empresas mineras en \"movimientos masivos de suelos\", \"obras civiles\" y trabajos asociados."
+        },
+        "equipment": {
+            "title": "Provisión de equipos pesados",
+            "description": "Disponemos de una \"flota de equipos propia\" que nos permite ofrecer servicios de provisión y operación de equipos pesados en todas las etapas, sectores e instalaciones de proyectos mineros, con \"personal altamente capacitado y calificado\"."
+        }
+    },
+    "projects_1": {
+        "slides": []
+    },
+    "projects_2": {
+        "slides": [
+            "p10",
+            "p11",
+            "p12",
+            "p13",
+            "p14",
+            "p15"
+        ]
+    },
+    "contact-section": {
+        "title": "Contacto",
+        "areas": {
+            "hr": "Recursos Humanos",
+            "technical": "Área Técnica",
+            "commercial": "Comercial / Compras",
+            "consulting": "Área de consultas"
+        },
+        "form": {
+            "lastname": "Apellido",
+            "firstname": "Nombre",
+            "email": "Email",
+            "phone": "Teléfono",
+            "province": "Provincia",
+            "city": "Localidad",
+            "select_province": "Seleccione provincia",
+            "select_city": "Seleccione localidad",
+            "loading": "Cargando...",
+            "study_level": "Nivel de estudio",
+            "worked_projects": "¿Trabajó en alguno de nuestros proyectos?",
+            "which_projects": "Indique cuál",
+            "company": "Empresa",
+            "message": "Mensaje",
+            "send": "Enviar",
+            "required": "Requerido",
+            "invalid_email": "Email inválido",
+            "cv_label": "Adjunta tu CV",
+            "upload_btn": "Subir PDF",
+            "no_file_selected": "Ningún archivo seleccionado",
+            "cv_note": "*Recordá adjuntarnos tu CV en el mail",
+            "success": "Mensaje enviado correctamente",
+            "error": "No pudimos enviar el mensaje. Por favor, intenta más tarde.",
+            "study_levels": {
+                "none": "Seleccione nivel de estudio",
+                "primary": "Primario",
+                "secondary": "Secundario",
+                "tertiary": "Terciario",
+                "university": "Universitario"
+            },
+            "yes_no": {
+                "none": "Indique su respuesta",
+                "yes": "Sí",
+                "no": "No"
+            }
+        }
+    },
+    "about": {
+        "history": {
+            "title": "Historia",
+            "description": "SIGMA S.A. nace en 1988 con la convicción de desarrollar sistemas y modalidades de construcción de alta calidad en la provincia de San Juan y en todo el país. Desde sus inicios, la empresa apuesta a la innovación, incorporando tecnologías y técnicas de trabajo de vanguardia, optimizando recursos y potenciando el trabajo de un equipo profesional altamente capacitado, con foco en la mejora continua, la seguridad y la eficiencia en cada obra."
+        },
+        "mission": {
+            "title": "Misión",
+            "description": "Nuestra misión consiste en prestar servicios de ingeniería y construcciones de grandes obras civiles, industriales, saneamiento y viales en forma responsable y sustentable en el ámbito de la Provincia de San Juan."
+        },
+        "vision": {
+            "title": "Visión",
+            "description": "En SIGMA, nuestra visión es posicionarnos como la mejor y más innovadora empresa en el ramo de la construcción e ingeniería y mantenernos a la vanguardia en cuanto a las nuevas tecnologías, basándonos en la especialización y capacitación de nuestro personal, respetando las normas para la conservación del medio ambiente."
+        },
+        "values": {
+            "title": "Valores",
+            "description": "En SIGMA S.A. actuamos con ética, honestidad y transparencia en todos nuestros procesos. Promovemos el trabajo en equipo y la mejora continua, cuidando la salud y seguridad de nuestros colaboradores, respetando el ambiente y fomentando prácticas sostenibles. Asumimos un fuerte compromiso con las comunidades donde operamos, construyendo vínculos basados en la confianza y la responsabilidad social."
+        }
+    },
+    "policy": {
+        "title": "Política de calidad, seguridad y salud ocupacional y medio ambiente.",
+        "description": "En SIGMA nos comprometemos a satisfacer los requerimientos y expectativas de nuestros clientes y otras partes interesadas de manera eficiente, sostenible y con los más altos estándares de calidad, seguridad y cuidado ambiental, manteniendo un Sistema de Gestión Integrado basado en las Normas ISO 9001:2015, ISO 14001:2015 e ISO 45001:2018.",
+        "button_policy": "Política de calidad",
+        "button_certifications": "Certificaciones",
+        "modal": {
+            "title": "Política de la calidad, seguridad y salud ocupacional y medio ambiente",
+            "intro": "Cumpliendo con nuestra visión nos proponemos a:",
+            "points": [
+                "Innovar y mejorar continuamente nuestros procesos, productos y servicios, garantizando altos estándares de calidad, eficiencia y sustentabilidad para consolidarnos como referentes en la región.",
+                "Valorar el esfuerzo de nuestros trabajadores, promoviendo su desarrollo profesional a través de capacitación constante, trabajo en equipo, consulta y participación de los trabajadores, y cuando existan, de los representantes de los trabajadores.",
+                "Desarrollar soluciones innovadoras que generen beneficios mutuos para clientes, trabajadores, la comunidad y el medio ambiente.",
+                "Prevenir y mitigar los riesgos laborales, eliminando peligros y reduciendo riesgos para la seguridad y salud de nuestros colaboradores.",
+                "Proteger el medio ambiente, previniendo la contaminación y promoviendo el uso sostenible de los recursos naturales.",
+                "Actuar con ética, transparencia y responsabilidad, cumpliendo con los requisitos legales y otros requisitos aplicables.",
+                "Mejorar continuamente la eficacia y desempeño de nuestro Sistema de Gestión Integrado."
+            ],
+            "footer": "La Dirección de SIGMA asume estos compromisos bajo la responsabilidad de rendir cuentas sobre el desempeño de ellos; mediante el seguimiento, la medición y la revisión de su sistema de gestión.",
+            "approved": "Aprobó: La Dirección",
+            "validity": "Vigencia: Abril 2026",
+            "version": "Versión: 3"
+        }
+    },
+    "projects-map": {
+        "items": {
+            "centauri": {
+                "name": "Proyecto Centauri",
+                "description": "Ampliación de la planta industrial de producción de fármacos. Edificio 2, Usina 5 y la playa de servicios. La planta está ubicada en el Departamento Pocito, San Juan, República Argentina. El área total de construcción es de aproximadamente de 4,727.00 m2."
+            },
+            "legislatura": {
+                "name": "Edificio anexo de la Legislatura Provincial",
+                "description": "Construcción de edificio de 5960.00 m², en un volumen apaisado formado por tres subsuelos, planta baja, y cuatro niveles superiores, mas un quinto de servicios que se proyectó por encima de la casa existente como un cuerpo único de lineas rectas y puras. Las áreas de servicio se conectan en el sector oeste conformado por un volumen cerrado, con circulaciones verticales (escalera y ascensores), las cuales comunican todo el edificio, en el sector este se dispone un patio longitudinal en dirección norte-sur, como regulados bioclimático. En la planta baja y primer piso cuenta con locales auditorio y biblioteca - sala interactiva."
+            },
+            "ayres-village": {
+                "name": "Galería comercial - Ayres Village",
+                "description": "Construcción de un edificio con destino comercial desarrollado en 2 plantas. La tipología es Strip Mall con galería semicubierta en todo su frente que sirve de espacio de transcisión y de ingreso a los locales comerciales. El complejo cuenta con 20 locales comerciales que varían en su superficie entre los 45.00 m² y los 160.00 m². El edificio está constituido por sistemas mixtos incluyendo mampostería de encadenado, pórticos, cerchas metálicas, panelería liviana, losas de hormigón armado y sistema steel frame."
+            },
+            "los-molinos": {
+                "name": "Barrio Los Molinos",
+                "description": "Barrio de 260 unidades funcionales en torres de dos y tres plantas, cinco prototipos con sistema constructivo tradicional, platea de fundacion, mampostería de ladrillón, losas de HºAº, carpinterías de aluminio y de madera, pisos cerámicos en baños y revestimientos cerámicos baños y cocina, pintadas al látex en muros exteriores e interiores y esmalte sintético en carpinterías de maderas."
+            },
+            "acueducto": {
+                "name": "Acueducto Gran Tulum",
+                "description": "Instalación de cañería de acero inoxidable, planta de tratamiento de agua y cañería PEAD. El proyecto asegura el abastecimiento de agua potable a la población de San Juan."
+            },
+            "linea-132k": {
+                "name": "Línea 132k",
+                "description": "Linea de alta tension de 132kv que interconecta la E.T. Albardón con la E.T. Solar Ullúm, con un recorrido total de 18km. La obra permite incorporar 180MW de energía solar al sistema eléctrico generada por los parques Ullum Alfa y El Chaguar."
+            },
+            "ayres-del-este": {
+                "name": "Barrio privado Ayres del Este",
+                "description": "Construción de 120 viviendas de 2 y 3 dormitorios Sup.: 9320 m² y 10 duplex Sup.: 700 m² de 1º calidad, carpinterías de Aluminio, pisos porcelanato, terminaciones de categoría, red de agua, Red de cloacas, red de gas, riego presurizado de espacios verdes y arbolado, red electrica subterranea, portal de acceso, calles asfaltadas, veredas de Hormigón, espacios veredes, sistema de comunicación IT, etc."
+            },
+            "los-azules": {
+                "name": "Proyecto Los Azules",
+                "description": "Servicios de apertura, mantenimiento y reparación del Camino de Acceso al proyecto minero Azules, a fin de asegurar el tránsito seguro y la ejecución normal de actividades inherentes al proyecto de exploración. Despeje de nieve y/o hielo, estabilización y reparación de los taludes laterales del camino, etc."
+            },
+            "veladero": {
+                "name": "Proyecto Veladero",
+                "description": "Servicios de apertura, mantenimiento y reparación del Camino de Acceso a la mina Veladero, proyecto Lama y aledaños, a fin de posibilitar el tránsito seguro y la ejecución normal de actividades inherentes a la mina."
+            },
+            "hualilan": {
+                "name": "Proyecto Hualilán",
+                "description": "Operación de minería a cielo abierto en los pits Sánchez, Norte y Magnata. El servicio incluye: movilización, desmovilización, actividades previas a la producción minera de los yacimientos de Hualilán, carga y gestión de la plataforma de acopio de mineral, etc."
+            }
+        }
+    }
+}
