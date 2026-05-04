@@ -1,13 +1,13 @@
 <section class="hero-section">
     <div class="hero-image-container">
-        <img [ngSrc]="backgroundImage" [priority]="priority" fill alt="" class="hero-img" 
+        <img [ngSrc]="backgroundImage" [priority]="priority" fill [alt]="title" class="hero-img" 
              [class.loaded]="isLoaded()" (load)="onImageLoad()">
     </div>
     <div class="hero-overlay"></div>
 
     <div class="hero-container">
         <div class="hero-content" appReveal>
-            <h1 class="hero-title">{{ title }}</h1>
+            <h2 class="hero-title">{{ title }}</h2>
             <p class="hero-description">{{ description }}</p>
             <app-action-button [text]="buttonText" (onClick)="openModal()"></app-action-button>
         </div>
