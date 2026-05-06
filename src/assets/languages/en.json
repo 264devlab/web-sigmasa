@@ -535,5 +535,10 @@
                 "description": "Open-pit mining operation in the Sánchez, Norte, and Magnata pits. The service includes: mobilization, demobilization, pre-production mining activities, mineral stockpile platform loading and management, etc."
             }
         }
+    },
+    "notfound": {
+        "title": "Oops! Page Not Found",
+        "description": "Sorry, but the page you are looking for does not exist or has been moved.",
+        "backHome": "Back to Home"
     }
 }

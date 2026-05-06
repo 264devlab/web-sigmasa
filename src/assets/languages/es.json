@@ -535,5 +535,10 @@
                 "description": "Operación de minería a cielo abierto en los pits Sánchez, Norte y Magnata. El servicio incluye: movilización, desmovilización, actividades previas a la producción minera de los yacimientos de Hualilán, carga y gestión de la plataforma de acopio de mineral, etc."
             }
         }
+    },
+    "notfound": {
+        "title": "¡Ups! Página no encontrada",
+        "description": "Lo sentimos, pero la página que buscas no existe o ha sido movida.",
+        "backHome": "Volver al Inicio"
     }
 }

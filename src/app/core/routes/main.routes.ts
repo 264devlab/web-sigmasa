@@ -21,4 +21,12 @@ export const mainRoutes: Routes = [
         path: 'mining',
         loadComponent: () => import('../../pages/contact/contact.component').then((m) => m.ContactComponent),
     },
+    {
+        path: '404',
+        loadComponent: () => import('../../pages/not-found/not-found.component').then((m) => m.NotFoundComponent),
+    },
+    {
+        path: '**',
+        loadComponent: () => import('../../pages/not-found/not-found.component').then((m) => m.NotFoundComponent),
+    },
 ];

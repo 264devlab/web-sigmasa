@@ -1,0 +1,18 @@
+<section class="not-found">
+    <div class="not-found-content reveal active">
+        <h1 class="error-code text-inter-medium-64">404</h1>
+        
+        <h2 class="error-title text-raleway-semibold-40">{{ 'notfound.title' | i18n }}</h2>
+        
+        <p class="error-description text-raleway-light-20">
+            {{ 'notfound.description' | i18n }}
+        </p>
+        
+        <div class="actions">
+            <app-action-button 
+                [text]="backHomeText" 
+                link="/">
+            </app-action-button>
+        </div>
+    </div>
+</section>

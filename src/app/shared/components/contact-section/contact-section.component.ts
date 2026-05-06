@@ -185,7 +185,7 @@ export class ContactSectionComponent implements OnInit {
           formData.cv_file_name = this.cvFileName();
         }
 
-        this.http.post('/api/send-email', formData).subscribe({
+        this.http.post('/contact-api-send', formData).subscribe({
           next: () => {
             this.submitState.set('finishing');
             setTimeout(() => {

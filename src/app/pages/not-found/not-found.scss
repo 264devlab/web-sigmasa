@@ -1,0 +1,55 @@
+@use '../../../styles/variables' as *;
+
+.not-found {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-background;
+    padding: 100px $spacing-md $spacing-xl;
+    text-align: center;
+
+    &-content {
+        max-width: 600px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $spacing-lg;
+    }
+
+    .error-code {
+        font-size: clamp(80px, 15vw, 120px);
+        color: $color-primary;
+        margin: 0;
+        line-height: 1;
+        background: linear-gradient(135deg, $color-primary 0%, $color-accent 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: $font-weight-black;
+        letter-spacing: -2px;
+    }
+
+    .error-title {
+        color: $color-secondary;
+        margin: 0;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .error-description {
+        color: $color-text-light;
+        margin-bottom: $spacing-md;
+        max-width: 450px;
+    }
+}
+
+@media (max-width: $mobile) {
+    .not-found {
+        padding-top: $spacing-2xl;
+        
+        .error-code {
+            font-size: 100px;
+        }
+    }
+}
